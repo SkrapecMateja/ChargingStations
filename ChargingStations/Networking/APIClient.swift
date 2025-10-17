@@ -9,11 +9,11 @@ import Foundation
 import Combine
 
 protocol APIClientProtocol {
-    func fetch<T: Decodable>(_ url: URL) -> AnyPublisher<T, NetworkingError>
+    func fetch<T: Decodable>(_ type: T.Type, url: URL) -> AnyPublisher<T, NetworkingError>
 }
 
 final class APIClient: APIClientProtocol {
-    func fetch<T: Decodable>(_ url: URL) -> AnyPublisher<T, NetworkingError> {
+    func fetch<T: Decodable>(_ type: T.Type, url: URL) -> AnyPublisher<T, NetworkingError> {
             URLSession.shared.dataTaskPublisher(for: url)
                 .tryMap { output -> Data in
                     guard let statusCode = (output.response as? HTTPURLResponse)?.statusCode else {

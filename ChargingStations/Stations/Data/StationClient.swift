@@ -26,14 +26,17 @@ struct StationClient: StationFetching {
     }
     
     func fetchStations(boundingBox: BoundingBox) -> AnyPublisher<[Station], StationError> {
-        apiClient.fetch(API.Endpoint.stationsInBoundingBox(x1: boundingBox.x1, y1: boundingBox.y1, x2: boundingBox.x2, y2: boundingBox.y2).fullURL)
-            .mapError { networkError -> StationError in
-                switch networkError {
-                case .noNetworkConnection:
-                    return .networkUnavailable
-                case .decodingFailed, .invalidStatusCode, .requestFailed, .generalError:
-                    return .serviceUnavailable
-                }
-            }.eraseToAnyPublisher()
+        apiClient.fetch(StationsWrapper.self,
+                        url: API.Endpoint.stationsInBoundingBox(x1: boundingBox.x1, y1: boundingBox.y1, x2: boundingBox.x2, y2: boundingBox.y2).fullURL
+        ).map { wrapper -> [Station] in
+            return wrapper.stations
+        }.mapError { networkError -> StationError in
+            switch networkError {
+            case .noNetworkConnection:
+                return .networkUnavailable
+            case .decodingFailed, .invalidStatusCode, .requestFailed, .generalError:
+                return .serviceUnavailable
+            }
+        }.eraseToAnyPublisher()
     }
 }
