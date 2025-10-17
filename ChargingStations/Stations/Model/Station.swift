@@ -10,11 +10,13 @@ struct Station: Codable {
     let latitude: Double
     let longitude: Double
     let availability: Availability
+    let chargingFacilities: [ChargingFacility]
     
     init(apiStation: APIStation) {
         self.id = apiStation.id
         self.latitude = Double(apiStation.geoCoordinates.decimalDegree.latitude) ?? 0
         self.longitude = Double(apiStation.geoCoordinates.decimalDegree.longitude) ?? 0
         self.availability = Availability(rawValue: apiStation.evseStatus) ?? .unknown
+        self.chargingFacilities = apiStation.chargingFacilities.map { ChargingFacility(apiFacilities: $0) }
     }
 }

@@ -27,11 +27,13 @@ struct APIStation: Decodable {
     let id: String
     let evseStatus: String
     let geoCoordinates: GeoCoordinates
+    let chargingFacilities: [ChargingFacilities]
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case evseStatus = "EvseStatus"
         case geoCoordinates = "GeoCoordinates"
+        case chargingFacilities = "ChargingFacilities"
     }
 
     struct GeoCoordinates: Decodable {
@@ -49,6 +51,14 @@ struct APIStation: Decodable {
         enum CodingKeys: String, CodingKey {
             case latitude = "Latitude"
             case longitude = "Longitude"
+        }
+    }
+    
+    struct ChargingFacilities: Decodable {
+        let power: UInt16
+        
+        enum CodingKeys: String, CodingKey {
+            case power = "Power"
         }
     }
 }

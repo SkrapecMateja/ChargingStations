@@ -31,6 +31,10 @@ class ModelTests: XCTestCase {
         XCTAssertEqual(stations[0].longitude, 9.548950, accuracy: 0.0000001)
         
         XCTAssertEqual(stations[0].id, "CHFASE4150401")
+        
+        XCTAssertEqual(stations[1].chargingFacilities.count, 2)
+        XCTAssertEqual(stations[1].chargingFacilities[0].power, 50)
+        XCTAssertEqual(stations[1].chargingFacilities[1].power, 300)
     }
 }
 
