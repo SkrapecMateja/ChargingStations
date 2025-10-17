@@ -35,6 +35,10 @@ class ModelTests: XCTestCase {
         XCTAssertEqual(stations[1].chargingFacilities.count, 2)
         XCTAssertEqual(stations[1].chargingFacilities[0].power, 50)
         XCTAssertEqual(stations[1].chargingFacilities[1].power, 300)
+        
+        let expectedLastUpdate = ISO8601DateFormatter().date(from: "2024-10-03T11:03:17Z")!
+        let diff = abs(stations[0].lastUpdate!.timeIntervalSince(expectedLastUpdate))
+        XCTAssertLessThan(diff, 0.001, "Dates differ by more than 1 ms")
     }
 }
 

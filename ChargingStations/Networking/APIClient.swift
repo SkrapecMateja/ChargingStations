@@ -13,6 +13,13 @@ protocol APIClientProtocol {
 }
 
 final class APIClient: APIClientProtocol {
+    
+    let jsonDecoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        return decoder
+    }()
+    
     func fetch<T: Decodable>(_ type: T.Type, url: URL) -> AnyPublisher<T, NetworkingError> {
             URLSession.shared.dataTaskPublisher(for: url)
                 .tryMap { output -> Data in
@@ -24,7 +31,7 @@ final class APIClient: APIClientProtocol {
                     }
                     return output.data
                 }
-                .decode(type: T.self, decoder: JSONDecoder())
+                .decode(type: T.self, decoder: jsonDecoder)
                 .mapError({ error -> NetworkingError in
                     if let urlError = error as? URLError {
                         if urlError.code == .notConnectedToInternet {

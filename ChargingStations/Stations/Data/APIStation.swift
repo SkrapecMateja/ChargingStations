@@ -4,6 +4,7 @@
 //
 //  Created by Mateja Skrapec on 18.10.2025.
 //
+import Foundation
 
 struct APIStationsWrapper: Decodable {
     let stations: [APIStation]
@@ -28,12 +29,14 @@ struct APIStation: Decodable {
     let evseStatus: String
     let geoCoordinates: GeoCoordinates
     let chargingFacilities: [ChargingFacilities]
+    let lastUpdate: String?
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case evseStatus = "EvseStatus"
         case geoCoordinates = "GeoCoordinates"
         case chargingFacilities = "ChargingFacilities"
+        case lastUpdate
     }
 
     struct GeoCoordinates: Decodable {
