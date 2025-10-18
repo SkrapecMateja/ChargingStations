@@ -16,7 +16,11 @@ class StationsViewModel: ObservableObject {
     
     init(stationsProvider: StationsProviderType) {
         self.stationsProvider = stationsProvider
+    }
+    
+    func startFetchingStations() {
         subscribeToUpdates()
+        stationsProvider.startUpdates(for: BoundingBox(x1: 1, y1: 2, x2: 3, y2: 4))
     }
     
     private func subscribeToUpdates() {
@@ -30,11 +34,8 @@ class StationsViewModel: ObservableObject {
         .store(in: &cancellables)
     }
     
-    func startFetchingStations() {
-        stationsProvider.startUpdates(for: BoundingBox(x1: 1, y1: 2, x2: 3, y2: 4))
-    }
-    
     func endFetchingStations() {
         stationsProvider.cancelUpdates()
+        cancellables.removeAll()
     }
 }

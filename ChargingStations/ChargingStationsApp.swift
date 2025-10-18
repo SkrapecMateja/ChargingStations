@@ -15,7 +15,8 @@ struct ChargingStationsApp: App {
                 stationsViewModel: StationsViewModel(
                     stationsProvider: StationsProvider(
                         repository: StationsRepository(),
-                        client: StationClient())
+                        client: StationClient(),
+                        sortOption: .power)
                     )
                 )
             )

@@ -34,7 +34,7 @@ struct Station: Codable {
                   latitude: Double(apiStation.geoCoordinates.decimalDegree.latitude) ?? 0,
                   longitude: Double(apiStation.geoCoordinates.decimalDegree.longitude) ?? 0,
                   availability: Availability(rawValue: apiStation.evseStatus) ?? .unknown,
-                  chargingFacilities: apiStation.chargingFacilities.map { ChargingFacility(apiFacilities: $0) },
+                  chargingFacilities: chargingFacilities,
                   lastUpdate: lastUpdate)
     }
     
@@ -50,5 +50,9 @@ struct Station: Codable {
         self.availability = availability
         self.chargingFacilities = chargingFacilities
         self.lastUpdate = lastUpdate
+    }
+    
+    var maxPower: UInt16 {
+        chargingFacilities.map({ $0.power }).max() ?? 0
     }
 }
