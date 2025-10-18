@@ -16,12 +16,35 @@ struct StationsListView: View {
     }
     
     var body: some View {
-        ScrollView {
-            LazyVStack(spacing: 12) {
-                ForEach(viewModel.stations) { stationVM in
-                    StationListItem(viewModel: stationVM)
+        VStack {
+            if viewModel.stations.isEmpty {
+                // Empty, loading view
+                VStack {
+                    Spacer()
+                    ContentUnavailableView("Loading stations...", systemImage: "ev.charger")
+                    Spacer()
                 }
-            }.padding()
+            } else {
+                ScrollView {
+                    // Last updated label
+                    if let lastUpdate = viewModel.lastUpdate {
+                        HStack {
+                            LastUpdateView(lastUpdateDate: lastUpdate)
+                            Spacer()
+                        }
+                        .padding(.top, 16)
+                        .padding(.bottom, 2)
+                        .padding(.leading, 32)
+                    }
+ 
+                    // Stations list
+                    LazyVStack(spacing: 12) {
+                        ForEach(viewModel.stations) { stationVM in
+                            StationListItem(viewModel: stationVM)
+                        }
+                    }.padding([.bottom, .leading, .trailing], 12)
+                }
+            }
         }.background(Color(.systemGroupedBackground))
     }
 }

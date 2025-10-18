@@ -16,18 +16,18 @@ struct StationListItem: View {
     
     var body: some View {
         VStack {
-            
+    
+            // Id and Max power of station
             HStack {
+                Image(systemName: "ev.charger")
+                    .font(.headline)
                 Text(viewModel.id)
                     .font(.headline)
                     .foregroundColor(.primary)
                 Spacer()
-                
-                Text(viewModel.maxPowerText)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
             }
             
+            // Availability
             HStack {
                 Circle()
                     .fill(viewModel.availability.color)
@@ -38,16 +38,21 @@ struct StationListItem: View {
                     .foregroundColor(.secondary)
                 
                 Spacer()
+                
+                Text(viewModel.maxPowerText)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
             }.padding(.bottom, 8)
             
             if !viewModel.chargingFacilities.isEmpty {
                 Divider()
             }
             
+            // Charging facilities
             VStack {
                 ForEach(viewModel.chargingFacilities) { facility in
                     HStack {
-                        Image(systemName: "powerplug.portrait.fill")
+                        Image(systemName: "powerplug.portrait")
                             .font(.subheadline)
                         
                         Text(facility.powerText)

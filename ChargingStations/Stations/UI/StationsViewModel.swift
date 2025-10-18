@@ -12,6 +12,7 @@ class StationsViewModel: ObservableObject {
     
     @Published var stations: [StationViewModel] = []
     @Published var currentLocation: CLLocation?
+    @Published var lastUpdate: Date?
     
     private let stationsProvider: StationsProviderType
     private let locationManager: LocationManagerType
@@ -39,6 +40,7 @@ class StationsViewModel: ObservableObject {
             
         } receiveValue: { [weak self] stations in
             self?.stations = stations.map { StationViewModel(station: $0) }
+            self?.lastUpdate = self?.stationsProvider.lastUpdate
         }
         .store(in: &cancellables)
         
