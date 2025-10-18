@@ -14,6 +14,8 @@
     <string>18.0</string>
     <key>UILaunchStoryboardName</key>
     <string>Launch Screen</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Your location is needed to show nearby stations</string>
     <key>NSAppTransportSecurity</key>
     <dict>
         <key>NSExceptionDomains</key>

@@ -8,8 +8,10 @@
 struct ChargingFacility: Codable, Equatable {
     let power: UInt16
     
-    init(apiFacilities: APIStation.ChargingFacilities) {
-        self.init(power: apiFacilities.power)
+    init?(apiFacilities: APIStation.ChargingFacilities) {
+        guard let power = apiFacilities.power else { return nil }
+        
+        self.init(power: power)
     }
     
     init(power: UInt16) {

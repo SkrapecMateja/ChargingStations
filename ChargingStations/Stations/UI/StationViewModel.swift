@@ -7,8 +7,8 @@
 
 struct StationViewModel: Identifiable {
     let id: String
-    let latitude: Double
-    let longitude: Double
+    let latitude: Double?
+    let longitude: Double?
     let availability: Availability
     var lastUpdate: String = ""
     

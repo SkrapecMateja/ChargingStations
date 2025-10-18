@@ -3,3244 +3,2994 @@
   "features": [
     {
       "type": "Feature",
-      "id": "CHFASE4150401",
+      "id": "CH*SHE*E585*1",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.54895,
-          46.95768
+          8.53584745,
+          47.37229222
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CHFASE4150401",
+        "_id": "CH*SHE*E585*1",
         "EvseStatus": "?",
-        "lastUpdate": "2024-10-03T11:03:17Z",
-        "ValueAddedServices": "None",
-        "Plugs": "CCS Combo 2 Plug (Cable Attached)",
+        "Plugs": [
+          "CHAdeMO",
+          "CCS Combo 2 Plug (Cable Attached)"
+        ],
         "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "46.957680",
-            "Longitude": "9.548950"
+          "Google": {
+            "Coordinates": "47.37229222 8.53584745"
           }
         },
-        "OperatorID": "CH*FASTNED",
-        "AuthenticationModes": [
-          "NFC RFID Classic",
-          "REMOTE",
-          "Direct Payment"
-        ],
+        "OperatorID": "CH*SHE",
+        "SubOperatorName": "",
         "CalibrationLawDataAvailability": "Not Available",
-        "AccessibilityLocation": "OnStreet",
-        "ChargingStationId": "50819",
-        "HotlinePhoneNumber": "+41415391092",
+        "ChargingStationId": "0cec9410-aa4e-11ea-944b-42010a840003",
+        "HotlinePhoneNumber": "+41225445465",
         "IsOpen24Hours": true,
         "Address": {
-          "PostalCode": "7205",
-          "City": "Zizers",
-          "Street": "Rastplatz Apfelwuhr Nord A13",
-          "Country": "CHE",
-          "ParkingFacility": true,
-          "HouseNum": "n/a"
+          "PostalCode": "8001",
+          "City": "Zürich",
+          "Street": "Nüschelerstrasse 31",
+          "Country": "CHE"
         },
-        "PaymentOptions": [
-          "Direct",
-          "Contract"
-        ],
         "IsHubjectCompatible": false,
         "ChargingFacilities": [
           {
-            "Power": 300,
-            "Voltage": 600,
+            "Power": 22,
+            "PowerType": "DC"
+          },
+          {
+            "Power": 22,
             "PowerType": "DC"
           }
         ],
-        "RenewableEnergy": true,
+        "RenewableEnergy": false,
         "ChargingStationNames": [
           {
             "lang": "en",
-            "value": "Apfelwuhr Nord"
+            "value": "Shell evpass Talgarten Zürich"
           }
         ],
-        "EvseID": "CHFASE4150401",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "auto"
+        "EvseID": "CH*SHE*E585*1",
+        "Accessibility": "Restricted access",
+        "DynamicInfoAvailable": "true"
       }
     },
     {
       "type": "Feature",
-      "id": "CHFASE4150402",
+      "id": "CH*SHE*E8123*1",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.54895,
-          46.95768
+          8.53579926,
+          47.36738704
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CHFASE4150402",
+        "_id": "CH*SHE*E8123*1",
         "EvseStatus": "OutOfService",
-        "lastUpdate": "2024-10-03T09:21:47Z",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)"
-        ],
+        "Plugs": "Type 2 Outlet",
         "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "46.957680",
-            "Longitude": "9.548950"
+          "Google": {
+            "Coordinates": "47.36738704 8.53579926"
           }
         },
-        "OperatorID": "CH*FASTNED",
-        "AuthenticationModes": [
-          "NFC RFID Classic",
-          "REMOTE",
-          "Direct Payment"
-        ],
+        "OperatorID": "CH*SHE",
+        "SubOperatorName": "",
         "CalibrationLawDataAvailability": "Not Available",
-        "AccessibilityLocation": "OnStreet",
-        "ChargingStationId": "50819",
-        "HotlinePhoneNumber": "+41415391092",
+        "ChargingStationId": "c28b460e-326c-11ef-bdb4-42010aa400b8",
+        "HotlinePhoneNumber": "+41225445465",
         "IsOpen24Hours": true,
         "Address": {
-          "PostalCode": "7205",
-          "City": "Zizers",
-          "Street": "Rastplatz Apfelwuhr Nord A13",
-          "Country": "CHE",
-          "ParkingFacility": true,
-          "HouseNum": "n/a"
+          "PostalCode": "8002",
+          "City": "Zürich",
+          "Street": "Beethovenstrasse 35",
+          "Country": "CHE"
         },
-        "PaymentOptions": [
-          "Direct",
-          "Contract"
-        ],
         "IsHubjectCompatible": false,
         "ChargingFacilities": [
           {
-            "Power": 50,
-            "Voltage": 400,
-            "PowerType": "DC"
-          },
-          {
-            "Power": 300,
-            "Voltage": 600,
-            "PowerType": "DC"
+            "Power": 22,
+            "PowerType": "AC_3_PHASE"
           }
         ],
-        "RenewableEnergy": true,
+        "RenewableEnergy": false,
         "ChargingStationNames": [
           {
             "lang": "en",
-            "value": "Apfelwuhr Nord"
+            "value": "Shell evpass Parkgarage Bleicherweg"
           }
         ],
-        "EvseID": "CHFASE4150402",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "auto"
+        "EvseID": "CH*SHE*E8123*1",
+        "Accessibility": "Restricted access",
+        "DynamicInfoAvailable": "true"
       }
     },
     {
       "type": "Feature",
-      "id": "CHFASE4150403",
+      "id": "CH*SHE*E586*1",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.54895,
-          46.95768
+          8.53579926,
+          47.36738704
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CHFASE4150403",
+        "_id": "CH*SHE*E586*1",
         "EvseStatus": "Available",
-        "lastUpdate": "2024-10-03T10:46:10Z",
-        "ValueAddedServices": "None",
-        "Plugs": "CCS Combo 2 Plug (Cable Attached)",
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "46.957680",
-            "Longitude": "9.548950"
-          }
-        },
-        "OperatorID": "CH*FASTNED",
-        "AuthenticationModes": [
-          "NFC RFID Classic",
-          "REMOTE",
-          "Direct Payment"
-        ],
-        "CalibrationLawDataAvailability": "Not Available",
-        "AccessibilityLocation": "OnStreet",
-        "ChargingStationId": "50819",
-        "HotlinePhoneNumber": "+41415391092",
-        "IsOpen24Hours": true,
-        "Address": {
-          "PostalCode": "7205",
-          "City": "Zizers",
-          "Street": "Rastplatz Apfelwuhr Nord A13",
-          "Country": "CHE",
-          "ParkingFacility": true,
-          "HouseNum": "n/a"
-        },
-        "PaymentOptions": [
-          "Direct",
-          "Contract"
-        ],
-        "IsHubjectCompatible": false,
-        "ChargingFacilities": [
-          {
-            "Power": 300,
-            "Voltage": 600,
-            "PowerType": "DC"
-          }
-        ],
-        "RenewableEnergy": true,
-        "ChargingStationNames": [
-          {
-            "lang": "en",
-            "value": "Apfelwuhr Nord"
-          }
-        ],
-        "EvseID": "CHFASE4150403",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "auto"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "CHFASE4150404",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.54895,
-          46.95768
-        ]
-      },
-      "properties": {
-        "@featureType": "evse",
-        "_id": "CHFASE4150404",
-        "EvseStatus": "Occupied",
-        "lastUpdate": "2024-10-03T10:29:11Z",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "46.957680",
-            "Longitude": "9.548950"
-          }
-        },
-        "OperatorID": "CH*FASTNED",
-        "AuthenticationModes": [
-          "NFC RFID Classic",
-          "REMOTE",
-          "Direct Payment"
-        ],
-        "CalibrationLawDataAvailability": "Not Available",
-        "AccessibilityLocation": "OnStreet",
-        "ChargingStationId": "50819",
-        "HotlinePhoneNumber": "+41415391092",
-        "IsOpen24Hours": true,
-        "Address": {
-          "PostalCode": "7205",
-          "City": "Zizers",
-          "Street": "Rastplatz Apfelwuhr Nord A13",
-          "Country": "CHE",
-          "ParkingFacility": true,
-          "HouseNum": "n/a"
-        },
-        "PaymentOptions": [
-          "Direct",
-          "Contract"
-        ],
-        "IsHubjectCompatible": false,
-        "ChargingFacilities": [
-          {
-            "Power": 50,
-            "Voltage": 400,
-            "PowerType": "DC"
-          },
-          {
-            "Power": 300,
-            "Voltage": 600,
-            "PowerType": "DC"
-          }
-        ],
-        "RenewableEnergy": true,
-        "ChargingStationNames": [
-          {
-            "lang": "en",
-            "value": "Apfelwuhr Nord"
-          }
-        ],
-        "EvseID": "CHFASE4150404",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "auto"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "CHFASE4130201",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.160158,
-          47.392556
-        ]
-      },
-      "properties": {
-        "@featureType": "evse",
-        "_id": "CHFASE4130201",
-        "EvseStatus": "Unknown",
-        "lastUpdate": "2024-10-03T08:44:01Z",
-        "ValueAddedServices": "None",
-        "Plugs": "CCS Combo 2 Plug (Cable Attached)",
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.392556",
-            "Longitude": "8.160158"
-          }
-        },
-        "OperatorID": "CH*FASTNED",
-        "AuthenticationModes": [
-          "NFC RFID Classic",
-          "REMOTE",
-          "Direct Payment"
-        ],
-        "CalibrationLawDataAvailability": "Not Available",
-        "AccessibilityLocation": "OnStreet",
-        "ChargingStationId": "50231",
-        "HotlinePhoneNumber": "+41415391092",
-        "IsOpen24Hours": true,
-        "Address": {
-          "PostalCode": "5600",
-          "City": "Lenzburg",
-          "Street": "Rastplatz Lenzburg A1",
-          "Country": "CHE",
-          "ParkingFacility": true,
-          "HouseNum": "n/a"
-        },
-        "PaymentOptions": [
-          "Direct",
-          "Contract"
-        ],
-        "IsHubjectCompatible": false,
-        "ChargingFacilities": [
-          {
-            "Power": 300,
-            "Voltage": 600,
-            "PowerType": "DC"
-          }
-        ],
-        "RenewableEnergy": true,
-        "ChargingStationNames": [
-          {
-            "lang": "en",
-            "value": "Lenzburg"
-          }
-        ],
-        "EvseID": "CHFASE4130201",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "auto"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "CHFASE4130202",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.160158,
-          47.392556
-        ]
-      },
-      "properties": {
-        "@featureType": "evse",
-        "_id": "CHFASE4130202",
-        "EvseStatus": "Unknown",
-        "lastUpdate": "2024-10-02T23:54:31Z",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.392556",
-            "Longitude": "8.160158"
-          }
-        },
-        "OperatorID": "CH*FASTNED",
-        "AuthenticationModes": [
-          "NFC RFID Classic",
-          "REMOTE",
-          "Direct Payment"
-        ],
-        "CalibrationLawDataAvailability": "Not Available",
-        "AccessibilityLocation": "OnStreet",
-        "ChargingStationId": "50231",
-        "HotlinePhoneNumber": "+41415391092",
-        "IsOpen24Hours": true,
-        "Address": {
-          "PostalCode": "5600",
-          "City": "Lenzburg",
-          "Street": "Rastplatz Lenzburg A1",
-          "Country": "CHE",
-          "ParkingFacility": true,
-          "HouseNum": "n/a"
-        },
-        "PaymentOptions": [
-          "Direct",
-          "Contract"
-        ],
-        "IsHubjectCompatible": false,
-        "ChargingFacilities": [
-          {
-            "Power": 50,
-            "Voltage": 400,
-            "PowerType": "DC"
-          },
-          {
-            "Power": 300,
-            "Voltage": 600,
-            "PowerType": "DC"
-          }
-        ],
-        "RenewableEnergy": true,
-        "ChargingStationNames": [
-          {
-            "lang": "en",
-            "value": "Lenzburg"
-          }
-        ],
-        "EvseID": "CHFASE4130202",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "auto"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "CHFASE4130203",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.160158,
-          47.392556
-        ]
-      },
-      "properties": {
-        "@featureType": "evse",
-        "_id": "CHFASE4130203",
-        "EvseStatus": "Occupied",
-        "lastUpdate": "2024-10-02T23:55:37Z",
-        "ValueAddedServices": "None",
-        "Plugs": "CCS Combo 2 Plug (Cable Attached)",
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.392556",
-            "Longitude": "8.160158"
-          }
-        },
-        "OperatorID": "CH*FASTNED",
-        "AuthenticationModes": [
-          "NFC RFID Classic",
-          "REMOTE",
-          "Direct Payment"
-        ],
-        "CalibrationLawDataAvailability": "Not Available",
-        "AccessibilityLocation": "OnStreet",
-        "ChargingStationId": "50231",
-        "HotlinePhoneNumber": "+41415391092",
-        "IsOpen24Hours": true,
-        "Address": {
-          "PostalCode": "5600",
-          "City": "Lenzburg",
-          "Street": "Rastplatz Lenzburg A1",
-          "Country": "CHE",
-          "ParkingFacility": true,
-          "HouseNum": "n/a"
-        },
-        "PaymentOptions": [
-          "Direct",
-          "Contract"
-        ],
-        "IsHubjectCompatible": false,
-        "ChargingFacilities": [
-          {
-            "Power": 300,
-            "Voltage": 600,
-            "PowerType": "DC"
-          }
-        ],
-        "RenewableEnergy": true,
-        "ChargingStationNames": [
-          {
-            "lang": "en",
-            "value": "Lenzburg"
-          }
-        ],
-        "EvseID": "CHFASE4130203",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "auto"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "CHFASE4130204",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.160158,
-          47.392556
-        ]
-      },
-      "properties": {
-        "@featureType": "evse",
-        "_id": "CHFASE4130204",
-        "EvseStatus": "Available",
-        "lastUpdate": "2024-10-03T11:01:08Z",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.392556",
-            "Longitude": "8.160158"
-          }
-        },
-        "OperatorID": "CH*FASTNED",
-        "AuthenticationModes": [
-          "NFC RFID Classic",
-          "REMOTE",
-          "Direct Payment"
-        ],
-        "CalibrationLawDataAvailability": "Not Available",
-        "AccessibilityLocation": "OnStreet",
-        "ChargingStationId": "50231",
-        "HotlinePhoneNumber": "+41415391092",
-        "IsOpen24Hours": true,
-        "Address": {
-          "PostalCode": "5600",
-          "City": "Lenzburg",
-          "Street": "Rastplatz Lenzburg A1",
-          "Country": "CHE",
-          "ParkingFacility": true,
-          "HouseNum": "n/a"
-        },
-        "PaymentOptions": [
-          "Direct",
-          "Contract"
-        ],
-        "IsHubjectCompatible": false,
-        "ChargingFacilities": [
-          {
-            "Power": 50,
-            "Voltage": 400,
-            "PowerType": "DC"
-          },
-          {
-            "Power": 300,
-            "Voltage": 600,
-            "PowerType": "DC"
-          }
-        ],
-        "RenewableEnergy": true,
-        "ChargingStationNames": [
-          {
-            "lang": "en",
-            "value": "Lenzburg"
-          }
-        ],
-        "EvseID": "CHFASE4130204",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "auto"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "CHFASE4130101",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.109115,
-          47.380548
-        ]
-      },
-      "properties": {
-        "@featureType": "evse",
-        "_id": "CHFASE4130101",
-        "EvseStatus": "Available",
-        "lastUpdate": "2024-12-16T12:04:28Z",
-        "ValueAddedServices": "None",
-        "Plugs": "CCS Combo 2 Plug (Cable Attached)",
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.380548",
-            "Longitude": "8.109115"
-          }
-        },
-        "OperatorID": "CH*FASTNED",
-        "AuthenticationModes": [
-          "NFC RFID Classic",
-          "REMOTE",
-          "Direct Payment"
-        ],
-        "CalibrationLawDataAvailability": "Not Available",
-        "AccessibilityLocation": "OnStreet",
-        "ChargingStationId": "50198",
-        "HotlinePhoneNumber": "+41415391092",
-        "IsOpen24Hours": true,
-        "Address": {
-          "PostalCode": "5034",
-          "City": "Suhr",
-          "Street": "Rastplatz Suhr A1",
-          "Country": "CHE",
-          "ParkingFacility": true,
-          "HouseNum": "n/a"
-        },
-        "PaymentOptions": [
-          "Direct",
-          "Contract"
-        ],
-        "IsHubjectCompatible": false,
-        "ChargingFacilities": [
-          {
-            "Power": 300,
-            "Voltage": 600,
-            "PowerType": "DC"
-          }
-        ],
-        "RenewableEnergy": true,
-        "ChargingStationNames": [
-          {
-            "lang": "en",
-            "value": "Suhr"
-          }
-        ],
-        "EvseID": "CHFASE4130101",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "auto"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "CHFASE4130102",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.109115,
-          47.380548
-        ]
-      },
-      "properties": {
-        "@featureType": "evse",
-        "_id": "CHFASE4130102",
-        "EvseStatus": "Available",
-        "lastUpdate": "2024-12-16T11:55:41Z",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.380548",
-            "Longitude": "8.109115"
-          }
-        },
-        "OperatorID": "CH*FASTNED",
-        "AuthenticationModes": [
-          "NFC RFID Classic",
-          "REMOTE",
-          "Direct Payment"
-        ],
-        "CalibrationLawDataAvailability": "Not Available",
-        "AccessibilityLocation": "OnStreet",
-        "ChargingStationId": "50198",
-        "HotlinePhoneNumber": "+41415391092",
-        "IsOpen24Hours": true,
-        "Address": {
-          "PostalCode": "5034",
-          "City": "Suhr",
-          "Street": "Rastplatz Suhr A1",
-          "Country": "CHE",
-          "ParkingFacility": true,
-          "HouseNum": "n/a"
-        },
-        "PaymentOptions": [
-          "Direct",
-          "Contract"
-        ],
-        "IsHubjectCompatible": false,
-        "ChargingFacilities": [
-          {
-            "Power": 50,
-            "Voltage": 400,
-            "PowerType": "DC"
-          },
-          {
-            "Power": 300,
-            "Voltage": 600,
-            "PowerType": "DC"
-          }
-        ],
-        "RenewableEnergy": true,
-        "ChargingStationNames": [
-          {
-            "lang": "en",
-            "value": "Suhr"
-          }
-        ],
-        "EvseID": "CHFASE4130102",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "auto"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "CHFASE4130103",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.109115,
-          47.380548
-        ]
-      },
-      "properties": {
-        "@featureType": "evse",
-        "_id": "CHFASE4130103",
-        "EvseStatus": "Available",
-        "lastUpdate": "2024-12-16T12:51:48Z",
-        "ValueAddedServices": "None",
-        "Plugs": "CCS Combo 2 Plug (Cable Attached)",
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.380548",
-            "Longitude": "8.109115"
-          }
-        },
-        "OperatorID": "CH*FASTNED",
-        "AuthenticationModes": [
-          "NFC RFID Classic",
-          "REMOTE",
-          "Direct Payment"
-        ],
-        "CalibrationLawDataAvailability": "Not Available",
-        "AccessibilityLocation": "OnStreet",
-        "ChargingStationId": "50198",
-        "HotlinePhoneNumber": "+41415391092",
-        "IsOpen24Hours": true,
-        "Address": {
-          "PostalCode": "5034",
-          "City": "Suhr",
-          "Street": "Rastplatz Suhr A1",
-          "Country": "CHE",
-          "ParkingFacility": true,
-          "HouseNum": "n/a"
-        },
-        "PaymentOptions": [
-          "Direct",
-          "Contract"
-        ],
-        "IsHubjectCompatible": false,
-        "ChargingFacilities": [
-          {
-            "Power": 300,
-            "Voltage": 600,
-            "PowerType": "DC"
-          }
-        ],
-        "RenewableEnergy": true,
-        "ChargingStationNames": [
-          {
-            "lang": "en",
-            "value": "Suhr"
-          }
-        ],
-        "EvseID": "CHFASE4130103",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "auto"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "CHFASE4130104",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.109115,
-          47.380548
-        ]
-      },
-      "properties": {
-        "@featureType": "evse",
-        "_id": "CHFASE4130104",
-        "EvseStatus": "Available",
-        "lastUpdate": "2024-12-16T10:41:15Z",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.380548",
-            "Longitude": "8.109115"
-          }
-        },
-        "OperatorID": "CH*FASTNED",
-        "AuthenticationModes": [
-          "NFC RFID Classic",
-          "REMOTE",
-          "Direct Payment"
-        ],
-        "CalibrationLawDataAvailability": "Not Available",
-        "AccessibilityLocation": "OnStreet",
-        "ChargingStationId": "50198",
-        "HotlinePhoneNumber": "+41415391092",
-        "IsOpen24Hours": true,
-        "Address": {
-          "PostalCode": "5034",
-          "City": "Suhr",
-          "Street": "Rastplatz Suhr A1",
-          "Country": "CHE",
-          "ParkingFacility": true,
-          "HouseNum": "n/a"
-        },
-        "PaymentOptions": [
-          "Direct",
-          "Contract"
-        ],
-        "IsHubjectCompatible": false,
-        "ChargingFacilities": [
-          {
-            "Power": 50,
-            "Voltage": 400,
-            "PowerType": "DC"
-          },
-          {
-            "Power": 300,
-            "Voltage": 600,
-            "PowerType": "DC"
-          }
-        ],
-        "RenewableEnergy": true,
-        "ChargingStationNames": [
-          {
-            "lang": "en",
-            "value": "Suhr"
-          }
-        ],
-        "EvseID": "CHFASE4130104",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "auto"
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "CH*AVI*E123*0001",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.20073,
-          47.46529
-        ]
-      },
-      "properties": {
-        "@featureType": "evse",
-        "_id": "CH*AVI*E123*0001",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
         "Plugs": [
           "CCS Combo 2 Plug (Cable Attached)",
-          "Type 2 Connector (Cable Attached)"
+          "CHAdeMO"
         ],
         "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.46529",
-            "Longitude": "9.20073"
+          "Google": {
+            "Coordinates": "47.36738704 8.53579926"
           }
         },
-        "OperatorID": "CH*AVIA",
-        "AuthenticationModes": "Direct Payment",
+        "OperatorID": "CH*SHE",
+        "SubOperatorName": "",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41712722740",
+        "ChargingStationId": "c28b460e-326c-11ef-bdb4-42010aa400b8",
+        "HotlinePhoneNumber": "+41225445465",
         "IsOpen24Hours": true,
-        "ChargingStationId": "CH*AVI*E123*0001",
         "Address": {
-          "PostalCode": "9246",
-          "City": "Niederbüren",
-          "Street": "Staatsstrasse ",
-          "Country": "CHE",
-          "HouseNum": "14"
+          "PostalCode": "8002",
+          "City": "Zürich",
+          "Street": "Beethovenstrasse 35",
+          "Country": "CHE"
         },
         "IsHubjectCompatible": false,
-        "PaymentOptions": "Direct",
         "ChargingFacilities": [
           {
-            "Power": 64,
-            "PowerType": null
+            "Power": 22,
+            "PowerType": "DC"
           },
           {
             "Power": 22,
-            "PowerType": null
+            "PowerType": "DC"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*AVI*E123*0001",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "en",
+            "value": "Shell evpass Parkgarage Bleicherweg"
+          }
+        ],
+        "EvseID": "CH*SHE*E586*1",
+        "Accessibility": "Restricted access",
+        "DynamicInfoAvailable": "true"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*DIE*E123*0001",
+      "id": "CHEVPE37063",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.40211,
-          47.40293
+          8.533151,
+          47.378593
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*DIE*E123*0001",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
+        "_id": "CHEVPE37063",
+        "EvseStatus": "Occupied",
+        "ValueAddedServices": "MaximumPowerCharging",
         "Plugs": [
-          "Type 2 Outlet",
-          "Type 2 Outlet"
+          "CHAdeMO",
+          "CCS Combo 2 Plug (Cable Attached)"
         ],
         "GeoCoordinates": {
           "DecimalDegree": {
-            "Latitude": "47.40293",
-            "Longitude": "8.40211"
+            "Latitude": "47.378593",
+            "Longitude": "8.533151"
           }
         },
-        "OperatorID": "CH*DIE",
-        "AuthenticationModes": "Direct Payment",
+        "OperatorID": "CHEVP",
+        "AuthenticationModes": [
+          "REMOTE",
+          "NFC RFID Classic",
+          "NFC RFID DESFire"
+        ],
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41447443535",
+        "HotlinePhoneNumber": "+41582219660",
         "IsOpen24Hours": true,
-        "ChargingStationId": "CH*DIE*E123*0001",
+        "ChargingStationId": "16602",
+        "AdditionalInfo": null,
         "Address": {
-          "PostalCode": "8953",
-          "City": "Dietikon",
-          "Street": "Bremgartnerstrasse",
+          "PostalCode": "8004",
+          "City": "Zürich",
+          "Street": "Europaallee",
+          "Floor": "-1",
           "Country": "CHE",
-          "HouseNum": "15"
+          "HouseNum": "23",
+          "TimeZone": "UTC+02:00"
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "Direct",
+        "IsHubjectCompatible": true,
+        "PaymentOptions": "No Payment",
         "ChargingFacilities": [
           {
-            "Power": 11,
-            "PowerType": null
+            "Power": 44,
+            "PowerType": "DC"
           },
           {
-            "Power": 11,
-            "PowerType": null
+            "Power": 44,
+            "PowerType": "DC"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*DIE*E123*0001",
+        "ChargingStationNames": [
+          {
+            "lang": "en",
+            "value": "UBS Europaallee Zürich EA21 - RXT44 - Client P12"
+          }
+        ],
+        "EvseID": "CHEVPE37063",
+        "Accessibility": "Free publicly accessible",
+        "DynamicInfoAvailable": "true"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CH*SCH*EWJBK511603SCH",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.543459,
+          47.377565
+        ]
+      },
+      "properties": {
+        "@featureType": "evse",
+        "_id": "CH*SCH*EWJBK511603SCH",
+        "EvseStatus": "Unknown",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.377565,8.543459"
+          }
+        },
+        "OperatorID": "CH*SCH",
+        "AuthenticationModes": "NFC RFID Classic",
+        "CalibrationLawDataAvailability": "Not Available",
+        "ChargingStationId": "P22234963",
+        "HotlinePhoneNumber": "+41445864550",
+        "IsOpen24Hours": true,
+        "Address": {
+          "PostalCode": "8001",
+          "City": "Zürich",
+          "Street": "Neumühlequai 6",
+          "Floor": null,
+          "Country": "CHE",
+          "Region": null,
+          "HouseNum": "",
+          "TimeZone": null
+        },
+        "PaymentOptions": [
+          "Contract",
+          "Direct"
+        ],
+        "IsHubjectCompatible": true,
+        "ChargingFacilities": [
+          {
+            "Power": 22,
+            "Amperage": 32,
+            "Voltage": 400,
+            "PowerType": "AC_3_PHASE"
+          }
+        ],
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
+          {
+            "lang": "en",
+            "value": "SUVA Neumühlequai 6 Zürich PP204"
+          }
+        ],
+        "EvseID": "CH*SCH*EWJBK511603SCH",
         "Accessibility": "Paying publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "DynamicInfoAvailable": "false"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*HER*E123*0001",
+      "id": "CH*SCH*E51RR511599SCH",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.611227,
-          47.284845
+          8.543489,
+          47.377548
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*HER*E123*0001",
-        "EvseStatus": "Unknown",
+        "_id": "CH*SCH*E51RR511599SCH",
+        "EvseStatus": "Available",
         "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 1 Plug (Cable Attached)",
-          "Type 2 Outlet",
-          "Type 2 Connector (Cable Attached)"
-        ],
+        "Plugs": "Type 2 Outlet",
         "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.284845",
-            "Longitude": "8.611227"
+          "Google": {
+            "Coordinates": "47.377548,8.543489"
           }
         },
-        "OperatorID": "CH*HER",
-        "AuthenticationModes": "Direct Payment",
+        "OperatorID": "CH*SCH",
+        "AuthenticationModes": "NFC RFID Classic",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41449053171",
+        "ChargingStationId": "P22234936",
+        "HotlinePhoneNumber": "+41445864550",
         "IsOpen24Hours": true,
-        "ChargingStationId": "CH*HER*E123*0001",
         "Address": {
-          "PostalCode": "8704",
-          "City": "Herrliberg",
-          "Street": "Forchstrasse",
+          "PostalCode": "8001",
+          "City": "Zürich",
+          "Street": "Neumühlequai 6",
+          "Floor": null,
           "Country": "CHE",
-          "HouseNum": "16"
+          "Region": null,
+          "HouseNum": "",
+          "TimeZone": null
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "Direct",
-        "ChargingFacilities": [
-          {
-            "Power": 60,
-            "PowerType": null
-          },
-          {
-            "Power": 150,
-            "PowerType": null
-          },
-          {
-            "Power": 22,
-            "PowerType": null
-          },
-          {
-            "Power": 43,
-            "PowerType": null
-          }
+        "PaymentOptions": [
+          "Contract",
+          "Direct"
         ],
-        "RenewableEnergy": false,
-        "EvseID": "CH*HER*E123*0001",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "CH*EWD*E123*0033",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.84591,
-          46.81352
-        ]
-      },
-      "properties": {
-        "@featureType": "evse",
-        "_id": "CH*EWD*E123*0033",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "Type 2 Connector (Cable Attached)",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "CHAdeMO"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "46.81352",
-            "Longitude": "9.84591"
-          }
-        },
-        "OperatorID": "CH*EWD",
-        "AuthenticationModes": "Direct Payment",
-        "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41814153800",
-        "IsOpen24Hours": true,
-        "ChargingStationId": "CH*EWD*E123*0033",
-        "Address": {
-          "PostalCode": "7260",
-          "City": "Davos",
-          "Street": "Bahnhofstrasse",
-          "Country": "CHE",
-          "HouseNum": "nan"
-        },
         "IsHubjectCompatible": true,
-        "PaymentOptions": "Direct",
         "ChargingFacilities": [
           {
             "Power": 22,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
+            "Amperage": 32,
+            "Voltage": 400,
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*EWD*E123*0033",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "en",
+            "value": "SUVA Neumühlequai 6 Zürich PP207"
+          }
+        ],
+        "EvseID": "CH*SCH*E51RR511599SCH",
+        "Accessibility": "Paying publicly accessible",
+        "DynamicInfoAvailable": "false"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*EWD*E123*0027",
+      "id": "CH*SCH*EQ43Z511607SCH",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.84586,
-          46.8135
+          8.543377,
+          47.377574
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*EWD*E123*0027",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "Type 2 Connector (Cable Attached)",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "CHAdeMO"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "46.8135",
-            "Longitude": "9.84586"
-          }
-        },
-        "OperatorID": "CH*EWD",
-        "AuthenticationModes": "Direct Payment",
-        "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41814153800",
-        "IsOpen24Hours": true,
-        "ChargingStationId": "CH*EWD*E123*0027",
-        "Address": {
-          "PostalCode": "7260",
-          "City": "Davos",
-          "Street": "Bahnhofstrasse",
-          "Country": "CHE",
-          "HouseNum": "nan"
-        },
-        "IsHubjectCompatible": true,
-        "PaymentOptions": "Direct",
-        "ChargingFacilities": [
-          {
-            "Power": 22,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          }
-        ],
-        "RenewableEnergy": false,
-        "EvseID": "CH*EWD*E123*0027",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "CH*EWD*E123*0023",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.83121,
-          46.80008
-        ]
-      },
-      "properties": {
-        "@featureType": "evse",
-        "_id": "CH*EWD*E123*0023",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "Type 2 Connector (Cable Attached)",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "CHAdeMO"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "46.80008",
-            "Longitude": "9.83121"
-          }
-        },
-        "OperatorID": "CH*EWD",
-        "AuthenticationModes": "Direct Payment",
-        "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41814153800",
-        "IsOpen24Hours": true,
-        "ChargingStationId": "CH*EWD*E123*0023",
-        "Address": {
-          "PostalCode": "7270",
-          "City": "Davos",
-          "Street": "Talstrasse",
-          "Country": "CHE",
-          "HouseNum": "49a"
-        },
-        "IsHubjectCompatible": true,
-        "PaymentOptions": "Direct",
-        "ChargingFacilities": [
-          {
-            "Power": 22,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          }
-        ],
-        "RenewableEnergy": false,
-        "EvseID": "CH*EWD*E123*0023",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "CH*EWD*E123*0032",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.83124,
-          46.80013
-        ]
-      },
-      "properties": {
-        "@featureType": "evse",
-        "_id": "CH*EWD*E123*0032",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "Type 2 Connector (Cable Attached)",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "CHAdeMO"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "46.800129999999996",
-            "Longitude": "9.83124"
-          }
-        },
-        "OperatorID": "CH*EWD",
-        "AuthenticationModes": "Direct Payment",
-        "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41814153800",
-        "IsOpen24Hours": true,
-        "ChargingStationId": "CH*EWD*E123*0032",
-        "Address": {
-          "PostalCode": "7270",
-          "City": "Davos",
-          "Street": "Talstrasse",
-          "Country": "CHE",
-          "HouseNum": "49a"
-        },
-        "IsHubjectCompatible": true,
-        "PaymentOptions": "Direct",
-        "ChargingFacilities": [
-          {
-            "Power": 22,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          }
-        ],
-        "RenewableEnergy": false,
-        "EvseID": "CH*EWD*E123*0032",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "CH*EWD*E123*0005",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.83104,
-          46.79978
-        ]
-      },
-      "properties": {
-        "@featureType": "evse",
-        "_id": "CH*EWD*E123*0005",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "Type 2 Connector (Cable Attached)",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "CHAdeMO"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "46.79978",
-            "Longitude": "9.83104"
-          }
-        },
-        "OperatorID": "CH*EWD",
-        "AuthenticationModes": "Direct Payment",
-        "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41814153800",
-        "IsOpen24Hours": true,
-        "ChargingStationId": "CH*EWD*E123*0005",
-        "Address": {
-          "PostalCode": "7270",
-          "City": "Davos",
-          "Street": "Talstrasse",
-          "Country": "CHE",
-          "HouseNum": "49a"
-        },
-        "IsHubjectCompatible": true,
-        "PaymentOptions": "Direct",
-        "ChargingFacilities": [
-          {
-            "Power": 22,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          }
-        ],
-        "RenewableEnergy": false,
-        "EvseID": "CH*EWD*E123*0005",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "CH*EWD*E123*0013",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.83108,
-          46.79975
-        ]
-      },
-      "properties": {
-        "@featureType": "evse",
-        "_id": "CH*EWD*E123*0013",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "Type 2 Connector (Cable Attached)",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "CHAdeMO"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "46.79975",
-            "Longitude": "9.83108"
-          }
-        },
-        "OperatorID": "CH*EWD",
-        "AuthenticationModes": "Direct Payment",
-        "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41814153800",
-        "IsOpen24Hours": true,
-        "ChargingStationId": "CH*EWD*E123*0013",
-        "Address": {
-          "PostalCode": "7270",
-          "City": "Davos",
-          "Street": "Talstrasse",
-          "Country": "CHE",
-          "HouseNum": "49a"
-        },
-        "IsHubjectCompatible": true,
-        "PaymentOptions": "Direct",
-        "ChargingFacilities": [
-          {
-            "Power": 22,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          }
-        ],
-        "RenewableEnergy": false,
-        "EvseID": "CH*EWD*E123*0013",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "CH*EWD*E123*0012",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.82095,
-          46.79336
-        ]
-      },
-      "properties": {
-        "@featureType": "evse",
-        "_id": "CH*EWD*E123*0012",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "Type 2 Connector (Cable Attached)",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "CHAdeMO"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "46.79336",
-            "Longitude": "9.82095"
-          }
-        },
-        "OperatorID": "CH*EWD",
-        "AuthenticationModes": "Direct Payment",
-        "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41814153800",
-        "IsOpen24Hours": true,
-        "ChargingStationId": "CH*EWD*E123*0012",
-        "Address": {
-          "PostalCode": "7270",
-          "City": "Davos",
-          "Street": "Promenade",
-          "Country": "CHE",
-          "HouseNum": "40"
-        },
-        "IsHubjectCompatible": true,
-        "PaymentOptions": "Direct",
-        "ChargingFacilities": [
-          {
-            "Power": 22,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          }
-        ],
-        "RenewableEnergy": false,
-        "EvseID": "CH*EWD*E123*0012",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "CH*EWD*E123*0014",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          9.82131,
-          46.79327
-        ]
-      },
-      "properties": {
-        "@featureType": "evse",
-        "_id": "CH*EWD*E123*0014",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "Type 2 Connector (Cable Attached)",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "CHAdeMO"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "46.79327",
-            "Longitude": "9.82131"
-          }
-        },
-        "OperatorID": "CH*EWD",
-        "AuthenticationModes": "Direct Payment",
-        "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41814153800",
-        "IsOpen24Hours": true,
-        "ChargingStationId": "CH*EWD*E123*0014",
-        "Address": {
-          "PostalCode": "7270",
-          "City": "Davos",
-          "Street": "Promenade",
-          "Country": "CHE",
-          "HouseNum": "40"
-        },
-        "IsHubjectCompatible": true,
-        "PaymentOptions": "Direct",
-        "ChargingFacilities": [
-          {
-            "Power": 22,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          }
-        ],
-        "RenewableEnergy": false,
-        "EvseID": "CH*EWD*E123*0014",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "CH*EWO*E123*0001",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.2476,
-          46.89538
-        ]
-      },
-      "properties": {
-        "@featureType": "evse",
-        "_id": "CH*EWO*E123*0001",
+        "_id": "CH*SCH*EQ43Z511607SCH",
         "EvseStatus": "Unknown",
         "ValueAddedServices": "None",
         "Plugs": "Type 2 Outlet",
         "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "46.895379999999996",
-            "Longitude": "8.2476"
+          "Google": {
+            "Coordinates": "47.377574,8.543377"
           }
         },
-        "OperatorID": "CH*EWO",
-        "AuthenticationModes": "REMOTE",
+        "OperatorID": "CH*SCH",
+        "AuthenticationModes": "NFC RFID Classic",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800876876",
+        "ChargingStationId": "P22233398",
+        "HotlinePhoneNumber": "+41445864550",
         "IsOpen24Hours": true,
-        "ChargingStationId": "CH*EWO*E123*0001",
         "Address": {
-          "PostalCode": "6060",
-          "City": "Sarnen",
-          "Street": "Bahnhofplatz",
+          "PostalCode": "8001",
+          "City": "Zürich",
+          "Street": "Neumühlequai 6",
+          "Floor": null,
           "Country": "CHE",
-          "HouseNum": "7.0"
+          "Region": null,
+          "HouseNum": "",
+          "TimeZone": null
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "PaymentOptions": [
+          "Contract",
+          "Direct"
+        ],
+        "IsHubjectCompatible": true,
         "ChargingFacilities": [
           {
-            "Power": 11,
-            "PowerType": null
+            "Power": 22,
+            "Amperage": 32,
+            "Voltage": 400,
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*EWO*E123*0001",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "en",
+            "value": "SUVA Neumühlequai 6 Zürich PPEinfahrt"
+          }
+        ],
+        "EvseID": "CH*SCH*EQ43Z511607SCH",
+        "Accessibility": "Paying publicly accessible",
+        "DynamicInfoAvailable": "false"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*EWO*E123*0002",
+      "id": "CH*SCH*EYIRO511605SCH",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.23782,
-          46.87077
+          8.543418,
+          47.37758
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*EWO*E123*0002",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "Type 2 Outlet",
-          "Type 2 Outlet"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "46.87077",
-            "Longitude": "8.23782"
-          }
-        },
-        "OperatorID": "CH*EWO",
-        "AuthenticationModes": "REMOTE",
-        "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800876876",
-        "IsOpen24Hours": true,
-        "ChargingStationId": "CH*EWO*E123*0002",
-        "Address": {
-          "PostalCode": "6072",
-          "City": "Sachseln",
-          "Street": "Bahnhofplatz",
-          "Country": "CHE",
-          "HouseNum": "1.0"
-        },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
-        "ChargingFacilities": [
-          {
-            "Power": 11,
-            "PowerType": null
-          },
-          {
-            "Power": 11,
-            "PowerType": null
-          }
-        ],
-        "RenewableEnergy": false,
-        "EvseID": "CH*EWO*E123*0002",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "CH*EWO*E123*0003",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.18736,
-          46.83674
-        ]
-      },
-      "properties": {
-        "@featureType": "evse",
-        "_id": "CH*EWO*E123*0003",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "Type 2 Outlet",
-          "Type 2 Outlet"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "46.83674",
-            "Longitude": "8.18736"
-          }
-        },
-        "OperatorID": "CH*EWO",
-        "AuthenticationModes": "REMOTE",
-        "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800876876",
-        "IsOpen24Hours": true,
-        "ChargingStationId": "CH*EWO*E123*0003",
-        "Address": {
-          "PostalCode": "6074",
-          "City": "Giswil",
-          "Street": "Gorgenstrasse",
-          "Country": "CHE",
-          "HouseNum": "nan"
-        },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
-        "ChargingFacilities": [
-          {
-            "Power": 11,
-            "PowerType": null
-          },
-          {
-            "Power": 11,
-            "PowerType": null
-          }
-        ],
-        "RenewableEnergy": false,
-        "EvseID": "CH*EWO*E123*0003",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "CH*EWO*E123*0004",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.16329,
-          46.78573
-        ]
-      },
-      "properties": {
-        "@featureType": "evse",
-        "_id": "CH*EWO*E123*0004",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "Type 2 Outlet",
-          "Type 2 Outlet"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "46.78573",
-            "Longitude": "8.16329"
-          }
-        },
-        "OperatorID": "CH*EWO",
-        "AuthenticationModes": "REMOTE",
-        "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800876876",
-        "IsOpen24Hours": true,
-        "ChargingStationId": "CH*EWO*E123*0004",
-        "Address": {
-          "PostalCode": "6078",
-          "City": "Lungern",
-          "Street": "Bahnhofstrasse",
-          "Country": "CHE",
-          "HouseNum": "nan"
-        },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
-        "ChargingFacilities": [
-          {
-            "Power": 11,
-            "PowerType": null
-          },
-          {
-            "Power": 11,
-            "PowerType": null
-          }
-        ],
-        "RenewableEnergy": false,
-        "EvseID": "CH*EWO*E123*0004",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
-      }
-    },
-    {
-      "type": "Feature",
-      "id": "CH*EWO*E123*0005",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          8.27574,
-          46.94119
-        ]
-      },
-      "properties": {
-        "@featureType": "evse",
-        "_id": "CH*EWO*E123*0005",
-        "EvseStatus": "Unknown",
+        "_id": "CH*SCH*EYIRO511605SCH",
+        "EvseStatus": "Available",
         "ValueAddedServices": "None",
         "Plugs": "Type 2 Outlet",
         "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "46.94119",
-            "Longitude": "8.275739999999999"
+          "Google": {
+            "Coordinates": "47.377580,8.543418"
           }
         },
-        "OperatorID": "CH*EWO",
-        "AuthenticationModes": "REMOTE",
+        "OperatorID": "CH*SCH",
+        "AuthenticationModes": "NFC RFID Classic",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800876876",
+        "ChargingStationId": "P22234934",
+        "HotlinePhoneNumber": "+41445864550",
         "IsOpen24Hours": true,
-        "ChargingStationId": "CH*EWO*E123*0005",
         "Address": {
-          "PostalCode": "6055",
-          "City": "Alpnach",
-          "Street": "Bahnhofplatz",
+          "PostalCode": "8340",
+          "City": "Hinwil",
+          "Street": "Waldstrasse 60",
+          "Floor": null,
           "Country": "CHE",
-          "HouseNum": "1.0"
+          "Region": null,
+          "HouseNum": "",
+          "TimeZone": null
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "PaymentOptions": [
+          "Contract",
+          "Direct"
+        ],
+        "IsHubjectCompatible": true,
         "ChargingFacilities": [
           {
-            "Power": 11,
-            "PowerType": null
+            "Power": 22,
+            "Amperage": 32,
+            "Voltage": 400,
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*EWO*E123*0005",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "en",
+            "value": "SUVA Neumühlequai 6 Zürich PP202"
+          }
+        ],
+        "EvseID": "CH*SCH*EYIRO511605SCH",
+        "Accessibility": "Paying publicly accessible",
+        "DynamicInfoAvailable": "false"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*EWO*E123*0006",
+      "id": "CH*SHE*E6503*1",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.40193,
-          46.81965
+          8.53584745,
+          47.37229222
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*EWO*E123*0006",
-        "EvseStatus": "Unknown",
+        "_id": "CH*SHE*E6503*1",
+        "EvseStatus": "Available",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.37229222 8.53584745"
+          }
+        },
+        "OperatorID": "CH*SHE",
+        "SubOperatorName": "",
+        "CalibrationLawDataAvailability": "Not Available",
+        "ChargingStationId": "0cec9410-aa4e-11ea-944b-42010a840003",
+        "HotlinePhoneNumber": "+41225445465",
+        "IsOpen24Hours": true,
+        "Address": {
+          "PostalCode": "8001",
+          "City": "Zürich",
+          "Street": "Nüschelerstrasse 31",
+          "Country": "CHE"
+        },
+        "IsHubjectCompatible": false,
+        "ChargingFacilities": [
+          {
+            "Power": 22,
+            "PowerType": "AC_3_PHASE"
+          }
+        ],
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
+          {
+            "lang": "en",
+            "value": "Shell evpass Talgarten Zürich"
+          }
+        ],
+        "EvseID": "CH*SHE*E6503*1",
+        "Accessibility": "Restricted access",
+        "DynamicInfoAvailable": "true"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CH*SHE*E7913*1",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.536165,
+          47.365918
+        ]
+      },
+      "properties": {
+        "@featureType": "evse",
+        "_id": "CH*SHE*E7913*1",
+        "EvseStatus": "Occupied",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.36591800 8.53616500"
+          }
+        },
+        "OperatorID": "CH*SHE",
+        "SubOperatorName": "",
+        "CalibrationLawDataAvailability": "Not Available",
+        "ChargingStationId": "cfc0cf02-4207-11e9-bb32-42010a840003",
+        "HotlinePhoneNumber": "+41225445465",
+        "IsOpen24Hours": true,
+        "Address": {
+          "PostalCode": "8002",
+          "City": "Zürich",
+          "Street": "Park Hyatt Hotel, Beethoven-Strasse 21, 8002",
+          "Country": "CHE"
+        },
+        "IsHubjectCompatible": false,
+        "ChargingFacilities": [
+          {
+            "Power": 22,
+            "PowerType": "AC_3_PHASE"
+          }
+        ],
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
+          {
+            "lang": "en",
+            "value": "Shell evpass Park Hyatt Hotel"
+          }
+        ],
+        "EvseID": "CH*SHE*E7913*1",
+        "Accessibility": "Restricted access",
+        "DynamicInfoAvailable": "true"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CH*SHE*E7913*2",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.536165,
+          47.365918
+        ]
+      },
+      "properties": {
+        "@featureType": "evse",
+        "_id": "CH*SHE*E7913*2",
+        "EvseStatus": "Available",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.36591800 8.53616500"
+          }
+        },
+        "OperatorID": "CH*SHE",
+        "SubOperatorName": "",
+        "CalibrationLawDataAvailability": "Not Available",
+        "ChargingStationId": "cfc0cf02-4207-11e9-bb32-42010a840003",
+        "HotlinePhoneNumber": "+41225445465",
+        "IsOpen24Hours": true,
+        "Address": {
+          "PostalCode": "8002",
+          "City": "Zürich",
+          "Street": "Park Hyatt Hotel, Beethoven-Strasse 21, 8002",
+          "Country": "CHE"
+        },
+        "IsHubjectCompatible": false,
+        "ChargingFacilities": [
+          {
+            "Power": 22,
+            "PowerType": "AC_3_PHASE"
+          }
+        ],
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
+          {
+            "lang": "en",
+            "value": "Shell evpass Park Hyatt Hotel"
+          }
+        ],
+        "EvseID": "CH*SHE*E7913*2",
+        "Accessibility": "Restricted access",
+        "DynamicInfoAvailable": "true"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CH*SHE*E7913*3",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.536165,
+          47.365918
+        ]
+      },
+      "properties": {
+        "@featureType": "evse",
+        "_id": "CH*SHE*E7913*3",
+        "EvseStatus": "Available",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.36591800 8.53616500"
+          }
+        },
+        "OperatorID": "CH*SHE",
+        "SubOperatorName": "",
+        "CalibrationLawDataAvailability": "Not Available",
+        "ChargingStationId": "cfc0cf02-4207-11e9-bb32-42010a840003",
+        "HotlinePhoneNumber": "+41225445465",
+        "IsOpen24Hours": true,
+        "Address": {
+          "PostalCode": "8002",
+          "City": "Zürich",
+          "Street": "Park Hyatt Hotel, Beethoven-Strasse 21, 8002",
+          "Country": "CHE"
+        },
+        "IsHubjectCompatible": false,
+        "ChargingFacilities": [
+          {
+            "Power": 22,
+            "PowerType": "AC_3_PHASE"
+          }
+        ],
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
+          {
+            "lang": "en",
+            "value": "Shell evpass Park Hyatt Hotel"
+          }
+        ],
+        "EvseID": "CH*SHE*E7913*3",
+        "Accessibility": "Restricted access",
+        "DynamicInfoAvailable": "true"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CH*SHE*E7913*4",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.536165,
+          47.365918
+        ]
+      },
+      "properties": {
+        "@featureType": "evse",
+        "_id": "CH*SHE*E7913*4",
+        "EvseStatus": "Available",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.36591800 8.53616500"
+          }
+        },
+        "OperatorID": "CH*SHE",
+        "SubOperatorName": "",
+        "CalibrationLawDataAvailability": "Not Available",
+        "ChargingStationId": "cfc0cf02-4207-11e9-bb32-42010a840003",
+        "HotlinePhoneNumber": "+41225445465",
+        "IsOpen24Hours": true,
+        "Address": {
+          "PostalCode": "8002",
+          "City": "Zürich",
+          "Street": "Park Hyatt Hotel, Beethoven-Strasse 21, 8002",
+          "Country": "CHE"
+        },
+        "IsHubjectCompatible": false,
+        "ChargingFacilities": [
+          {
+            "Power": 22,
+            "PowerType": "AC_3_PHASE"
+          }
+        ],
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
+          {
+            "lang": "en",
+            "value": "Shell evpass Park Hyatt Hotel"
+          }
+        ],
+        "EvseID": "CH*SHE*E7913*4",
+        "Accessibility": "Restricted access",
+        "DynamicInfoAvailable": "true"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CH*ELC*E23YQ",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.550477,
+          47.364842
+        ]
+      },
+      "properties": {
+        "@featureType": "evse",
+        "_id": "CH*ELC*E23YQ",
+        "EvseStatus": "Available",
+        "Plugs": "CCS Combo 2 Plug (Cable Attached)",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.36484200 8.55047700"
+          }
+        },
+        "OperatorID": "CH*ELECTRA",
+        "SubOperatorName": "",
+        "CalibrationLawDataAvailability": "Not Available",
+        "ChargingStationId": "cfb5fcce-5404-11f0-96b5-42010aa40043",
+        "HotlinePhoneNumber": "+00000",
+        "IsOpen24Hours": false,
+        "Address": {
+          "PostalCode": "8008",
+          "City": "Zürich",
+          "Street": "Mühlebachstrasse 23 / 25",
+          "Country": "CHE"
+        },
+        "IsHubjectCompatible": false,
+        "ChargingFacilities": [
+          {
+            "PowerType": "DC"
+          }
+        ],
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
+          {
+            "lang": "en",
+            "value": "Zürich - Mühlebachstrasse"
+          }
+        ],
+        "EvseID": "CH*ELC*E23YQ",
+        "Accessibility": "Restricted access",
+        "DynamicInfoAvailable": "true"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CH*ELC*E2BYQ",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.550477,
+          47.364842
+        ]
+      },
+      "properties": {
+        "@featureType": "evse",
+        "_id": "CH*ELC*E2BYQ",
+        "EvseStatus": "Available",
+        "Plugs": "CCS Combo 2 Plug (Cable Attached)",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.36484200 8.55047700"
+          }
+        },
+        "OperatorID": "CH*ELECTRA",
+        "SubOperatorName": "",
+        "CalibrationLawDataAvailability": "Not Available",
+        "ChargingStationId": "cfb5fcce-5404-11f0-96b5-42010aa40043",
+        "HotlinePhoneNumber": "+00000",
+        "IsOpen24Hours": false,
+        "Address": {
+          "PostalCode": "8008",
+          "City": "Zürich",
+          "Street": "Mühlebachstrasse 23 / 25",
+          "Country": "CHE"
+        },
+        "IsHubjectCompatible": false,
+        "ChargingFacilities": [
+          {
+            "PowerType": "DC"
+          }
+        ],
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
+          {
+            "lang": "en",
+            "value": "Zürich - Mühlebachstrasse"
+          }
+        ],
+        "EvseID": "CH*ELC*E2BYQ",
+        "Accessibility": "Restricted access",
+        "DynamicInfoAvailable": "true"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CH*ELC*E636Y",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.550477,
+          47.364842
+        ]
+      },
+      "properties": {
+        "@featureType": "evse",
+        "_id": "CH*ELC*E636Y",
+        "EvseStatus": "OutOfService",
+        "Plugs": "CCS Combo 2 Plug (Cable Attached)",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.36484200 8.55047700"
+          }
+        },
+        "OperatorID": "CH*ELECTRA",
+        "SubOperatorName": "",
+        "CalibrationLawDataAvailability": "Not Available",
+        "ChargingStationId": "cfb5fcce-5404-11f0-96b5-42010aa40043",
+        "HotlinePhoneNumber": "+00000",
+        "IsOpen24Hours": false,
+        "Address": {
+          "PostalCode": "8008",
+          "City": "Zürich",
+          "Street": "Mühlebachstrasse 23 / 25",
+          "Country": "CHE"
+        },
+        "IsHubjectCompatible": false,
+        "ChargingFacilities": [
+          {
+            "PowerType": "DC"
+          }
+        ],
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
+          {
+            "lang": "en",
+            "value": "Zürich - Mühlebachstrasse"
+          }
+        ],
+        "EvseID": "CH*ELC*E636Y",
+        "Accessibility": "Restricted access",
+        "DynamicInfoAvailable": "true"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CH*ELC*EADHK",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.550477,
+          47.364842
+        ]
+      },
+      "properties": {
+        "@featureType": "evse",
+        "_id": "CH*ELC*EADHK",
+        "EvseStatus": "OutOfService",
+        "Plugs": "CCS Combo 2 Plug (Cable Attached)",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.36484200 8.55047700"
+          }
+        },
+        "OperatorID": "CH*ELECTRA",
+        "SubOperatorName": "",
+        "CalibrationLawDataAvailability": "Not Available",
+        "ChargingStationId": "cfb5fcce-5404-11f0-96b5-42010aa40043",
+        "HotlinePhoneNumber": "+00000",
+        "IsOpen24Hours": false,
+        "Address": {
+          "PostalCode": "8008",
+          "City": "Zürich",
+          "Street": "Mühlebachstrasse 23 / 25",
+          "Country": "CHE"
+        },
+        "IsHubjectCompatible": false,
+        "ChargingFacilities": [
+          {
+            "PowerType": "DC"
+          }
+        ],
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
+          {
+            "lang": "en",
+            "value": "Zürich - Mühlebachstrasse"
+          }
+        ],
+        "EvseID": "CH*ELC*EADHK",
+        "Accessibility": "Restricted access",
+        "DynamicInfoAvailable": "true"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CH*SWI*E169271",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5307315,
+          47.373004
+        ]
+      },
+      "properties": {
+        "@featureType": "evse",
+        "EvseStatus": "Available",
+        "lastUpdate": "2025-09-30T02:15:17.076Z",
+        "OperatorID": "CH*SWISSCHARGE",
+        "AuthenticationModes": [
+          "NFC RFID Classic",
+          "REMOTE"
+        ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
+        "CalibrationLawDataAvailability": "Not Available",
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E170384",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E169271",
         "ValueAddedServices": "None",
         "Plugs": "Type 2 Outlet",
         "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "46.81965",
-            "Longitude": "8.40193"
+          "Google": {
+            "Coordinates": "47.373004 8.5307315"
           }
         },
-        "OperatorID": "CH*EWO",
-        "AuthenticationModes": "REMOTE",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Werdstrasse 4",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
+        "ChargingFacilities": [
+          {
+            "Power": 22,
+            "PowerType": "AC_3_PHASE"
+          }
+        ],
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "Parkhaus Stauffachertor, 8004 Zürich"
+          }
+        ],
+        "EvseID": "CH*SWI*E169271",
+        "Accessibility": "Free publicly accessible"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CH*SWI*E169272",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.5307315,
+          47.373004
+        ]
+      },
+      "properties": {
+        "@featureType": "evse",
+        "EvseStatus": "Available",
+        "lastUpdate": "2025-09-30T02:15:17.076Z",
+        "OperatorID": "CH*SWISSCHARGE",
+        "AuthenticationModes": [
+          "NFC RFID Classic",
+          "REMOTE"
+        ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800876876",
+        "HotlinePhoneNumber": "+41713881150",
         "IsOpen24Hours": true,
-        "ChargingStationId": "CH*EWO*E123*0006",
-        "Address": {
-          "PostalCode": "6390",
-          "City": "Engelberg",
-          "Street": "Bahnhof",
-          "Country": "CHE",
-          "HouseNum": "nan"
+        "ChargingStationId": "CH*SWI*E170384",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E169272",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.373004 8.5307315"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Werdstrasse 4",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
         "ChargingFacilities": [
           {
-            "Power": 11,
-            "PowerType": null
+            "Power": 22,
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*EWO*E123*0006",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "Parkhaus Stauffachertor, 8004 Zürich"
+          }
+        ],
+        "EvseID": "CH*SWI*E169272",
+        "Accessibility": "Free publicly accessible"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*EWO*E123*0007",
+      "id": "CH*SWI*E196730",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.27367,
-          46.90111
+          8.55006544,
+          47.37902691
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*EWO*E123*0007",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "Type 2 Outlet",
-          "Type 2 Outlet"
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.115Z",
+        "OperatorID": "CH*SWISSCHARGE",
+        "AuthenticationModes": [
+          "NFC RFID Classic",
+          "REMOTE"
         ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "46.901109999999996",
-            "Longitude": "8.27367"
-          }
-        },
-        "OperatorID": "CH*EWO",
-        "AuthenticationModes": "REMOTE",
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800876876",
+        "HotlinePhoneNumber": "+41713881150",
         "IsOpen24Hours": true,
-        "ChargingStationId": "CH*EWO*E123*0007",
-        "Address": {
-          "PostalCode": "6064",
-          "City": "Kerns",
-          "Street": "Sarnerstrasse",
-          "Country": "CHE",
-          "HouseNum": "5.0"
+        "ChargingStationId": "CH*SWI*E196792",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E196730",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.37902691 8.55006544"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Rämistrasse 100",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
         "ChargingFacilities": [
           {
-            "Power": 11,
-            "PowerType": null
-          },
-          {
-            "Power": 11,
-            "PowerType": null
+            "Power": 22,
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*EWO*E123*0007",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "Universitätsspital Zürich"
+          }
+        ],
+        "EvseID": "CH*SWI*E196730",
+        "Accessibility": "Free publicly accessible"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*LID*E123*0001",
+      "id": "CH*SWI*E196731",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.81854,
-          47.19381
+          8.55006544,
+          47.37902691
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*LID*E123*0001",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "Type 2 Connector (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.19381",
-            "Longitude": "8.81854"
-          }
-        },
-        "OperatorID": "CH*LIDL",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.115Z",
+        "OperatorID": "CH*SWISSCHARGE",
         "AuthenticationModes": [
           "NFC RFID Classic",
-          "NFC RFID DESFire",
-          "PnC",
           "REMOTE"
         ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800857000",
-        "IsOpen24Hours": false,
-        "ChargingStationId": "CH*LID*E123*0001",
-        "Address": {
-          "PostalCode": "8852",
-          "City": "Altendorf",
-          "Street": "Zürcherstrasse ",
-          "Country": "CHE",
-          "HouseNum": "68"
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E196792",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E196731",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.37902691 8.55006544"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Rämistrasse 100",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
         "ChargingFacilities": [
           {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
             "Power": 22,
-            "PowerType": null
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*LID*E123*0001",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "Universitätsspital Zürich"
+          }
+        ],
+        "EvseID": "CH*SWI*E196731",
+        "Accessibility": "Free publicly accessible"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*LID*E123*0002",
+      "id": "CH*SWI*E196732",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.27426,
-          47.54679
+          8.55006544,
+          47.37902691
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*LID*E123*0002",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "Type 2 Connector (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.54679",
-            "Longitude": "9.27426"
-          }
-        },
-        "OperatorID": "CH*LIDL",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.115Z",
+        "OperatorID": "CH*SWISSCHARGE",
         "AuthenticationModes": [
           "NFC RFID Classic",
-          "NFC RFID DESFire",
-          "PnC",
           "REMOTE"
         ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800857000",
-        "IsOpen24Hours": false,
-        "ChargingStationId": "CH*LID*E123*0002",
-        "Address": {
-          "PostalCode": "8580",
-          "City": "Amriswil",
-          "Street": "Schrofenstrasse",
-          "Country": "CHE",
-          "HouseNum": "13"
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E196792",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E196732",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.37902691 8.55006544"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Rämistrasse 100",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
         "ChargingFacilities": [
           {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
             "Power": 22,
-            "PowerType": null
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*LID*E123*0002",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "Universitätsspital Zürich"
+          }
+        ],
+        "EvseID": "CH*SWI*E196732",
+        "Accessibility": "Free publicly accessible"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*LID*E123*0003",
+      "id": "CH*SWI*E196733",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.83903,
-          47.46274
+          8.55006544,
+          47.37902691
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*LID*E123*0003",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "Type 2 Connector (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.46274",
-            "Longitude": "7.83903"
-          }
-        },
-        "OperatorID": "CH*LIDL",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.115Z",
+        "OperatorID": "CH*SWISSCHARGE",
         "AuthenticationModes": [
           "NFC RFID Classic",
-          "NFC RFID DESFire",
-          "PnC",
           "REMOTE"
         ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800857000",
-        "IsOpen24Hours": false,
-        "ChargingStationId": "CH*LID*E123*0003",
-        "Address": {
-          "PostalCode": "4461",
-          "City": "Böckten",
-          "Street": "Hauptstrasse",
-          "Country": "CHE",
-          "HouseNum": "23"
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E196792",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E196733",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.37902691 8.55006544"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Rämistrasse 100",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
         "ChargingFacilities": [
           {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
             "Power": 22,
-            "PowerType": null
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*LID*E123*0003",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "Universitätsspital Zürich"
+          }
+        ],
+        "EvseID": "CH*SWI*E196733",
+        "Accessibility": "Free publicly accessible"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*LID*E123*0004",
+      "id": "CH*SWI*E243447",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.63853,
-          47.39553
+          8.54814857,
+          47.36867572
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*LID*E123*0004",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "Type 2 Connector (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.39553",
-            "Longitude": "8.63853"
-          }
-        },
-        "OperatorID": "CH*LIDL",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.193Z",
+        "OperatorID": "CH*SWISSCHARGE",
         "AuthenticationModes": [
           "NFC RFID Classic",
-          "NFC RFID DESFire",
-          "PnC",
           "REMOTE"
         ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800857000",
-        "IsOpen24Hours": false,
-        "ChargingStationId": "CH*LID*E123*0004",
-        "Address": {
-          "PostalCode": "8600",
-          "City": "Dübendorf",
-          "Street": "Im Schörli",
-          "Country": "CHE",
-          "HouseNum": "20"
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E243381",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E243447",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.36867572 8.54814857"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Rämistrasse 22a",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
         "ChargingFacilities": [
           {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
             "Power": 22,
-            "PowerType": null
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*LID*E123*0004",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "PZAG Hohe Promenade Ebene4 PP001-PP023"
+          }
+        ],
+        "EvseID": "CH*SWI*E243447",
+        "Accessibility": "Free publicly accessible"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*LID*E123*0005",
+      "id": "CH*SWI*E243448",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.90792,
-          47.56601
+          8.54814857,
+          47.36867572
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*LID*E123*0005",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "Type 2 Connector (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.56601",
-            "Longitude": "8.90792"
-          }
-        },
-        "OperatorID": "CH*LIDL",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.193Z",
+        "OperatorID": "CH*SWISSCHARGE",
         "AuthenticationModes": [
           "NFC RFID Classic",
-          "NFC RFID DESFire",
-          "PnC",
           "REMOTE"
         ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800857000",
-        "IsOpen24Hours": false,
-        "ChargingStationId": "CH*LID*E123*0005",
-        "Address": {
-          "PostalCode": "8500",
-          "City": "Frauenfeld",
-          "Street": "Langfeldstrasse",
-          "Country": "CHE",
-          "HouseNum": "70"
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E243381",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E243448",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.36867572 8.54814857"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Rämistrasse 22a",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
         "ChargingFacilities": [
           {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
             "Power": 22,
-            "PowerType": null
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*LID*E123*0005",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "PZAG Hohe Promenade Ebene4 PP001-PP023"
+          }
+        ],
+        "EvseID": "CH*SWI*E243448",
+        "Accessibility": "Free publicly accessible"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*LID*E123*0006",
+      "id": "CH*SWI*E243449",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.84679,
-          47.22942
+          8.54814857,
+          47.36867572
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*LID*E123*0006",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "Type 2 Connector (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.22942",
-            "Longitude": "8.84679"
-          }
-        },
-        "OperatorID": "CH*LIDL",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.193Z",
+        "OperatorID": "CH*SWISSCHARGE",
         "AuthenticationModes": [
           "NFC RFID Classic",
-          "NFC RFID DESFire",
-          "PnC",
           "REMOTE"
         ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800857000",
-        "IsOpen24Hours": false,
-        "ChargingStationId": "CH*LID*E123*0006",
-        "Address": {
-          "PostalCode": "8645",
-          "City": "Jona",
-          "Street": "Feldlistrasse",
-          "Country": "CHE",
-          "HouseNum": "5"
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E243381",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E243449",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.36867572 8.54814857"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Rämistrasse 22a",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
         "ChargingFacilities": [
           {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
             "Power": 22,
-            "PowerType": null
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*LID*E123*0006",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "PZAG Hohe Promenade Ebene4 PP001-PP023"
+          }
+        ],
+        "EvseID": "CH*SWI*E243449",
+        "Accessibility": "Free publicly accessible"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*LID*E123*0007",
+      "id": "CH*SWI*E243451",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.57956,
-          47.45501
+          8.54814857,
+          47.36867572
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*LID*E123*0007",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "Type 2 Connector (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.45501",
-            "Longitude": "8.57956"
-          }
-        },
-        "OperatorID": "CH*LIDL",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.193Z",
+        "OperatorID": "CH*SWISSCHARGE",
         "AuthenticationModes": [
           "NFC RFID Classic",
-          "NFC RFID DESFire",
-          "PnC",
           "REMOTE"
         ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800857000",
-        "IsOpen24Hours": false,
-        "ChargingStationId": "CH*LID*E123*0007",
-        "Address": {
-          "PostalCode": "8302",
-          "City": "Kloten",
-          "Street": "Schaffhauserstrasse",
-          "Country": "CHE",
-          "HouseNum": "163"
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E243381",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E243451",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.36867572 8.54814857"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Rämistrasse 22a",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
         "ChargingFacilities": [
           {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
             "Power": 22,
-            "PowerType": null
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*LID*E123*0007",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "PZAG Hohe Promenade Ebene4 PP001-PP023"
+          }
+        ],
+        "EvseID": "CH*SWI*E243451",
+        "Accessibility": "Free publicly accessible"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*LID*E123*0008",
+      "id": "CH*SWI*E243454",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.33616,
-          47.27968
+          8.54814857,
+          47.36867572
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*LID*E123*0008",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "Type 2 Connector (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.27968",
-            "Longitude": "8.33616"
-          }
-        },
-        "OperatorID": "CH*LIDL",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.193Z",
+        "OperatorID": "CH*SWISSCHARGE",
         "AuthenticationModes": [
           "NFC RFID Classic",
-          "NFC RFID DESFire",
-          "PnC",
           "REMOTE"
         ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800857000",
-        "IsOpen24Hours": false,
-        "ChargingStationId": "CH*LID*E123*0008",
-        "Address": {
-          "PostalCode": "5630",
-          "City": "Muri",
-          "Street": "Aarauerstrasse",
-          "Country": "CHE",
-          "HouseNum": "36"
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E243381",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E243454",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.36867572 8.54814857"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Rämistrasse 22a",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
         "ChargingFacilities": [
           {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
             "Power": 22,
-            "PowerType": null
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*LID*E123*0008",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "PZAG Hohe Promenade Ebene4 PP001-PP023"
+          }
+        ],
+        "EvseID": "CH*SWI*E243454",
+        "Accessibility": "Free publicly accessible"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*LID*E123*0009",
+      "id": "CH*SWI*E243483",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.50681,
-          47.47563
+          8.54814857,
+          47.36867572
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*LID*E123*0009",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "Type 2 Connector (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.47563",
-            "Longitude": "8.50681"
-          }
-        },
-        "OperatorID": "CH*LIDL",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.193Z",
+        "OperatorID": "CH*SWISSCHARGE",
         "AuthenticationModes": [
           "NFC RFID Classic",
-          "NFC RFID DESFire",
-          "PnC",
           "REMOTE"
         ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800857000",
-        "IsOpen24Hours": false,
-        "ChargingStationId": "CH*LID*E123*0009",
-        "Address": {
-          "PostalCode": "8154",
-          "City": "Oberglatt",
-          "Street": "Lägernstrasse",
-          "Country": "CHE",
-          "HouseNum": "4"
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E243381",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E243483",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.36867572 8.54814857"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Rämistrasse 22a",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
         "ChargingFacilities": [
           {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
             "Power": 22,
-            "PowerType": null
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*LID*E123*0009",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "PZAG Hohe Promenade Ebene4 PP001-PP023"
+          }
+        ],
+        "EvseID": "CH*SWI*E243483",
+        "Accessibility": "Free publicly accessible"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*LID*E123*0010",
+      "id": "CH*SWI*E233775",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.77067,
-          47.36639
+          8.54808356,
+          47.3765347
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*LID*E123*0010",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "Type 2 Connector (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.36639",
-            "Longitude": "8.77067"
-          }
-        },
-        "OperatorID": "CH*LIDL",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.202Z",
+        "OperatorID": "CH*SWISSCHARGE",
         "AuthenticationModes": [
           "NFC RFID Classic",
-          "NFC RFID DESFire",
-          "PnC",
           "REMOTE"
         ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800857000",
-        "IsOpen24Hours": false,
-        "ChargingStationId": "CH*LID*E123*0010",
-        "Address": {
-          "PostalCode": "8330",
-          "City": "Pfäffikon",
-          "Street": "Schützenhausstrasse",
-          "Country": "CHE",
-          "HouseNum": "7"
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E250421",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E233775",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.3765347 8.54808356"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Rämistrasse 101",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
         "ChargingFacilities": [
           {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
             "Power": 22,
-            "PowerType": null
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*LID*E123*0010",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "HG PP15 Europcar"
+          }
+        ],
+        "EvseID": "CH*SWI*E233775",
+        "Accessibility": "Free publicly accessible"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*LID*E123*0011",
+      "id": "CH*SWI*E233776",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.43218,
-          47.39945
+          8.54808356,
+          47.3765347
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*LID*E123*0011",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "Type 2 Connector (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.39945",
-            "Longitude": "8.43218"
-          }
-        },
-        "OperatorID": "CH*LIDL",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.202Z",
+        "OperatorID": "CH*SWISSCHARGE",
         "AuthenticationModes": [
           "NFC RFID Classic",
-          "NFC RFID DESFire",
-          "PnC",
           "REMOTE"
         ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800857000",
-        "IsOpen24Hours": false,
-        "ChargingStationId": "CH*LID*E123*0011",
-        "Address": {
-          "PostalCode": "8952",
-          "City": "Schlieren",
-          "Street": "Reitmenstrasse",
-          "Country": "CHE",
-          "HouseNum": "5"
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E250421",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E233776",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.3765347 8.54808356"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Rämistrasse 101",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
         "ChargingFacilities": [
           {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
             "Power": 22,
-            "PowerType": null
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*LID*E123*0011",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "HG PP15 Europcar"
+          }
+        ],
+        "EvseID": "CH*SWI*E233776",
+        "Accessibility": "Free publicly accessible"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*LID*E123*0012",
+      "id": "CH*SWI*E255700",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.33982,
-          47.41348
+          8.54064008,
+          47.37453488
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*LID*E123*0012",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "Type 2 Connector (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.41348",
-            "Longitude": "9.33982"
-          }
-        },
-        "OperatorID": "CH*LIDL",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.211Z",
+        "OperatorID": "CH*SWISSCHARGE",
         "AuthenticationModes": [
           "NFC RFID Classic",
-          "NFC RFID DESFire",
-          "PnC",
           "REMOTE"
         ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800857000",
-        "IsOpen24Hours": false,
-        "ChargingStationId": "CH*LID*E123*0012",
-        "Address": {
-          "PostalCode": "9014",
-          "City": "St. Gallen",
-          "Street": "Lerchenfeldstrasse",
-          "Country": "CHE",
-          "HouseNum": "11"
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E255700",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E255700",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.37453488 8.54064008"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Uraniastrasse 2a",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
         "ChargingFacilities": [
           {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
             "Power": 22,
-            "PowerType": null
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*LID*E123*0012",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "ewz Uraniastrasse 2a Zürich"
+          }
+        ],
+        "EvseID": "CH*SWI*E255700",
+        "Accessibility": "Free publicly accessible"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*LID*E123*0013",
+      "id": "CH*SWI*E255701",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.67753,
-          47.37933
+          8.54064008,
+          47.37453488
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*LID*E123*0013",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "Type 2 Connector (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.37933",
-            "Longitude": "8.67753"
-          }
-        },
-        "OperatorID": "CH*LIDL",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.211Z",
+        "OperatorID": "CH*SWISSCHARGE",
         "AuthenticationModes": [
           "NFC RFID Classic",
-          "NFC RFID DESFire",
-          "PnC",
           "REMOTE"
         ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800857000",
-        "IsOpen24Hours": false,
-        "ChargingStationId": "CH*LID*E123*0013",
-        "Address": {
-          "PostalCode": "8604",
-          "City": "Volketswil",
-          "Street": "Müllerenstrasse",
-          "Country": "CHE",
-          "HouseNum": "5"
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E255700",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E255701",
+        "ValueAddedServices": "None",
+        "Plugs": [
+          "CCS Combo 2 Plug (Cable Attached)",
+          "CHAdeMO"
+        ],
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.37453488 8.54064008"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Uraniastrasse 2a",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
         "ChargingFacilities": [
           {
             "Power": 50,
-            "PowerType": null
+            "PowerType": "DC"
           },
           {
             "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 22,
-            "PowerType": null
+            "PowerType": "DC"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*LID*E123*0013",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "ewz Uraniastrasse 2a Zürich"
+          }
+        ],
+        "EvseID": "CH*SWI*E255701",
+        "Accessibility": "Free publicly accessible"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*LID*E123*0014",
+      "id": "CH*SWI*E259942",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.63594,
-          47.23686
+          8.541,
+          47.3741
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*LID*E123*0014",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "Type 2 Connector (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.23686",
-            "Longitude": "8.63594"
-          }
-        },
-        "OperatorID": "CH*LIDL",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.219Z",
+        "OperatorID": "CH*SWISSCHARGE",
         "AuthenticationModes": [
           "NFC RFID Classic",
-          "NFC RFID DESFire",
-          "PnC",
           "REMOTE"
         ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800857000",
-        "IsOpen24Hours": false,
-        "ChargingStationId": "CH*LID*E123*0014",
-        "Address": {
-          "PostalCode": "8820",
-          "City": "Wädenswil",
-          "Street": "Steinacherstrasse",
-          "Country": "CHE",
-          "HouseNum": "147"
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E259940",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E259942",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.3741 8.541"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Uraniastrasse 3",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
         "ChargingFacilities": [
           {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
             "Power": 22,
-            "PowerType": null
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*LID*E123*0014",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "PZAG Uraniastr. 3 PP430-PP438"
+          }
+        ],
+        "EvseID": "CH*SWI*E259942",
+        "Accessibility": "Free publicly accessible"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*LID*E123*0015",
+      "id": "CH*SWI*E259944",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.09654,
-          47.56521
+          8.541,
+          47.3741
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*LID*E123*0015",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "Type 2 Connector (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.56521",
-            "Longitude": "9.09654"
-          }
-        },
-        "OperatorID": "CH*LIDL",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.219Z",
+        "OperatorID": "CH*SWISSCHARGE",
         "AuthenticationModes": [
           "NFC RFID Classic",
-          "NFC RFID DESFire",
-          "PnC",
           "REMOTE"
         ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800857000",
-        "IsOpen24Hours": false,
-        "ChargingStationId": "CH*LID*E123*0015",
-        "Address": {
-          "PostalCode": "8570",
-          "City": "Weinfelden",
-          "Street": "Walkestrasse",
-          "Country": "CHE",
-          "HouseNum": "28"
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E259940",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E259944",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.3741 8.541"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Uraniastrasse 3",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
         "ChargingFacilities": [
           {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
             "Power": 22,
-            "PowerType": null
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*LID*E123*0015",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "PZAG Uraniastr. 3 PP430-PP438"
+          }
+        ],
+        "EvseID": "CH*SWI*E259944",
+        "Accessibility": "Free publicly accessible"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*LID*E123*0016",
+      "id": "CH*SWI*E259947",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.76403,
-          47.49917
+          8.541,
+          47.3741
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*LID*E123*0016",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "Type 2 Connector (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.49917",
-            "Longitude": "8.76403"
-          }
-        },
-        "OperatorID": "CH*LIDL",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.219Z",
+        "OperatorID": "CH*SWISSCHARGE",
         "AuthenticationModes": [
           "NFC RFID Classic",
-          "NFC RFID DESFire",
-          "PnC",
           "REMOTE"
         ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800857000",
-        "IsOpen24Hours": false,
-        "ChargingStationId": "CH*LID*E123*0016",
-        "Address": {
-          "PostalCode": "8409",
-          "City": "Winterthur",
-          "Street": "Im Schönengrund",
-          "Country": "CHE",
-          "HouseNum": "3"
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E259940",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E259947",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.3741 8.541"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Uraniastrasse 3",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
         "ChargingFacilities": [
           {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
             "Power": 22,
-            "PowerType": null
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*LID*E123*0016",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "PZAG Uraniastr. 3 PP430-PP438"
+          }
+        ],
+        "EvseID": "CH*SWI*E259947",
+        "Accessibility": "Free publicly accessible"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*LID*E123*0017",
+      "id": "CH*SWI*E259951",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.70398,
-          47.48648
+          8.541,
+          47.3741
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*LID*E123*0017",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "Type 2 Connector (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.48648",
-            "Longitude": "8.70398"
-          }
-        },
-        "OperatorID": "CH*LIDL",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.219Z",
+        "OperatorID": "CH*SWISSCHARGE",
         "AuthenticationModes": [
           "NFC RFID Classic",
-          "NFC RFID DESFire",
-          "PnC",
           "REMOTE"
         ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800857000",
-        "IsOpen24Hours": false,
-        "ChargingStationId": "CH*LID*E123*0017",
-        "Address": {
-          "PostalCode": "8406",
-          "City": "Winterthur",
-          "Street": "In der Au",
-          "Country": "CHE",
-          "HouseNum": "10"
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E259940",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E259951",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.3741 8.541"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Uraniastrasse 3",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
         "ChargingFacilities": [
           {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
             "Power": 22,
-            "PowerType": null
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*LID*E123*0017",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "PZAG Uraniastr. 3 PP430-PP438"
+          }
+        ],
+        "EvseID": "CH*SWI*E259951",
+        "Accessibility": "Free publicly accessible"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*LID*E123*0018",
+      "id": "CH*SWI*E259952",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.9653,
-          46.1541
+          8.541,
+          47.3741
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*LID*E123*0018",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "Type 2 Connector (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "46.1541",
-            "Longitude": "8.9653"
-          }
-        },
-        "OperatorID": "CH*LIDL",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.219Z",
+        "OperatorID": "CH*SWISSCHARGE",
         "AuthenticationModes": [
           "NFC RFID Classic",
-          "NFC RFID DESFire",
-          "PnC",
           "REMOTE"
         ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800857000",
-        "IsOpen24Hours": false,
-        "ChargingStationId": "CH*LID*E123*0018",
-        "Address": {
-          "PostalCode": "6592",
-          "City": "Sant Antonino",
-          "Street": "Via Serrai",
-          "Country": "CHE",
-          "HouseNum": "8"
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E259940",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E259952",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.3741 8.541"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Uraniastrasse 3",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
         "ChargingFacilities": [
           {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
             "Power": 22,
-            "PowerType": null
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*LID*E123*0018",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "PZAG Uraniastr. 3 PP430-PP438"
+          }
+        ],
+        "EvseID": "CH*SWI*E259952",
+        "Accessibility": "Free publicly accessible"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*LID*E123*0019",
+      "id": "CH*SWI*E290678",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.39934,
-          47.19344
+          8.541,
+          47.3741
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*LID*E123*0019",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "Type 2 Connector (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "47.19344",
-            "Longitude": "7.39934"
-          }
-        },
-        "OperatorID": "CH*LIDL",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.219Z",
+        "OperatorID": "CH*SWISSCHARGE",
         "AuthenticationModes": [
           "NFC RFID Classic",
-          "NFC RFID DESFire",
-          "PnC",
           "REMOTE"
         ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800857000",
-        "IsOpen24Hours": false,
-        "ChargingStationId": "CH*LID*E123*0019",
-        "Address": {
-          "PostalCode": "2540",
-          "City": "Grenchen",
-          "Street": "Solothurnstrasse",
-          "Country": "CHE",
-          "HouseNum": "45"
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E259940",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E290678",
+        "ValueAddedServices": "None",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.3741 8.541"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
-        "ChargingFacilities": [
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Uraniastrasse 3",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
           {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 22,
-            "PowerType": null
+            "lang": "de",
+            "value": "PZAG Uraniastr. 3 PP430-PP438"
           }
         ],
-        "RenewableEnergy": false,
-        "EvseID": "CH*LID*E123*0019",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "EvseID": "CH*SWI*E290678",
+        "Accessibility": "Free publicly accessible"
       }
     },
     {
       "type": "Feature",
-      "id": "CH*LID*E123*0020",
+      "id": "CH*SWI*E290679",
       "geometry": {
         "type": "Point",
         "coordinates": [
-          9.01818,
-          46.18191
+          8.541,
+          47.3741
         ]
       },
       "properties": {
         "@featureType": "evse",
-        "_id": "CH*LID*E123*0020",
-        "EvseStatus": "Unknown",
-        "ValueAddedServices": "None",
-        "Plugs": [
-          "CHAdeMO",
-          "CCS Combo 2 Plug (Cable Attached)",
-          "Type 2 Connector (Cable Attached)"
-        ],
-        "GeoCoordinates": {
-          "DecimalDegree": {
-            "Latitude": "46.18191",
-            "Longitude": "9.01818"
-          }
-        },
-        "OperatorID": "CH*LIDL",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.219Z",
+        "OperatorID": "CH*SWISSCHARGE",
         "AuthenticationModes": [
           "NFC RFID Classic",
-          "NFC RFID DESFire",
-          "PnC",
           "REMOTE"
         ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
         "CalibrationLawDataAvailability": "Not Available",
-        "HotlinePhoneNumber": "+41800857000",
-        "IsOpen24Hours": false,
-        "ChargingStationId": "CH*LID*E123*0020",
-        "Address": {
-          "PostalCode": "6929",
-          "City": "Giubiasco",
-          "Street": "Viale C.Olgiati",
-          "Country": "CHE",
-          "HouseNum": "44"
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E259940",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E290679",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.3741 8.541"
+          }
         },
-        "IsHubjectCompatible": false,
-        "PaymentOptions": "No Payment",
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Uraniastrasse 3",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
         "ChargingFacilities": [
           {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
-            "Power": 50,
-            "PowerType": null
-          },
-          {
             "Power": 22,
-            "PowerType": null
+            "PowerType": "AC_3_PHASE"
           }
         ],
         "RenewableEnergy": false,
-        "EvseID": "CH*LID*E123*0020",
-        "Accessibility": "Free publicly accessible",
-        "DynamicInfoAvailable": "false",
-        "ChargingStationNames": null
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "PZAG Uraniastr. 3 PP430-PP438"
+          }
+        ],
+        "EvseID": "CH*SWI*E290679",
+        "Accessibility": "Free publicly accessible"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CH*SWI*E290680",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.541,
+          47.3741
+        ]
+      },
+      "properties": {
+        "@featureType": "evse",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.219Z",
+        "OperatorID": "CH*SWISSCHARGE",
+        "AuthenticationModes": [
+          "NFC RFID Classic",
+          "REMOTE"
+        ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
+        "CalibrationLawDataAvailability": "Not Available",
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E259940",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E290680",
+        "ValueAddedServices": "None",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.3741 8.541"
+          }
+        },
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Uraniastrasse 3",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "PZAG Uraniastr. 3 PP430-PP438"
+          }
+        ],
+        "EvseID": "CH*SWI*E290680",
+        "Accessibility": "Free publicly accessible"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CH*SWI*E260846",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.54690114,
+          47.37129515
+        ]
+      },
+      "properties": {
+        "@featureType": "evse",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.220Z",
+        "OperatorID": "CH*SWISSCHARGE",
+        "AuthenticationModes": [
+          "NFC RFID Classic",
+          "REMOTE"
+        ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
+        "CalibrationLawDataAvailability": "Not Available",
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E260846",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E260846",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.37129515 8.54690114"
+          }
+        },
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Hirschengraben 11",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
+        "ChargingFacilities": [
+          {
+            "Power": 22,
+            "PowerType": "AC_3_PHASE"
+          }
+        ],
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "ewz Hirschengraben 11"
+          }
+        ],
+        "EvseID": "CH*SWI*E260846",
+        "Accessibility": "Free publicly accessible"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CH*SWI*E260847",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.54690114,
+          47.37129515
+        ]
+      },
+      "properties": {
+        "@featureType": "evse",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.220Z",
+        "OperatorID": "CH*SWISSCHARGE",
+        "AuthenticationModes": [
+          "NFC RFID Classic",
+          "REMOTE"
+        ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
+        "CalibrationLawDataAvailability": "Not Available",
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E260846",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E260847",
+        "ValueAddedServices": "None",
+        "Plugs": [
+          "CCS Combo 2 Plug (Cable Attached)",
+          "CHAdeMO"
+        ],
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.37129515 8.54690114"
+          }
+        },
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Hirschengraben 11",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
+        "ChargingFacilities": [
+          {
+            "Power": 50,
+            "PowerType": "DC"
+          },
+          {
+            "Power": 50,
+            "PowerType": "DC"
+          }
+        ],
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "ewz Hirschengraben 11"
+          }
+        ],
+        "EvseID": "CH*SWI*E260847",
+        "Accessibility": "Free publicly accessible"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CH*SWI*E259887",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.54094,
+          47.37404
+        ]
+      },
+      "properties": {
+        "@featureType": "evse",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.215Z",
+        "OperatorID": "CH*SWISSCHARGE",
+        "AuthenticationModes": [
+          "NFC RFID Classic",
+          "REMOTE"
+        ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
+        "CalibrationLawDataAvailability": "Not Available",
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E259887",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E259887",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.37404 8.54094"
+          }
+        },
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Uraniastrasse 3",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
+        "ChargingFacilities": [
+          {
+            "Power": 22,
+            "PowerType": "AC_3_PHASE"
+          }
+        ],
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "PZAG Uraniastr. 3 PP410-PP419"
+          }
+        ],
+        "EvseID": "CH*SWI*E259887",
+        "Accessibility": "Free publicly accessible"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CH*SWI*E259898",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.54094,
+          47.37404
+        ]
+      },
+      "properties": {
+        "@featureType": "evse",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.215Z",
+        "OperatorID": "CH*SWISSCHARGE",
+        "AuthenticationModes": [
+          "NFC RFID Classic",
+          "REMOTE"
+        ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
+        "CalibrationLawDataAvailability": "Not Available",
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E259887",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E259898",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.37404 8.54094"
+          }
+        },
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Uraniastrasse 3",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
+        "ChargingFacilities": [
+          {
+            "Power": 22,
+            "PowerType": "AC_3_PHASE"
+          }
+        ],
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "PZAG Uraniastr. 3 PP410-PP419"
+          }
+        ],
+        "EvseID": "CH*SWI*E259898",
+        "Accessibility": "Free publicly accessible"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CH*SWI*E259911",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.54094,
+          47.37404
+        ]
+      },
+      "properties": {
+        "@featureType": "evse",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.215Z",
+        "OperatorID": "CH*SWISSCHARGE",
+        "AuthenticationModes": [
+          "NFC RFID Classic",
+          "REMOTE"
+        ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
+        "CalibrationLawDataAvailability": "Not Available",
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E259887",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E259911",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.37404 8.54094"
+          }
+        },
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Uraniastrasse 3",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
+        "ChargingFacilities": [
+          {
+            "Power": 22,
+            "PowerType": "AC_3_PHASE"
+          }
+        ],
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "PZAG Uraniastr. 3 PP410-PP419"
+          }
+        ],
+        "EvseID": "CH*SWI*E259911",
+        "Accessibility": "Free publicly accessible"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CH*SWI*E259919",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.54094,
+          47.37404
+        ]
+      },
+      "properties": {
+        "@featureType": "evse",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.215Z",
+        "OperatorID": "CH*SWISSCHARGE",
+        "AuthenticationModes": [
+          "NFC RFID Classic",
+          "REMOTE"
+        ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
+        "CalibrationLawDataAvailability": "Not Available",
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E259887",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E259919",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.37404 8.54094"
+          }
+        },
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Uraniastrasse 3",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
+        "ChargingFacilities": [
+          {
+            "Power": 22,
+            "PowerType": "AC_3_PHASE"
+          }
+        ],
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "PZAG Uraniastr. 3 PP410-PP419"
+          }
+        ],
+        "EvseID": "CH*SWI*E259919",
+        "Accessibility": "Free publicly accessible"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CH*SWI*E259924",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.54094,
+          47.37404
+        ]
+      },
+      "properties": {
+        "@featureType": "evse",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.215Z",
+        "OperatorID": "CH*SWISSCHARGE",
+        "AuthenticationModes": [
+          "NFC RFID Classic",
+          "REMOTE"
+        ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
+        "CalibrationLawDataAvailability": "Not Available",
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E259887",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E259924",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.37404 8.54094"
+          }
+        },
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Uraniastrasse 3",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
+        "ChargingFacilities": [
+          {
+            "Power": 22,
+            "PowerType": "AC_3_PHASE"
+          }
+        ],
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "PZAG Uraniastr. 3 PP410-PP419"
+          }
+        ],
+        "EvseID": "CH*SWI*E259924",
+        "Accessibility": "Free publicly accessible"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CH*SWI*E259926",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.54094,
+          47.37404
+        ]
+      },
+      "properties": {
+        "@featureType": "evse",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.215Z",
+        "OperatorID": "CH*SWISSCHARGE",
+        "AuthenticationModes": [
+          "NFC RFID Classic",
+          "REMOTE"
+        ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
+        "CalibrationLawDataAvailability": "Not Available",
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E259887",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E259926",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.37404 8.54094"
+          }
+        },
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Uraniastrasse 3",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
+        "ChargingFacilities": [
+          {
+            "Power": 22,
+            "PowerType": "AC_3_PHASE"
+          }
+        ],
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "PZAG Uraniastr. 3 PP410-PP419"
+          }
+        ],
+        "EvseID": "CH*SWI*E259926",
+        "Accessibility": "Free publicly accessible"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "CH*SWI*E259932",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.54094,
+          47.37404
+        ]
+      },
+      "properties": {
+        "@featureType": "evse",
+        "EvseStatus": "OutOfService",
+        "lastUpdate": "2025-09-30T02:15:17.215Z",
+        "OperatorID": "CH*SWISSCHARGE",
+        "AuthenticationModes": [
+          "NFC RFID Classic",
+          "REMOTE"
+        ],
+        "HubOperatorID": "CH*SWISSCHARGE",
+        "AccessibilityLocation": "OnStreet",
+        "CalibrationLawDataAvailability": "Not Available",
+        "HotlinePhoneNumber": "+41713881150",
+        "IsOpen24Hours": true,
+        "ChargingStationId": "CH*SWI*E259887",
+        "IsHubjectCompatible": true,
+        "DynamicInfoAvailable": "true",
+        "_id": "CH*SWI*E259932",
+        "ValueAddedServices": "None",
+        "Plugs": "Type 2 Outlet",
+        "GeoCoordinates": {
+          "Google": {
+            "Coordinates": "47.37404 8.54094"
+          }
+        },
+        "Address": {
+          "PostalCode": "0",
+          "City": "Zürich",
+          "Street": "Uraniastrasse 3",
+          "Country": "CHE",
+          "HouseNum": "0",
+          "TimeZone": "UTC+01:00"
+        },
+        "PaymentOptions": "Direct",
+        "deltaType": "insert",
+        "ChargingFacilities": [
+          {
+            "Power": 22,
+            "PowerType": "AC_3_PHASE"
+          }
+        ],
+        "RenewableEnergy": false,
+        "ChargingStationNames": [
+          {
+            "lang": "de",
+            "value": "PZAG Uraniastr. 3 PP410-PP419"
+          }
+        ],
+        "EvseID": "CH*SWI*E259932",
+        "Accessibility": "Free publicly accessible"
       }
     }
   ],
-  "totalFeatures": 16649,
-  "numberMatched": 16649,
+  "totalFeatures": 203,
+  "numberMatched": 203,
   "numberReturned": 50,
-  "timeStamp": "2025-10-17T17:52:16.727Z",
+  "timeStamp": "2025-10-18T18:37:27.497Z",
   "crs": {
     "type": "name",
     "properties": {

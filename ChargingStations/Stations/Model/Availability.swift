@@ -7,7 +7,7 @@
 
 enum Availability: String, CaseIterable, Codable {
     case available = "Available"
-    case oufOfService = "OutOfService"
+    case outOfService = "OutOfService"
     case occupied = "Occupied"
     case unknown = "Unknown"
 }

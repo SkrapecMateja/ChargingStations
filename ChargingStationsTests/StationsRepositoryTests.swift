@@ -11,10 +11,10 @@ import XCTest
 class StationsRepositoryTests: XCTestCase {
     
     let stations: [Station] = [
-        Station(id: "CH*12345", latitude: 12.34567, longitude: 9.87352, availability: .available, chargingFacilities: [ChargingFacility(power: 20)], lastUpdate: nil),
-        Station(id: "CH*12346", latitude: 12.34555, longitude: 9.87353, availability: .occupied, chargingFacilities: [ChargingFacility(power: 300)], lastUpdate: Date()),
-        Station(id: "CH*12347", latitude: 12.3333, longitude: 9.87092, availability: .oufOfService, chargingFacilities: [ChargingFacility(power: 100), ChargingFacility(power: 255)], lastUpdate: Date()),
-        Station(id: "CH*12348", latitude: 12.3345, longitude: 9.87887, availability: .unknown, chargingFacilities: [ChargingFacility(power: 200), ChargingFacility(power: 25)], lastUpdate: nil)
+        Station(id: "CH*12345", latitude: 12.34567, longitude: 9.87352, availability: .available, chargingFacilities: [ChargingFacility(power: 20)]),
+        Station(id: "CH*12346", latitude: 12.34555, longitude: 9.87353, availability: .occupied, chargingFacilities: [ChargingFacility(power: 300)]),
+        Station(id: "CH*12347", latitude: 12.3333, longitude: 9.87092, availability: .outOfService, chargingFacilities: [ChargingFacility(power: 100), ChargingFacility(power: 255)]),
+        Station(id: "CH*12348", latitude: 12.3345, longitude: 9.87887, availability: .unknown, chargingFacilities: [ChargingFacility(power: 200), ChargingFacility(power: 25)])
     ]
 
     func testSavingAndLoadingStations() {

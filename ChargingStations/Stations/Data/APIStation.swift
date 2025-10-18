@@ -15,50 +15,42 @@ struct APIStationsWrapper: Decodable {
 
     struct Feature: Decodable {
         let properties: APIStation
+        let id: String
+        let geometry: Geometry
+    }
+    
+    struct Geometry: Decodable {
+        let coordinates: [Double]
     }
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let features = try container.decode([Feature].self, forKey: .features)
-        self.stations = features.map { $0.properties }
+        
+        self.stations = features.map { feature in
+            var station = feature.properties
+            station.id = feature.id
+            station.latitude = feature.geometry.coordinates[1]
+            station.longitude = feature.geometry.coordinates[0]
+            return station
+        }
     }
 }
 
 struct APIStation: Decodable {
-    let id: String
+    var id: String = ""
+    var latitude: Double = 0
+    var longitude: Double = 0
     let evseStatus: String
-    let geoCoordinates: GeoCoordinates
-    let chargingFacilities: [ChargingFacilities]
-    let lastUpdate: String?
+    let chargingFacilities: [ChargingFacilities]?
 
     enum CodingKeys: String, CodingKey {
-        case id = "_id"
         case evseStatus = "EvseStatus"
-        case geoCoordinates = "GeoCoordinates"
         case chargingFacilities = "ChargingFacilities"
-        case lastUpdate
     }
 
-    struct GeoCoordinates: Decodable {
-        let decimalDegree: DecimalDegree
-        
-        enum CodingKeys: String, CodingKey {
-            case decimalDegree = "DecimalDegree"
-        }
-    }
-
-    struct DecimalDegree: Decodable {
-        let latitude: String
-        let longitude: String
-        
-        enum CodingKeys: String, CodingKey {
-            case latitude = "Latitude"
-            case longitude = "Longitude"
-        }
-    }
-    
     struct ChargingFacilities: Decodable {
-        let power: UInt16
+        let power: UInt16?
         
         enum CodingKeys: String, CodingKey {
             case power = "Power"
