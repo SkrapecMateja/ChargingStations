@@ -7,75 +7,62 @@
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
-		D25A1DB12EA2391B00311AB7 /* PBXContainerItemProxy */ = {
+		D22E6D5E2EA3E882007C82C3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D25A1D952EA2391A00311AB7 /* Project object */;
+			containerPortal = D22E6D432EA3E881007C82C3 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D25A1D9C2EA2391B00311AB7;
-			remoteInfo = ChargingStations;
+			remoteGlobalIDString = D22E6D4A2EA3E881007C82C3;
+			remoteInfo = redsg;
 		};
-		D25A1DBB2EA2391B00311AB7 /* PBXContainerItemProxy */ = {
+		D22E6D682EA3E882007C82C3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D25A1D952EA2391A00311AB7 /* Project object */;
+			containerPortal = D22E6D432EA3E881007C82C3 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D25A1D9C2EA2391B00311AB7;
-			remoteInfo = ChargingStations;
+			remoteGlobalIDString = D22E6D4A2EA3E881007C82C3;
+			remoteInfo = redsg;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D25A1D9D2EA2391B00311AB7 /* ChargingStations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChargingStations.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D25A1DB02EA2391B00311AB7 /* ChargingStationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChargingStationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D25A1DBA2EA2391B00311AB7 /* ChargingStationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChargingStationsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D22E6D4B2EA3E881007C82C3 /* redsg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = redsg.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D22E6D5D2EA3E882007C82C3 /* redsgTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = redsgTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D22E6D672EA3E882007C82C3 /* redsgUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = redsgUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		D2124CA02EA3EBCF007C5245 /* Exceptions for "ChargingStations" folder in "ChargingStations" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = D25A1D9C2EA2391B00311AB7 /* ChargingStations */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		D25A1D9F2EA2391B00311AB7 /* ChargingStations */ = {
+		D22E6D4D2EA3E881007C82C3 /* redsg */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				D2124CA02EA3EBCF007C5245 /* Exceptions for "ChargingStations" folder in "ChargingStations" target */,
-			);
-			path = ChargingStations;
+			path = redsg;
 			sourceTree = "<group>";
 		};
-		D25A1DB32EA2391B00311AB7 /* ChargingStationsTests */ = {
+		D22E6D602EA3E882007C82C3 /* redsgTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ChargingStationsTests;
+			path = redsgTests;
 			sourceTree = "<group>";
 		};
-		D25A1DBD2EA2391B00311AB7 /* ChargingStationsUITests */ = {
+		D22E6D6A2EA3E882007C82C3 /* redsgUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ChargingStationsUITests;
+			path = redsgUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D25A1D9A2EA2391B00311AB7 /* Frameworks */ = {
+		D22E6D482EA3E881007C82C3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D25A1DAD2EA2391B00311AB7 /* Frameworks */ = {
+		D22E6D5A2EA3E882007C82C3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D25A1DB72EA2391B00311AB7 /* Frameworks */ = {
+		D22E6D642EA3E882007C82C3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -85,22 +72,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D25A1D942EA2391A00311AB7 = {
+		D22E6D422EA3E881007C82C3 = {
 			isa = PBXGroup;
 			children = (
-				D25A1D9F2EA2391B00311AB7 /* ChargingStations */,
-				D25A1DB32EA2391B00311AB7 /* ChargingStationsTests */,
-				D25A1DBD2EA2391B00311AB7 /* ChargingStationsUITests */,
-				D25A1D9E2EA2391B00311AB7 /* Products */,
+				D22E6D4D2EA3E881007C82C3 /* redsg */,
+				D22E6D602EA3E882007C82C3 /* redsgTests */,
+				D22E6D6A2EA3E882007C82C3 /* redsgUITests */,
+				D22E6D4C2EA3E881007C82C3 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D25A1D9E2EA2391B00311AB7 /* Products */ = {
+		D22E6D4C2EA3E881007C82C3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D25A1D9D2EA2391B00311AB7 /* ChargingStations.app */,
-				D25A1DB02EA2391B00311AB7 /* ChargingStationsTests.xctest */,
-				D25A1DBA2EA2391B00311AB7 /* ChargingStationsUITests.xctest */,
+				D22E6D4B2EA3E881007C82C3 /* redsg.app */,
+				D22E6D5D2EA3E882007C82C3 /* redsgTests.xctest */,
+				D22E6D672EA3E882007C82C3 /* redsgUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,134 +95,134 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D25A1D9C2EA2391B00311AB7 /* ChargingStations */ = {
+		D22E6D4A2EA3E881007C82C3 /* redsg */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D25A1DC42EA2391B00311AB7 /* Build configuration list for PBXNativeTarget "ChargingStations" */;
+			buildConfigurationList = D22E6D712EA3E882007C82C3 /* Build configuration list for PBXNativeTarget "redsg" */;
 			buildPhases = (
-				D25A1D992EA2391B00311AB7 /* Sources */,
-				D25A1D9A2EA2391B00311AB7 /* Frameworks */,
-				D25A1D9B2EA2391B00311AB7 /* Resources */,
+				D22E6D472EA3E881007C82C3 /* Sources */,
+				D22E6D482EA3E881007C82C3 /* Frameworks */,
+				D22E6D492EA3E881007C82C3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				D25A1D9F2EA2391B00311AB7 /* ChargingStations */,
+				D22E6D4D2EA3E881007C82C3 /* redsg */,
 			);
-			name = ChargingStations;
+			name = redsg;
 			packageProductDependencies = (
 			);
-			productName = ChargingStations;
-			productReference = D25A1D9D2EA2391B00311AB7 /* ChargingStations.app */;
+			productName = redsg;
+			productReference = D22E6D4B2EA3E881007C82C3 /* redsg.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D25A1DAF2EA2391B00311AB7 /* ChargingStationsTests */ = {
+		D22E6D5C2EA3E882007C82C3 /* redsgTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D25A1DC72EA2391B00311AB7 /* Build configuration list for PBXNativeTarget "ChargingStationsTests" */;
+			buildConfigurationList = D22E6D742EA3E882007C82C3 /* Build configuration list for PBXNativeTarget "redsgTests" */;
 			buildPhases = (
-				D25A1DAC2EA2391B00311AB7 /* Sources */,
-				D25A1DAD2EA2391B00311AB7 /* Frameworks */,
-				D25A1DAE2EA2391B00311AB7 /* Resources */,
+				D22E6D592EA3E882007C82C3 /* Sources */,
+				D22E6D5A2EA3E882007C82C3 /* Frameworks */,
+				D22E6D5B2EA3E882007C82C3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D25A1DB22EA2391B00311AB7 /* PBXTargetDependency */,
+				D22E6D5F2EA3E882007C82C3 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				D25A1DB32EA2391B00311AB7 /* ChargingStationsTests */,
+				D22E6D602EA3E882007C82C3 /* redsgTests */,
 			);
-			name = ChargingStationsTests;
+			name = redsgTests;
 			packageProductDependencies = (
 			);
-			productName = ChargingStationsTests;
-			productReference = D25A1DB02EA2391B00311AB7 /* ChargingStationsTests.xctest */;
+			productName = redsgTests;
+			productReference = D22E6D5D2EA3E882007C82C3 /* redsgTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D25A1DB92EA2391B00311AB7 /* ChargingStationsUITests */ = {
+		D22E6D662EA3E882007C82C3 /* redsgUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D25A1DCA2EA2391B00311AB7 /* Build configuration list for PBXNativeTarget "ChargingStationsUITests" */;
+			buildConfigurationList = D22E6D772EA3E882007C82C3 /* Build configuration list for PBXNativeTarget "redsgUITests" */;
 			buildPhases = (
-				D25A1DB62EA2391B00311AB7 /* Sources */,
-				D25A1DB72EA2391B00311AB7 /* Frameworks */,
-				D25A1DB82EA2391B00311AB7 /* Resources */,
+				D22E6D632EA3E882007C82C3 /* Sources */,
+				D22E6D642EA3E882007C82C3 /* Frameworks */,
+				D22E6D652EA3E882007C82C3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D25A1DBC2EA2391B00311AB7 /* PBXTargetDependency */,
+				D22E6D692EA3E882007C82C3 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				D25A1DBD2EA2391B00311AB7 /* ChargingStationsUITests */,
+				D22E6D6A2EA3E882007C82C3 /* redsgUITests */,
 			);
-			name = ChargingStationsUITests;
+			name = redsgUITests;
 			packageProductDependencies = (
 			);
-			productName = ChargingStationsUITests;
-			productReference = D25A1DBA2EA2391B00311AB7 /* ChargingStationsUITests.xctest */;
+			productName = redsgUITests;
+			productReference = D22E6D672EA3E882007C82C3 /* redsgUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D25A1D952EA2391A00311AB7 /* Project object */ = {
+		D22E6D432EA3E881007C82C3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
-					D25A1D9C2EA2391B00311AB7 = {
+					D22E6D4A2EA3E881007C82C3 = {
 						CreatedOnToolsVersion = 16.4;
 					};
-					D25A1DAF2EA2391B00311AB7 = {
+					D22E6D5C2EA3E882007C82C3 = {
 						CreatedOnToolsVersion = 16.4;
-						TestTargetID = D25A1D9C2EA2391B00311AB7;
+						TestTargetID = D22E6D4A2EA3E881007C82C3;
 					};
-					D25A1DB92EA2391B00311AB7 = {
+					D22E6D662EA3E882007C82C3 = {
 						CreatedOnToolsVersion = 16.4;
-						TestTargetID = D25A1D9C2EA2391B00311AB7;
+						TestTargetID = D22E6D4A2EA3E881007C82C3;
 					};
 				};
 			};
-			buildConfigurationList = D25A1D982EA2391A00311AB7 /* Build configuration list for PBXProject "ChargingStations" */;
+			buildConfigurationList = D22E6D462EA3E881007C82C3 /* Build configuration list for PBXProject "redsg" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = D25A1D942EA2391A00311AB7;
+			mainGroup = D22E6D422EA3E881007C82C3;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = D25A1D9E2EA2391B00311AB7 /* Products */;
+			productRefGroup = D22E6D4C2EA3E881007C82C3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D25A1D9C2EA2391B00311AB7 /* ChargingStations */,
-				D25A1DAF2EA2391B00311AB7 /* ChargingStationsTests */,
-				D25A1DB92EA2391B00311AB7 /* ChargingStationsUITests */,
+				D22E6D4A2EA3E881007C82C3 /* redsg */,
+				D22E6D5C2EA3E882007C82C3 /* redsgTests */,
+				D22E6D662EA3E882007C82C3 /* redsgUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D25A1D9B2EA2391B00311AB7 /* Resources */ = {
+		D22E6D492EA3E881007C82C3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D25A1DAE2EA2391B00311AB7 /* Resources */ = {
+		D22E6D5B2EA3E882007C82C3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D25A1DB82EA2391B00311AB7 /* Resources */ = {
+		D22E6D652EA3E882007C82C3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -245,21 +232,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D25A1D992EA2391B00311AB7 /* Sources */ = {
+		D22E6D472EA3E881007C82C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D25A1DAC2EA2391B00311AB7 /* Sources */ = {
+		D22E6D592EA3E882007C82C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D25A1DB62EA2391B00311AB7 /* Sources */ = {
+		D22E6D632EA3E882007C82C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -269,20 +256,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D25A1DB22EA2391B00311AB7 /* PBXTargetDependency */ = {
+		D22E6D5F2EA3E882007C82C3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D25A1D9C2EA2391B00311AB7 /* ChargingStations */;
-			targetProxy = D25A1DB12EA2391B00311AB7 /* PBXContainerItemProxy */;
+			target = D22E6D4A2EA3E881007C82C3 /* redsg */;
+			targetProxy = D22E6D5E2EA3E882007C82C3 /* PBXContainerItemProxy */;
 		};
-		D25A1DBC2EA2391B00311AB7 /* PBXTargetDependency */ = {
+		D22E6D692EA3E882007C82C3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D25A1D9C2EA2391B00311AB7 /* ChargingStations */;
-			targetProxy = D25A1DBB2EA2391B00311AB7 /* PBXContainerItemProxy */;
+			target = D22E6D4A2EA3E881007C82C3 /* redsg */;
+			targetProxy = D22E6D682EA3E882007C82C3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		D25A1DC22EA2391B00311AB7 /* Debug */ = {
+		D22E6D6F2EA3E882007C82C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -325,23 +312,28 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/ChargingStations/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		D25A1DC32EA2391B00311AB7 /* Release */ = {
+		D22E6D702EA3E882007C82C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -388,15 +380,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/ChargingStations/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		D25A1DC52EA2391B00311AB7 /* Debug */ = {
+		D22E6D722EA3E882007C82C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -404,27 +398,20 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DHYB7SSSP2;
-				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = NO;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.trifork.ChargingStations;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdf.redsg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				REGISTER_APP_GROUPS = YES;
-				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -435,7 +422,7 @@
 			};
 			name = Debug;
 		};
-		D25A1DC62EA2391B00311AB7 /* Release */ = {
+		D22E6D732EA3E882007C82C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -443,27 +430,20 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DHYB7SSSP2;
-				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = NO;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.trifork.ChargingStations;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdf.redsg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				REGISTER_APP_GROUPS = YES;
-				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -474,7 +454,7 @@
 			};
 			name = Release;
 		};
-		D25A1DC82EA2391B00311AB7 /* Debug */ = {
+		D22E6D752EA3E882007C82C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -482,23 +462,18 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DHYB7SSSP2;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.trifork.ChargingStationsTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdf.redsgTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChargingStations.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChargingStations";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/redsg.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/redsg";
 			};
 			name = Debug;
 		};
-		D25A1DC92EA2391B00311AB7 /* Release */ = {
+		D22E6D762EA3E882007C82C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,108 +481,91 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DHYB7SSSP2;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.trifork.ChargingStationsTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdf.redsgTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChargingStations.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChargingStations";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/redsg.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/redsg";
 			};
 			name = Release;
 		};
-		D25A1DCB2EA2391B00311AB7 /* Debug */ = {
+		D22E6D782EA3E882007C82C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DHYB7SSSP2;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.trifork.ChargingStationsUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdf.redsgUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ChargingStations;
+				TEST_TARGET_NAME = redsg;
 			};
 			name = Debug;
 		};
-		D25A1DCC2EA2391B00311AB7 /* Release */ = {
+		D22E6D792EA3E882007C82C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = DHYB7SSSP2;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.trifork.ChargingStationsUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tdf.redsgUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ChargingStations;
+				TEST_TARGET_NAME = redsg;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D25A1D982EA2391A00311AB7 /* Build configuration list for PBXProject "ChargingStations" */ = {
+		D22E6D462EA3E881007C82C3 /* Build configuration list for PBXProject "redsg" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D25A1DC22EA2391B00311AB7 /* Debug */,
-				D25A1DC32EA2391B00311AB7 /* Release */,
+				D22E6D6F2EA3E882007C82C3 /* Debug */,
+				D22E6D702EA3E882007C82C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D25A1DC42EA2391B00311AB7 /* Build configuration list for PBXNativeTarget "ChargingStations" */ = {
+		D22E6D712EA3E882007C82C3 /* Build configuration list for PBXNativeTarget "redsg" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D25A1DC52EA2391B00311AB7 /* Debug */,
-				D25A1DC62EA2391B00311AB7 /* Release */,
+				D22E6D722EA3E882007C82C3 /* Debug */,
+				D22E6D732EA3E882007C82C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D25A1DC72EA2391B00311AB7 /* Build configuration list for PBXNativeTarget "ChargingStationsTests" */ = {
+		D22E6D742EA3E882007C82C3 /* Build configuration list for PBXNativeTarget "redsgTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D25A1DC82EA2391B00311AB7 /* Debug */,
-				D25A1DC92EA2391B00311AB7 /* Release */,
+				D22E6D752EA3E882007C82C3 /* Debug */,
+				D22E6D762EA3E882007C82C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D25A1DCA2EA2391B00311AB7 /* Build configuration list for PBXNativeTarget "ChargingStationsUITests" */ = {
+		D22E6D772EA3E882007C82C3 /* Build configuration list for PBXNativeTarget "redsgUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D25A1DCB2EA2391B00311AB7 /* Debug */,
-				D25A1DCC2EA2391B00311AB7 /* Release */,
+				D22E6D782EA3E882007C82C3 /* Debug */,
+				D22E6D792EA3E882007C82C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D25A1D952EA2391A00311AB7 /* Project object */;
+	rootObject = D22E6D432EA3E881007C82C3 /* Project object */;
 }

@@ -12,9 +12,10 @@ protocol StationsProviderType {
     func startUpdates(for boundingBox: BoundingBox)
     func cancelUpdates()
     var lastUpdate: Date? { get }
+    var publishedStations: AnyPublisher<[Station], StationError> { get }
 }
 
-class StationsProvider {
+class StationsProvider: StationsProviderType {
     private let updateInterval: TimeInterval = 60
     private let respository: StationsRepositoryType
     private let client: StationFetching
@@ -37,6 +38,7 @@ class StationsProvider {
         timer = Timer.scheduledTimer(withTimeInterval: updateInterval, repeats: true, block: { [weak self] _ in
             self?.fetchStations(boundingBox: boundingBox)
         })
+        timer?.fire()
     }
     
     func cancelUpdates() {

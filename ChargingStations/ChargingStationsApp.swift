@@ -11,7 +11,14 @@ import SwiftUI
 struct ChargingStationsApp: App {
     var body: some Scene {
         WindowGroup {
-            
+            MainTabView(viewModel: MainTabViewModel(
+                stationsViewModel: StationsViewModel(
+                    stationsProvider: StationsProvider(
+                        repository: StationsRepository(),
+                        client: StationClient())
+                    )
+                )
+            )
         }
     }
 }
