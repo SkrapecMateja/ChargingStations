@@ -9,7 +9,7 @@ import XCTest
 import Foundation
 @testable import ChargingStations
 
-class ModelTests: XCTestCase {
+class DecodingTests: XCTestCase {
 
     func testStationDecodingAndMappingToModel() async throws {
         let data = try getData(fromJSON: "StationsAPIData")

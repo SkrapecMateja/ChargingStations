@@ -16,8 +16,8 @@ protocol StationsRepositoryType {
 
 struct StationsRepository: StationsRepositoryType {
     
-    private let cacheFileName = "stationsCache.json"
-    private let lastUpdatedKey = "stations.lastUpdated"
+    private(set) var cacheFileName: String
+    private(set) var  lastUpdatedKey: String
     
     private let jsonEncoder: JSONEncoder = {
         let encoder = JSONEncoder()
@@ -25,10 +25,21 @@ struct StationsRepository: StationsRepositoryType {
         return encoder
     }()
     
+    private let jsonDecoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        return decoder
+    }()
+    
     private var cacheURL: URL {
         let dir = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
         try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
         return dir.appendingPathComponent(cacheFileName)
+    }
+    
+    init(cacheFileName: String = "stationsCache.json", lastUpdatedKey: String = "stations.lastUpdated") {
+        self.cacheFileName = cacheFileName
+        self.lastUpdatedKey = lastUpdatedKey
     }
     
     func saveStations(_ stations: [Station], completion: @escaping (Result<Void, StationError>) -> Void) {
@@ -46,7 +57,7 @@ struct StationsRepository: StationsRepositoryType {
         DispatchQueue.global(qos: .userInitiated).async {
             do {
                 let data = try Data(contentsOf: self.cacheURL)
-                let stations = try JSONDecoder().decode([Station].self, from: data)
+                let stations = try self.jsonDecoder.decode([Station].self, from: data)
                 completion(.success(stations))
             } catch {
                 completion(.failure(.readingFromCacheFailed))

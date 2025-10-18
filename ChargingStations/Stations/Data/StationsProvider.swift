@@ -58,7 +58,8 @@ class StationsProvider {
                     self?.stationsSubject.send(completion: .failure(error))
                 }
             case .finished:
-                // Log finished
+                //Log error
+                break
             }
         } receiveValue: { [weak self] apiStations in
             let stations = apiStations.map { Station(apiStation: $0) }
@@ -74,6 +75,7 @@ class StationsProvider {
                 self?.respository.saveLastUpdated(date: Date())
             case .failure(let error):
                 // Log error
+                break
             }
             
         })
@@ -86,6 +88,7 @@ class StationsProvider {
                 self?.stationsSubject.send(stations)
             case .failure(let error):
                 // log error
+                break
             }
         }
     }

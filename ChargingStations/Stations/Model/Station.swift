@@ -22,13 +22,33 @@ struct Station: Codable {
     }()
     
     init(apiStation: APIStation) {
-        self.id = apiStation.id
-        self.latitude = Double(apiStation.geoCoordinates.decimalDegree.latitude) ?? 0
-        self.longitude = Double(apiStation.geoCoordinates.decimalDegree.longitude) ?? 0
-        self.availability = Availability(rawValue: apiStation.evseStatus) ?? .unknown
+        
+        let chargingFacilities = apiStation.chargingFacilities.map { ChargingFacility(apiFacilities: $0) }
+        
+        var lastUpdate: Date? = nil
         if let updateDate = apiStation.lastUpdate {
-            self.lastUpdate = Station.isoFormatter.date(from: updateDate)
+            lastUpdate = Station.isoFormatter.date(from: updateDate)
         }
-        self.chargingFacilities = apiStation.chargingFacilities.map { ChargingFacility(apiFacilities: $0) }
+        
+        self.init(id: apiStation.id,
+                  latitude: Double(apiStation.geoCoordinates.decimalDegree.latitude) ?? 0,
+                  longitude: Double(apiStation.geoCoordinates.decimalDegree.longitude) ?? 0,
+                  availability: Availability(rawValue: apiStation.evseStatus) ?? .unknown,
+                  chargingFacilities: apiStation.chargingFacilities.map { ChargingFacility(apiFacilities: $0) },
+                  lastUpdate: lastUpdate)
+    }
+    
+    init(id: String,
+         latitude: Double,
+         longitude: Double,
+         availability: Availability,
+         chargingFacilities: [ChargingFacility],
+         lastUpdate: Date?) {
+        self.id = id
+        self.latitude = latitude
+        self.longitude = longitude
+        self.availability = availability
+        self.chargingFacilities = chargingFacilities
+        self.lastUpdate = lastUpdate
     }
 }
