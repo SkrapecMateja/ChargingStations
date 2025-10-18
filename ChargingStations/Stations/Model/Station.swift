@@ -36,7 +36,7 @@ struct Station: Codable {
         self.chargingFacilities = chargingFacilities
     }
     
-    var maxPower: UInt16 {
-        chargingFacilities.map({ $0.power }).max() ?? 0
+    var maxPower: UInt16? {
+        chargingFacilities.map({ $0.power }).max()
     }
 }

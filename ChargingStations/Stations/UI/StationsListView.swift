@@ -16,11 +16,13 @@ struct StationsListView: View {
     }
     
     var body: some View {
-        List {
-            ForEach(viewModel.stations) { station in
-                Text(station.id)
-            }
-        }
+        ScrollView {
+            LazyVStack(spacing: 12) {
+                ForEach(viewModel.stations) { stationVM in
+                    StationListItem(viewModel: stationVM)
+                }
+            }.padding()
+        }.background(Color(.systemGroupedBackground))
     }
 }
 

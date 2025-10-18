@@ -12,12 +12,13 @@ enum TabType: Int, Identifiable, Hashable, CaseIterable {
     
     var id: Int { rawValue }
     
+    // Would localize in production ready app
     var title: String {
         switch self {
         case .map:
-            return "Map"
+            return "Stations Map"
         case .list:
-            return "List"
+            return "Stations List"
         }
     }
     

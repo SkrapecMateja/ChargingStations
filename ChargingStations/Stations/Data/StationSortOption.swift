@@ -12,7 +12,7 @@ enum StationSortOption {
     func apply(to stations: [Station]) -> [Station] {
         switch self {
         case .power:
-            stations.sorted(by: { $0.maxPower > $1.maxPower })
+            stations.sorted(by: { $0.maxPower ?? 0 > $1.maxPower ?? 0 })
         }
     }
 }
