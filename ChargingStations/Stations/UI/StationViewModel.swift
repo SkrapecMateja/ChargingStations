@@ -10,13 +10,11 @@ struct StationViewModel: Identifiable {
     let latitude: Double?
     let longitude: Double?
     let availability: Availability
-    var lastUpdate: String = ""
     
     init(station: Station) {
         self.id = station.id
         self.latitude = station.latitude
         self.longitude = station.longitude
         self.availability = station.availability
-        //self.lastUpdate = station.lastUpdate
     }
 }

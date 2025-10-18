@@ -12,11 +12,17 @@ struct MainTabView: View {
     
     var body: some View {
         TabView(selection: $viewModel.selectedTab) {
-            ForEach(viewModel.tabItems) { item in
-                item.view
-                .tabItem {
-                    Label(item.title, systemImage: item.icon)
-                }.id(item.id)
+            ForEach(viewModel.tabItems) { tabType in
+                switch tabType {
+                case .map:
+                    StationsMapView(viewModel: viewModel.stationsViewModel).tabItem {
+                        Label(tabType.title, systemImage: tabType.icon)
+                    }.tag(tabType)
+                case .list:
+                    StationsListView(viewModel: viewModel.stationsViewModel).tabItem {
+                        Label(tabType.title, systemImage: tabType.icon)
+                    }.tag(tabType)
+                }
             }
         }.onAppear {
             viewModel.viewAppeared()
