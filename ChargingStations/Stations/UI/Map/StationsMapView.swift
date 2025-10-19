@@ -26,9 +26,11 @@ struct StationsMapView: View {
                 }
             } else {
                 Map(bounds: viewModel.mapCameraBounds, selection: $selectedMarkerId) {
-                    MapCircle(center: viewModel.currentLocation, radius: CLLocationDistance(1200))
-                           .foregroundStyle(.orange.opacity(0.5))
-                           .mapOverlayLevel(level: .aboveLabels)
+                    if let currentLocation = viewModel.currentLocation {
+                        MapCircle(center: currentLocation, radius: CLLocationDistance(1200))
+                            .foregroundStyle(.orange.opacity(0.5))
+                            .mapOverlayLevel(level: .aboveLabels)
+                    }
                     
                     ForEach(viewModel.chargingPoints) { point in
                         Marker(
@@ -39,10 +41,13 @@ struct StationsMapView: View {
                             )
                         ).tint(point.bestAvailability.color)
                     }
-                    Marker(
-                        "You are here",
-                        coordinate: viewModel.currentLocation
-                    ).tint(.blue)
+                    
+                    if let currentLocation = viewModel.currentLocation {
+                        Marker(
+                            "You are here",
+                            coordinate: currentLocation
+                        ).tint(.blue)
+                    }
                 }.onChange(of: selectedMarkerId) {
                     if let selectedMarkerId = selectedMarkerId {
                         viewModel.showStations(for: selectedMarkerId)
@@ -83,7 +88,3 @@ struct StationsMapView: View {
         }
     }
 }
-
-//#Preview {
-//    StationsMapView(viewModel: StationsViewModel())
-//}

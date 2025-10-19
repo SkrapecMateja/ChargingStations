@@ -10,12 +10,9 @@ import Foundation
 protocol StationsRepositoryType {
     func saveStations(_ stations: [Station], completion: @escaping (Result<Void, StationError>) -> Void)
     func loadStations(completion: @escaping (Result<[Station],StationError>) -> Void)
+    
     func saveLastUpdated(date: Date)
     var lastUpdated: Date? { get }
-    
-    func saveLastLocation(longitude: Double,  latitude: Double)
-    var lastLocationLongitude: Double? { get }
-    var lastLocationLatitude: Double? { get }
 }
 
 struct StationsRepository: StationsRepositoryType {
@@ -95,21 +92,5 @@ struct StationsRepository: StationsRepositoryType {
     var lastUpdated: Date? {
         DefaultLogger.shared.info("Fetching last updated date from cache.")
         return UserDefaults.standard.object(forKey: lastUpdatedKey) as? Date
-    }
-    
-    func saveLastLocation(longitude: Double,  latitude: Double) {
-        DefaultLogger.shared.info("Saving last location to cache.")
-        UserDefaults.standard.set(longitude, forKey: lastLongitudeKey)
-        UserDefaults.standard.set(latitude, forKey: lastLatitudeKey)
-    }
-    
-    var lastLocationLongitude: Double? {
-        DefaultLogger.shared.info("Fetching last longitude from cache.")
-        return UserDefaults.standard.object(forKey: lastLongitudeKey) as? Double
-    }
-    
-    var lastLocationLatitude: Double? {
-        DefaultLogger.shared.info("Fetching last latitude from cache.")
-        return UserDefaults.standard.object(forKey: lastLatitudeKey) as? Double
     }
 }

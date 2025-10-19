@@ -27,7 +27,6 @@ class LocationManager: NSObject, LocationManagerType {
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         requestWhenInUseAuthorization()
-        startUpdatingLocation()
     }
     
     private func requestWhenInUseAuthorization() {
@@ -35,8 +34,12 @@ class LocationManager: NSObject, LocationManagerType {
         manager.requestWhenInUseAuthorization()
     }
     
-    private func startUpdatingLocation() {
+    func startUpdatingLocation() {
         DefaultLogger.shared.info("Started updating location.")
+        guard manager.authorizationStatus == .authorizedAlways || manager.authorizationStatus == .authorizedWhenInUse else {
+           return
+        }
+        stopUpdatingLocation()
         manager.startUpdatingLocation()
     }
     
@@ -57,4 +60,22 @@ extension LocationManager: CLLocationManagerDelegate {
         DefaultLogger.shared.error("Location failed: \(error.localizedDescription)")
         locationSubject.send(nil)
     }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+            switch manager.authorizationStatus {
+            case .authorizedWhenInUse, .authorizedAlways:
+                DefaultLogger.shared.info("Authorization granted. Starting updates.")
+                // Delay a bit so that location manager is ready and restarted after autorization comes. This is especially important for 'Allow once' because first returned location is nil and we never receive another one in didUpdateLocations
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+                    self?.startUpdatingLocation()
+                }
+            case .denied, .restricted:
+                DefaultLogger.shared.info("Location access denied or restricted.")
+                locationSubject.send(nil)
+            case .notDetermined:
+                DefaultLogger.shared.info("Authorization not determined yet.")
+            @unknown default:
+                break
+            }
+        }
 }

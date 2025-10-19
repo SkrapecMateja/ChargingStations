@@ -12,8 +12,7 @@ import CoreLocation
 protocol StationsProviderType {
     func cancelUpdates()
     var lastUpdatePublisher: AnyPublisher<Date?, Never> { get }
-    var publishedStations: AnyPublisher<[Station], StationError> { get }
-    func resolveLocation(location: CLLocationCoordinate2D?) -> CLLocationCoordinate2D?
+    var publishedStations: AnyPublisher<[Station], Never> { get }
 }
 
 class StationsProvider: StationsProviderType {
@@ -29,8 +28,8 @@ class StationsProvider: StationsProviderType {
     
     private var timer: Timer?
     
-    private let stationsSubject: CurrentValueSubject<[Station], StationError> = .init([])
-    var publishedStations: AnyPublisher<[Station], StationError> {
+    private let stationsSubject: CurrentValueSubject<[Station], Never> = .init([])
+    var publishedStations: AnyPublisher<[Station], Never> {
         stationsSubject.eraseToAnyPublisher()
     }
     
@@ -77,14 +76,13 @@ class StationsProvider: StationsProviderType {
         DefaultLogger.shared.info("Started station updates.")
         
         cancelUpdates()
-        
-        let currentLocation = resolveLocation(location: location) // If in airplane mode and no location, get last known location from cache
-        
+
         timer = Timer.scheduledTimer(withTimeInterval: updateInterval, repeats: true, block: { [weak self] _ in
-            if let location = currentLocation {
+            if let location = location {
                 self?.fetchStations(location: location, sortOption: self?.sortOption)
+            } else {
+                self?.sendStationsFromCache(sortOption: self?.sortOption)
             }
-            
         })
         timer?.fire()
     }
@@ -93,17 +91,6 @@ class StationsProvider: StationsProviderType {
         timer?.invalidate()
         timer = nil
         cancellables.removeAll()
-    }
-    
-    func resolveLocation(location: CLLocationCoordinate2D?) -> CLLocationCoordinate2D? {
-        DefaultLogger.shared.info("Resolve location from cache, if not provided.")
-        
-        var currentLocation: CLLocationCoordinate2D? = location
-        if currentLocation == nil, let latitude = respository.lastLocationLatitude, let longitude = respository.lastLocationLongitude {
-            DefaultLogger.shared.info("Location loaded from cache.")
-            currentLocation = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        }
-        return currentLocation
     }
 
     private func fetchStations(location: CLLocationCoordinate2D, sortOption: StationSortOption?) {
@@ -119,7 +106,6 @@ class StationsProvider: StationsProviderType {
                     self?.sendStationsFromCache(sortOption: sortOption)
                 } else {
                     DefaultLogger.shared.error("Network error: \(error)")
-                    self?.stationsSubject.send(completion: .failure(error))
                 }
             case .finished:
                 DefaultLogger.shared.info("Finished fetching stations from API.")
@@ -142,7 +128,6 @@ class StationsProvider: StationsProviderType {
                 let date = Date()
                 DefaultLogger.shared.info("Saving last updated date and location to cache after succesful stations save.")
                 self?.respository.saveLastUpdated(date: date)
-                self?.respository.saveLastLocation(longitude: longitude, latitude: latitude)
                 self?.sendLastUpdate(date: date)
             case .failure(let error):
                 DefaultLogger.shared.error("Failed to save stations to cache \(error).")

@@ -29,7 +29,7 @@ struct ChargingPoint: Identifiable {
 }
 
 class MapViewModel: ObservableObject {
-    @Published var currentLocation: CLLocationCoordinate2D = .init()
+    @Published var currentLocation: CLLocationCoordinate2D?
 
     @Published var mapCameraBounds: MapCameraBounds?
     
@@ -57,9 +57,7 @@ class MapViewModel: ObservableObject {
         DefaultLogger.shared.info("Subscribing to station updates.")
         self.stationsProvider.publishedStations
         .receive(on: DispatchQueue.main)
-        .sink { error in
-            
-        } receiveValue: { [weak self] stations in
+        .sink { [weak self] stations in
             DefaultLogger.shared.info("Received stations \(stations.count).")
             self?.chargingPoints = self?.groupStationsByChargingPoint(stations: stations) ?? []
         }
@@ -78,17 +76,23 @@ class MapViewModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] location in
                 DefaultLogger.shared.info("Received location updates.")
-                
-                guard let coordinates = self?.stationsProvider.resolveLocation(location: location?.coordinate) else {
+                guard let coordinate = location?.coordinate else {
+                    self?.clearMap()
                     return
                 }
                 
-                self?.currentLocation = coordinates
-                
-                let region = MKCoordinateRegion(center: coordinates, latitudinalMeters: Self.radiusMeters, longitudinalMeters: Self.radiusMeters)
+                self?.currentLocation = coordinate
+                let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: Self.radiusMeters, longitudinalMeters: Self.radiusMeters)
                 self?.mapCameraBounds = MapCameraBounds(centerCoordinateBounds: region)
                 
             }.store(in: &cancellables)
+    }
+    
+    private func clearMap() {
+        currentLocation = nil
+        mapCameraBounds = nil
+        chargingPoints.removeAll()
+        lastUpdate = nil
     }
     
     private func groupStationsByChargingPoint(stations: [Station]) -> [ChargingPoint] {

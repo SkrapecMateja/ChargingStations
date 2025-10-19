@@ -30,9 +30,7 @@ class StationsViewModel: ObservableObject {
         
         self.stationsProvider.publishedStations
         .receive(on: DispatchQueue.main)
-        .sink { error in
-            
-        } receiveValue: { [weak self] stations in
+        .sink { [weak self] stations in
             self?.stations = stations.map { StationViewModel(station: $0) }
         }
         .store(in: &cancellables)

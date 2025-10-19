@@ -31,7 +31,3 @@ struct MainTabView: View {
         }
     }
 }
-
-//#Preview {
-//    MainTabView(viewModel: MainTabViewModel(stationsListViewModel: StationsListViewModel()))
-//}
