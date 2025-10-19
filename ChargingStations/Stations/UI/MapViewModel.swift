@@ -22,28 +22,24 @@ struct ChargingPoint: Identifiable {
     var id: String { stationId }
     
     let stations: [StationViewModel]
+    
+    var coordinate: CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
 }
 
 class MapViewModel: ObservableObject {
-    @Published var currentLocation: CLLocationCoordinate2D = .init() {
-        didSet {
-            mapCameraBounds = MapCameraBounds(
-                centerCoordinateBounds: MKMapRect(
-                    origin: MKMapPoint(currentLocation),
-                    size: MKMapSize(width: radiusMeters, height: radiusMeters)
-                ),
-                minimumDistance: radiusMeters,
-                maximumDistance: radiusMeters
-            )
-        }
-    }
+    @Published var currentLocation: CLLocationCoordinate2D = .init()
+
     @Published var mapCameraBounds: MapCameraBounds?
     
     @Published var chargingPoints: [ChargingPoint] = []
     @Published var lastUpdate: Date?
     
+    @Published var selectedStationsText: String?
+    
     private let stationsProvider: StationsProviderType
-    private let radiusMeters: CLLocationDistance = 10000
+    private static let radiusMeters: CLLocationDistance = 000
     
     private let locationManager: LocationManagerType
     
@@ -73,10 +69,14 @@ class MapViewModel: ObservableObject {
         
         locationManager.locationPublisher
             .receive(on: DispatchQueue.main)
-            .sink { location in
-                if let location = location {
-                    self.currentLocation = location.coordinate
-                }
+            .sink { [weak self] location in
+                guard let coordinates = location?.coordinate else { return }
+                
+                self?.currentLocation = coordinates
+                
+                let region = MKCoordinateRegion(center: coordinates, latitudinalMeters: Self.radiusMeters, longitudinalMeters: Self.radiusMeters)
+                self?.mapCameraBounds = MapCameraBounds(centerCoordinateBounds: region)
+                
             }.store(in: &cancellables)
     }
     
@@ -94,5 +94,24 @@ class MapViewModel: ObservableObject {
         }
         
         return chargingPoints
+    }
+    
+    public func showStations(for chargingPointId: String) {
+        if let chargingPoints = chargingPoints.first(where: { $0.stationId == chargingPointId }) {
+            let sortedStations = chargingPoints.stations.sorted(by: { $0.id > $1.id} )
+            
+            var text: String = "\n"
+            for stationIndex in 0..<sortedStations.count {
+                text.append("Charging point \(stationIndex + 1): \(sortedStations[stationIndex].availability.title)")
+                text.append("\n")
+            }
+            selectedStationsText = text
+        } else {
+            selectedStationsText = nil
+        }
+    }
+    
+    public func hideStations() {
+        selectedStationsText = nil
     }
 }

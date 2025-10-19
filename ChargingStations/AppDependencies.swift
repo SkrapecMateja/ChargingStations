@@ -16,8 +16,7 @@ struct AppDependencies {
         self.stationsProvider = StationsProvider(
             repository: StationsRepository(),
             locationManager: locationManager,
-            client: StationClient(),
-            boundingBoxCalculator: BoundingBoxCalculator()
+            client: StationClient()
         )
     }
 }

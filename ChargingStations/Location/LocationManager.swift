@@ -9,12 +9,9 @@ import Combine
 import CoreLocation
 
 protocol LocationManagerType {
-    func requestWhenInUseAuthorization()
-    func startUpdatingLocation()
     func stopUpdatingLocation()
     var locationPublisher: AnyPublisher<CLLocation?, Never> { get }
-    var currentLocation: CLLocation? { get }
-    var defaultCoordinate: CLLocationCoordinate2D { get }
+    func boundingBoxFromCurrentLocation(withDistance distance: Double) -> BoundingBox?
 }
 
 class LocationManager: NSObject, LocationManagerType {
@@ -22,14 +19,8 @@ class LocationManager: NSObject, LocationManagerType {
     private var locationSubject = CurrentValueSubject<CLLocation?, Never>(nil)
     private let manager = CLLocationManager()
     
-    let defaultCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 47.3769, longitude: 8.5417) // Zurich
-    
     var locationPublisher: AnyPublisher<CLLocation?, Never> {
         locationSubject.eraseToAnyPublisher()
-    }
-    
-    var currentLocation: CLLocation? {
-        locationSubject.value
     }
     
     override init() {
@@ -40,16 +31,22 @@ class LocationManager: NSObject, LocationManagerType {
         startUpdatingLocation()
     }
     
-    func requestWhenInUseAuthorization() {
+    private func requestWhenInUseAuthorization() {
         manager.requestWhenInUseAuthorization()
     }
     
-    func startUpdatingLocation() {
+    private func startUpdatingLocation() {
         manager.startUpdatingLocation()
     }
     
     func stopUpdatingLocation() {
         manager.stopUpdatingLocation()
+    }
+    
+    func boundingBoxFromCurrentLocation(withDistance distance: Double) -> BoundingBox? {
+        guard let currentLocation = locationSubject.value else { return nil }
+        
+        return BoundingBoxCalculator().boundingBox(center: currentLocation.coordinate, radiusKm: distance)
     }
 }
 

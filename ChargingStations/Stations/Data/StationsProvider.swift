@@ -10,7 +10,6 @@ import Combine
 import CoreLocation
 
 protocol StationsProviderType {
-    func startUpdates()
     func cancelUpdates()
     var lastUpdatePublisher: AnyPublisher<Date?, Never> { get }
     var publishedStations: AnyPublisher<[Station], StationError> { get }
@@ -23,7 +22,6 @@ class StationsProvider: StationsProviderType {
     private let locationManager: LocationManagerType
     private let client: StationFetching
     
-    private let boundingBoxCalculator: BoundingBoxCalculator
     private var radiusInKm: Double = 1
     
     private var timer: Timer?
@@ -45,13 +43,11 @@ class StationsProvider: StationsProviderType {
     init(repository: StationsRepositoryType,
          locationManager: LocationManagerType,
          client: StationFetching,
-         boundingBoxCalculator: BoundingBoxCalculator,
          radiusInKm: Double = 1,
          sortOption: StationSortOption? = nil) {
         self.respository = repository
         self.locationManager = locationManager
         self.client = client
-        self.boundingBoxCalculator = boundingBoxCalculator
         self.radiusInKm = radiusInKm
         self.sortOption = sortOption
         
@@ -62,19 +58,16 @@ class StationsProvider: StationsProviderType {
         self.locationManager.locationPublisher
             .receive(on: DispatchQueue.main)
             .sink { [weak self] location in
-                self?.startUpdates(location: location)
+                if let location = location {
+                    self?.startUpdates(location: location)
+                }
         }.store(in: &cancellables)
     }
     
-    func startUpdates() {
-        startUpdates(location: locationManager.currentLocation)
-    }
-    
-    private func startUpdates(location: CLLocation?) {
+    private func startUpdates(location: CLLocation) {
         cancelUpdates()
-        
-        let coordinates = location?.coordinate ?? locationManager.defaultCoordinate
-        let boundingBox = boundingBoxCalculator.boundingBox(center: coordinates, radiusKm: radiusInKm)
+
+        guard let boundingBox = locationManager.boundingBoxFromCurrentLocation(withDistance: radiusInKm) else { return }
         
         timer = Timer.scheduledTimer(withTimeInterval: updateInterval, repeats: true, block: { [weak self] _ in
             self?.fetchStations(boundingBox: boundingBox, sortOption: self?.sortOption)

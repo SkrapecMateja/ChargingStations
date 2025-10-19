@@ -10,6 +10,7 @@ import MapKit
 
 struct StationsMapView: View {
     @ObservedObject var viewModel: MapViewModel
+    @State private var selectedMarkerId: String?
     
     init(viewModel: MapViewModel) {
         self.viewModel = viewModel
@@ -17,7 +18,7 @@ struct StationsMapView: View {
     
     var body: some View {
         ZStack {
-            Map(bounds: viewModel.mapCameraBounds) {
+            Map(bounds: viewModel.mapCameraBounds, selection: $selectedMarkerId) {
                 ForEach(viewModel.chargingPoints) { point in
                         Marker(
                             "",
@@ -31,6 +32,27 @@ struct StationsMapView: View {
                     "You are here",
                     coordinate: viewModel.currentLocation
                 ).tint(.blue)
+            }.onChange(of: selectedMarkerId) {
+                if let selectedMarkerId = selectedMarkerId {
+                    viewModel.showStations(for: selectedMarkerId)
+                } else {
+                    viewModel.hideStations()
+                }
+            }
+            
+            if let selectedStations = viewModel.selectedStationsText {
+                VStack {
+                    Spacer()
+                    HStack {
+                        Text(selectedStations)
+                            .font(.caption)
+                            .padding([.leading, .trailing], 16)
+                            .background(.ultraThinMaterial)
+                            .cornerRadius(8)
+                        Spacer()
+                    }
+                }
+                .transition(.scale.combined(with: .opacity))
             }
             
             if let lastUpdate = viewModel.lastUpdate {
