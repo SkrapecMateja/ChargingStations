@@ -16,7 +16,8 @@ struct AppDependencies {
         self.stationsProvider = StationsProvider(
             repository: StationsRepository(),
             locationManager: locationManager,
-            client: StationClient()
+            client: StationClient(),
+            sortOption: .power
         )
     }
 }
