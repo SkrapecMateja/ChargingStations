@@ -20,7 +20,6 @@ struct BoundingBoxCalculator {
         // Longitude delta (depends on latitude)
         let lonDelta = radiusKm / (111.0 * cos(lat * .pi / 180))
         
-        // Calculate min/max latitude and longitude
         let minLat = lat - latDelta
         let maxLat = lat + latDelta
         let minLon = lon - lonDelta
