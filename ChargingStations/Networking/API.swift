@@ -7,8 +7,6 @@
 import Foundation
 
 enum API {
-    static var baseUrl: String = "http://ich-tanke-strom.switzerlandnorth.cloudapp.azure.com:8080"
-    
     enum Endpoint {
         case stationsInBoundingBox(bbox: BoundingBox)
         
