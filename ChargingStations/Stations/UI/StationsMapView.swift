@@ -21,11 +21,15 @@ struct StationsMapView: View {
             if viewModel.mapCameraBounds == nil || viewModel.chargingPoints.isEmpty {
                 VStack {
                     Spacer()
-                    ContentUnavailableView("Loading map...", systemImage: "map")
+                    ContentUnavailableView("No locations found", systemImage: "map")
                     Spacer()
                 }
             } else {
                 Map(bounds: viewModel.mapCameraBounds, selection: $selectedMarkerId) {
+                    MapCircle(center: viewModel.currentLocation, radius: CLLocationDistance(1200))
+                           .foregroundStyle(.orange.opacity(0.5))
+                           .mapOverlayLevel(level: .aboveLabels)
+                    
                     ForEach(viewModel.chargingPoints) { point in
                         Marker(
                             "",
@@ -47,6 +51,7 @@ struct StationsMapView: View {
                     }
                 }
                 
+                
                 if let selectedStations = viewModel.selectedStationsText {
                     VStack {
                         Spacer()
@@ -56,6 +61,8 @@ struct StationsMapView: View {
                                 .padding([.leading, .trailing], 16)
                                 .background(.ultraThinMaterial)
                                 .cornerRadius(8)
+                                .padding(.leading, 16)
+                                .padding(.bottom, 24)
                             Spacer()
                         }
                     }

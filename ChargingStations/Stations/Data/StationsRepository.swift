@@ -12,13 +12,19 @@ protocol StationsRepositoryType {
     func loadStations(completion: @escaping (Result<[Station],StationError>) -> Void)
     func saveLastUpdated(date: Date)
     var lastUpdated: Date? { get }
+    
+    func saveLastLocation(longitude: Double,  latitude: Double)
+    var lastLocationLongitude: Double? { get }
+    var lastLocationLatitude: Double? { get }
 }
 
 struct StationsRepository: StationsRepositoryType {
     
-    private(set) var cacheFileName: String
-    private(set) var  lastUpdatedKey: String
-    
+    private let cacheFileName: String
+    private let lastUpdatedKey: String
+    private let lastLatitudeKey: String
+    private let lastLongitudeKey: String
+
     private let jsonEncoder: JSONEncoder = {
         let encoder = JSONEncoder()
         encoder.dateEncodingStrategy = .iso8601
@@ -37,9 +43,11 @@ struct StationsRepository: StationsRepositoryType {
         return dir.appendingPathComponent(cacheFileName)
     }
     
-    init(cacheFileName: String = "stationsCache.json", lastUpdatedKey: String = "stations.lastUpdated") {
+    init(cacheFileName: String = "stationsCache.json", lastUpdatedKey: String = "stations.lastUpdated", lastLatitudeKey: String = "stations.lastLatitude", lastLongitudeKey: String = "stations.lastLongitude") {
         self.cacheFileName = cacheFileName
         self.lastUpdatedKey = lastUpdatedKey
+        self.lastLatitudeKey = lastLatitudeKey
+        self.lastLongitudeKey = lastLongitudeKey
     }
     
     func saveStations(_ stations: [Station], completion: @escaping (Result<Void, StationError>) -> Void) {
@@ -72,5 +80,18 @@ struct StationsRepository: StationsRepositoryType {
     
     var lastUpdated: Date? {
         UserDefaults.standard.object(forKey: lastUpdatedKey) as? Date
+    }
+    
+    func saveLastLocation(longitude: Double,  latitude: Double) {
+        UserDefaults.standard.set(longitude, forKey: lastLongitudeKey)
+        UserDefaults.standard.set(latitude, forKey: lastLatitudeKey)
+    }
+    
+    var lastLocationLongitude: Double? {
+        UserDefaults.standard.object(forKey: lastLongitudeKey) as? Double
+    }
+    
+    var lastLocationLatitude: Double? {
+        UserDefaults.standard.object(forKey: lastLatitudeKey) as? Double
     }
 }

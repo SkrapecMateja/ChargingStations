@@ -39,7 +39,7 @@ class MapViewModel: ObservableObject {
     @Published var selectedStationsText: String?
     
     private let stationsProvider: StationsProviderType
-    private static let radiusMeters: CLLocationDistance = 000
+    private static let radiusMeters: CLLocationDistance = 1000
     
     private let locationManager: LocationManagerType
     
@@ -53,6 +53,7 @@ class MapViewModel: ObservableObject {
     }
     
     private func subscribeToUpdates() {
+        // Station updates
         self.stationsProvider.publishedStations
         .receive(on: DispatchQueue.main)
         .sink { error in
@@ -62,15 +63,19 @@ class MapViewModel: ObservableObject {
         }
         .store(in: &cancellables)
         
+        // Last updated date updates
         stationsProvider.lastUpdatePublisher
             .receive(on: DispatchQueue.main)
             .assign(to: \.lastUpdate, on: self)
             .store(in: &cancellables)
         
+        // Location updates
         locationManager.locationPublisher
             .receive(on: DispatchQueue.main)
             .sink { [weak self] location in
-                guard let coordinates = location?.coordinate else { return }
+                guard let coordinates = self?.stationsProvider.resolveLocation(location: location?.coordinate) else {
+                    return
+                }
                 
                 self?.currentLocation = coordinates
                 
@@ -96,13 +101,14 @@ class MapViewModel: ObservableObject {
         return chargingPoints
     }
     
+    // Short method to show available stations in one charging point / location
     public func showStations(for chargingPointId: String) {
         if let chargingPoints = chargingPoints.first(where: { $0.stationId == chargingPointId }) {
             let sortedStations = chargingPoints.stations.sorted(by: { $0.id > $1.id} )
             
             var text: String = "\n"
             for stationIndex in 0..<sortedStations.count {
-                text.append("Charging point \(stationIndex + 1): \(sortedStations[stationIndex].availability.title)")
+                text.append("Charging point \(stationIndex + 1):  \(sortedStations[stationIndex].availability.title)")
                 text.append("\n")
             }
             selectedStationsText = text

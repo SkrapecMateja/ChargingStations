@@ -13,7 +13,7 @@ struct LastUpdateView: View {
     init(lastUpdateDate: Date) {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
-        formatter.timeStyle = .short
+        formatter.timeStyle = .medium
         
         self.lastUpdateDateString = formatter.string(from: lastUpdateDate)
     }

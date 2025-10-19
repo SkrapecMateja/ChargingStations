@@ -21,7 +21,7 @@ struct StationsListView: View {
                 // Empty, loading view
                 VStack {
                     Spacer()
-                    ContentUnavailableView("Loading stations...", systemImage: "ev.charger")
+                    ContentUnavailableView("No stations found", systemImage: "ev.charger")
                     Spacer()
                 }
             } else {

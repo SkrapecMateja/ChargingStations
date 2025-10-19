@@ -11,7 +11,6 @@ import CoreLocation
 protocol LocationManagerType {
     func stopUpdatingLocation()
     var locationPublisher: AnyPublisher<CLLocation?, Never> { get }
-    func boundingBoxFromCurrentLocation(withDistance distance: Double) -> BoundingBox?
 }
 
 class LocationManager: NSObject, LocationManagerType {
@@ -41,12 +40,6 @@ class LocationManager: NSObject, LocationManagerType {
     
     func stopUpdatingLocation() {
         manager.stopUpdatingLocation()
-    }
-    
-    func boundingBoxFromCurrentLocation(withDistance distance: Double) -> BoundingBox? {
-        guard let currentLocation = locationSubject.value else { return nil }
-        
-        return BoundingBoxCalculator().boundingBox(center: currentLocation.coordinate, radiusKm: distance)
     }
 }
 

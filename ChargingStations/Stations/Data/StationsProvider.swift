@@ -13,6 +13,7 @@ protocol StationsProviderType {
     func cancelUpdates()
     var lastUpdatePublisher: AnyPublisher<Date?, Never> { get }
     var publishedStations: AnyPublisher<[Station], StationError> { get }
+    func resolveLocation(location: CLLocationCoordinate2D?) -> CLLocationCoordinate2D?
 }
 
 class StationsProvider: StationsProviderType {
@@ -21,6 +22,8 @@ class StationsProvider: StationsProviderType {
     private let respository: StationsRepositoryType
     private let locationManager: LocationManagerType
     private let client: StationFetching
+    
+    private let boundingBoxCalculator: BoundingBoxCalculator
     
     private var radiusInKm: Double = 1
     
@@ -43,6 +46,7 @@ class StationsProvider: StationsProviderType {
     init(repository: StationsRepositoryType,
          locationManager: LocationManagerType,
          client: StationFetching,
+         boundingBoxCalculator: BoundingBoxCalculator = BoundingBoxCalculator(),
          radiusInKm: Double = 1,
          sortOption: StationSortOption? = nil) {
         self.respository = repository
@@ -50,7 +54,9 @@ class StationsProvider: StationsProviderType {
         self.client = client
         self.radiusInKm = radiusInKm
         self.sortOption = sortOption
+        self.boundingBoxCalculator = boundingBoxCalculator
         
+        startUpdates()
         startObservingLocation()
     }
     
@@ -59,18 +65,21 @@ class StationsProvider: StationsProviderType {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] location in
                 if let location = location {
-                    self?.startUpdates(location: location)
+                    self?.startUpdates(location: location.coordinate)
                 }
         }.store(in: &cancellables)
     }
     
-    private func startUpdates(location: CLLocation) {
+    private func startUpdates(location: CLLocationCoordinate2D? = nil) {
         cancelUpdates()
-
-        guard let boundingBox = locationManager.boundingBoxFromCurrentLocation(withDistance: radiusInKm) else { return }
+        
+        let currentLocation = resolveLocation(location: location) // If in airplane mode and no location, get last known location from cache
         
         timer = Timer.scheduledTimer(withTimeInterval: updateInterval, repeats: true, block: { [weak self] _ in
-            self?.fetchStations(boundingBox: boundingBox, sortOption: self?.sortOption)
+            if let location = currentLocation {
+                self?.fetchStations(location: location, sortOption: self?.sortOption)
+            }
+            
         })
         timer?.fire()
     }
@@ -80,8 +89,19 @@ class StationsProvider: StationsProviderType {
         timer = nil
         cancellables.removeAll()
     }
+    
+    func resolveLocation(location: CLLocationCoordinate2D?) -> CLLocationCoordinate2D? {
+        var currentLocation: CLLocationCoordinate2D? = location
+        if currentLocation == nil, let latitude = respository.lastLocationLatitude, let longitude = respository.lastLocationLongitude {
+            // Load last known location
+            currentLocation = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        }
+        return currentLocation
+    }
 
-    private func fetchStations(boundingBox: BoundingBox, sortOption: StationSortOption?) {
+    private func fetchStations(location: CLLocationCoordinate2D, sortOption: StationSortOption?) {
+        let boundingBox = boundingBoxCalculator.boundingBox(center: location, radiusKm: radiusInKm)
+        
         client.fetchStations(boundingBox: boundingBox).sink { [weak self] result in
             switch result {
             case .failure(let error):
@@ -96,31 +116,34 @@ class StationsProvider: StationsProviderType {
             }
         } receiveValue: { [weak self] apiStations in
             let stations = apiStations.map { Station(apiStation: $0) }
-            self?.saveStationsToCache(stations)
+            self?.saveStationsToCache(stations, latitude: location.latitude, longitude: location.longitude)
             self?.sendStations(stations: stations, sortOption: sortOption)
         }.store(in: &cancellables)
     }
     
-    private func saveStationsToCache(_ stations: [Station]) {
+    private func saveStationsToCache(_ stations: [Station], latitude: Double, longitude: Double) {
         respository.saveStations(stations, completion: {[weak self] result in
             switch result {
             case .success:
                 let date = Date()
                 self?.respository.saveLastUpdated(date: date)
-                self?.lastUpdateSubject.send(date)
+                self?.respository.saveLastLocation(longitude: longitude, latitude: latitude)
+                self?.sendLastUpdate(date: date)
             case .failure(let error):
                 // Log error
                 break
             }
-            
         })
     }
     
     private func sendStationsFromCache(sortOption: StationSortOption?) {
+        let lastUpdated = respository.lastUpdated
+        
         respository.loadStations { [weak self] result in
             switch result {
                 case .success(let stations):
                 self?.sendStations(stations: stations, sortOption: sortOption)
+                self?.sendLastUpdate(date: lastUpdated)
             case .failure(let error):
                 // log error
                 break
@@ -134,5 +157,10 @@ class StationsProvider: StationsProviderType {
         } else {
             self.stationsSubject.send(stations)
         }
+    }
+    
+    private func sendLastUpdate(date: Date?) {
+        guard let date = date else { return }
+        self.lastUpdateSubject.send(date)
     }
 }
