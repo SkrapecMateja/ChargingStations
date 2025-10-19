@@ -25,6 +25,9 @@ class StationsViewModel: ObservableObject {
     }
     
     private func subscribeToUpdates() {
+        
+        DefaultLogger.shared.info("Subscribe to station updates.")
+        
         self.stationsProvider.publishedStations
         .receive(on: DispatchQueue.main)
         .sink { error in
@@ -34,6 +37,7 @@ class StationsViewModel: ObservableObject {
         }
         .store(in: &cancellables)
         
+        DefaultLogger.shared.info("Assignes last update for updates.")
         stationsProvider.lastUpdatePublisher
             .receive(on: DispatchQueue.main)
             .assign(to: \.lastUpdate, on: self)
@@ -41,6 +45,7 @@ class StationsViewModel: ObservableObject {
     }
     
     func endFetchingStations() {
+        DefaultLogger.shared.info("End fetching stations.")
         stationsProvider.cancelUpdates()
         cancellables.removeAll()
     }

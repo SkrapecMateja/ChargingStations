@@ -31,24 +31,30 @@ class LocationManager: NSObject, LocationManagerType {
     }
     
     private func requestWhenInUseAuthorization() {
+        DefaultLogger.shared.info("Requestion location authorization.")
         manager.requestWhenInUseAuthorization()
     }
     
     private func startUpdatingLocation() {
+        DefaultLogger.shared.info("Started updating location.")
         manager.startUpdatingLocation()
     }
     
     func stopUpdatingLocation() {
+        DefaultLogger.shared.info("Ended updating location.")
         manager.stopUpdatingLocation()
     }
 }
 
 extension LocationManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        locationSubject.send(locations.last)
+        guard let lastLocation = locations.last else { return }
+        DefaultLogger.shared.info("Location updated: \(lastLocation)")
+        locationSubject.send(lastLocation)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        DefaultLogger.shared.error("Location failed: \(error.localizedDescription)")
         locationSubject.send(nil)
     }
 }

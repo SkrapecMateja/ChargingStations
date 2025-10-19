@@ -43,7 +43,11 @@ struct StationsRepository: StationsRepositoryType {
         return dir.appendingPathComponent(cacheFileName)
     }
     
-    init(cacheFileName: String = "stationsCache.json", lastUpdatedKey: String = "stations.lastUpdated", lastLatitudeKey: String = "stations.lastLatitude", lastLongitudeKey: String = "stations.lastLongitude") {
+    init(cacheFileName: String = "stationsCache.json",
+         lastUpdatedKey: String = "stations.lastUpdated",
+         lastLatitudeKey: String = "stations.lastLatitude",
+         lastLongitudeKey: String = "stations.lastLongitude"
+    ) {
         self.cacheFileName = cacheFileName
         self.lastUpdatedKey = lastUpdatedKey
         self.lastLatitudeKey = lastLatitudeKey
@@ -51,23 +55,32 @@ struct StationsRepository: StationsRepositoryType {
     }
     
     func saveStations(_ stations: [Station], completion: @escaping (Result<Void, StationError>) -> Void) {
+        DefaultLogger.shared.info("Saving stations to cache: \(stations.count)")
+        
         DispatchQueue.global(qos: .userInitiated).async {
             do {
                 try self.jsonEncoder.encode(stations).write(to: self.cacheURL)
+                DefaultLogger.shared.info("Saved stations to cache.")
                 completion(.success(()))
             } catch {
+                DefaultLogger.shared.error("Failed to save stations to cache: \(error.localizedDescription)")
                 completion(.failure(StationError.saveToCacheFailed))
             }
         }
     }
     
     func loadStations(completion: @escaping (Result<[Station],StationError>) -> Void) {
+        DefaultLogger.shared.info("Loading stations from cache...")
+        
         DispatchQueue.global(qos: .userInitiated).async {
             do {
                 let data = try Data(contentsOf: self.cacheURL)
                 let stations = try self.jsonDecoder.decode([Station].self, from: data)
+                
+                DefaultLogger.shared.info("Loaded stations from cache \(stations.count)")
                 completion(.success(stations))
             } catch {
+                DefaultLogger.shared.error("Failed to log stations from cache:\(error.localizedDescription)")
                 completion(.failure(.readingFromCacheFailed))
             }
         }
@@ -75,23 +88,28 @@ struct StationsRepository: StationsRepositoryType {
     
     
     func saveLastUpdated(date: Date) {
+        DefaultLogger.shared.info("Saving last updated date to cache.")
         UserDefaults.standard.set(date, forKey: lastUpdatedKey)
     }
     
     var lastUpdated: Date? {
-        UserDefaults.standard.object(forKey: lastUpdatedKey) as? Date
+        DefaultLogger.shared.info("Fetching last updated date from cache.")
+        return UserDefaults.standard.object(forKey: lastUpdatedKey) as? Date
     }
     
     func saveLastLocation(longitude: Double,  latitude: Double) {
+        DefaultLogger.shared.info("Saving last location to cache.")
         UserDefaults.standard.set(longitude, forKey: lastLongitudeKey)
         UserDefaults.standard.set(latitude, forKey: lastLatitudeKey)
     }
     
     var lastLocationLongitude: Double? {
-        UserDefaults.standard.object(forKey: lastLongitudeKey) as? Double
+        DefaultLogger.shared.info("Fetching last longitude from cache.")
+        return UserDefaults.standard.object(forKey: lastLongitudeKey) as? Double
     }
     
     var lastLocationLatitude: Double? {
-        UserDefaults.standard.object(forKey: lastLatitudeKey) as? Double
+        DefaultLogger.shared.info("Fetching last latitude from cache.")
+        return UserDefaults.standard.object(forKey: lastLatitudeKey) as? Double
     }
 }

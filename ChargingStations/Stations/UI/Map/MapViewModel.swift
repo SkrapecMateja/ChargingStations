@@ -54,25 +54,31 @@ class MapViewModel: ObservableObject {
     
     private func subscribeToUpdates() {
         // Station updates
+        DefaultLogger.shared.info("Subscribing to station updates.")
         self.stationsProvider.publishedStations
         .receive(on: DispatchQueue.main)
         .sink { error in
             
         } receiveValue: { [weak self] stations in
+            DefaultLogger.shared.info("Received stations \(stations.count).")
             self?.chargingPoints = self?.groupStationsByChargingPoint(stations: stations) ?? []
         }
         .store(in: &cancellables)
         
         // Last updated date updates
+        DefaultLogger.shared.info("Assigning last updated date updates.")
         stationsProvider.lastUpdatePublisher
             .receive(on: DispatchQueue.main)
             .assign(to: \.lastUpdate, on: self)
             .store(in: &cancellables)
         
         // Location updates
+        DefaultLogger.shared.info("Subscribing to location updates.")
         locationManager.locationPublisher
             .receive(on: DispatchQueue.main)
             .sink { [weak self] location in
+                DefaultLogger.shared.info("Received location updates.")
+                
                 guard let coordinates = self?.stationsProvider.resolveLocation(location: location?.coordinate) else {
                     return
                 }
@@ -86,6 +92,8 @@ class MapViewModel: ObservableObject {
     }
     
     private func groupStationsByChargingPoint(stations: [Station]) -> [ChargingPoint] {
+        DefaultLogger.shared.info("Groupping stations by location / charging point.")
+        
         let stationVMs = stations.map { StationViewModel(station: $0) }
         let groupedByChargingPoint = Dictionary(grouping: stationVMs, by: \.chargingStationId)
         

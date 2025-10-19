@@ -23,10 +23,12 @@ class MainTabViewModel: ObservableObject {
     }
     
     func viewAppeared() {
+        DefaultLogger.shared.info("Main Tab View appeared.")
         stationsViewModel.startFetchingStations()
     }
     
     func viewDisappeared() {
+        DefaultLogger.shared.info("Main Tab View disappeared.")
         stationsViewModel.endFetchingStations()
     }
 }
