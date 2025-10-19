@@ -13,14 +13,12 @@ struct StationViewModel: Identifiable {
     let availability: Availability
     let maxPowerText: String
     var chargingFacilities: [ChargingFacilityViewModel] = []
-    let chargingStationId: String
     
     init(station: Station) {
         self.id = station.id
         self.latitude = station.latitude
         self.longitude = station.longitude
         self.availability = station.availability
-        self.chargingStationId = station.chargingStationId
 
         if let maxPower = station.maxPower {
             self.maxPowerText = "Max power: \(maxPower) kW"

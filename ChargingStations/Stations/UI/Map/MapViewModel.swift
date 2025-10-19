@@ -10,8 +10,8 @@ import Combine
 import MapKit
 import _MapKit_SwiftUI
 
-struct ChargingPoint: Identifiable {
-    let stationId: String
+struct StationCluster: Identifiable {
+    let clusterId: String
     let latitude: Double
     let longitude: Double
     
@@ -19,13 +19,9 @@ struct ChargingPoint: Identifiable {
         stations.map(\.availability).max() ?? .unknown
     }
     
-    var id: String { stationId }
+    var id: String { clusterId }
     
     let stations: [StationViewModel]
-    
-    var coordinate: CLLocationCoordinate2D {
-        CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-    }
 }
 
 class MapViewModel: ObservableObject {
@@ -33,13 +29,13 @@ class MapViewModel: ObservableObject {
 
     @Published var mapCameraBounds: MapCameraBounds?
     
-    @Published var chargingPoints: [ChargingPoint] = []
+    @Published var chargingPoints: [StationCluster] = []
     @Published var lastUpdate: Date?
     
     @Published var selectedStationsText: String?
     
     private let stationsProvider: StationsProviderType
-    private static let radiusMeters: CLLocationDistance = 1000
+    private static let radiusMeters: CLLocationDistance = 1000 // 1 km
     
     private let locationManager: LocationManagerType
     
@@ -59,7 +55,7 @@ class MapViewModel: ObservableObject {
         .receive(on: DispatchQueue.main)
         .sink { [weak self] stations in
             DefaultLogger.shared.info("Received stations \(stations.count).")
-            self?.chargingPoints = self?.groupStationsByChargingPoint(stations: stations) ?? []
+            self?.chargingPoints = self?.clusterStationsIntoChargingPointsByLocation(stations: stations) ?? []
         }
         .store(in: &cancellables)
         
@@ -95,27 +91,41 @@ class MapViewModel: ObservableObject {
         lastUpdate = nil
     }
     
-    private func groupStationsByChargingPoint(stations: [Station]) -> [ChargingPoint] {
-        DefaultLogger.shared.info("Groupping stations by location / charging point.")
+    func clusterStationsIntoChargingPointsByLocation(
+        stations: [Station],
+        tolerance: Double = 0.0001
+    ) -> [StationCluster] {
         
-        let stationVMs = stations.map { StationViewModel(station: $0) }
-        let groupedByChargingPoint = Dictionary(grouping: stationVMs, by: \.chargingStationId)
+        var groups: [[StationViewModel]] = []
         
-        let chargingPoints: [ChargingPoint] = groupedByChargingPoint.map { (stationId, stations) in
-            ChargingPoint(
-                stationId: stationId,
-                latitude: stations.first?.latitude ?? 0,
-                longitude: stations.first?.longitude ?? 0,
-                stations: stations
+        for station in stations {
+            if let index = groups.firstIndex(where: { group in
+                group.contains { s in
+                    abs(s.latitude - station.latitude) <= tolerance &&
+                    abs(s.longitude - station.longitude) <= tolerance
+                }
+            }) {
+                groups[index].append(StationViewModel(station: station))
+            } else {
+                groups.append([StationViewModel(station: station)])
+            }
+        }
+        
+        let cluster: [StationCluster] = groups.map { group in
+            return StationCluster(
+                clusterId: group.first?.id ?? UUID().uuidString,
+                latitude: group.first?.latitude ?? 0,
+                longitude: group.first?.longitude ?? 0,
+                stations: group
             )
         }
         
-        return chargingPoints
+        return cluster
     }
-    
+
     // Short method to show available stations in one charging point / location
     public func showStations(for chargingPointId: String) {
-        if let chargingPoints = chargingPoints.first(where: { $0.stationId == chargingPointId }) {
+        if let chargingPoints = chargingPoints.first(where: { $0.clusterId == chargingPointId }) {
             let sortedStations = chargingPoints.stations.sorted(by: { $0.id > $1.id} )
             
             var text: String = "\n"

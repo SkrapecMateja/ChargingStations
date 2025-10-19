@@ -43,12 +43,10 @@ struct APIStation: Decodable {
     var longitude: Double = 0
     let evseStatus: String
     let chargingFacilities: [ChargingFacilities]?
-    let chargingStationId: String
 
     enum CodingKeys: String, CodingKey {
         case evseStatus = "EvseStatus"
         case chargingFacilities = "ChargingFacilities"
-        case chargingStationId = "ChargingStationId"
     }
 
     struct ChargingFacilities: Decodable {

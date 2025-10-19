@@ -12,7 +12,6 @@ struct Station: Codable {
     let longitude: Double
     let availability: Availability
     let chargingFacilities: [ChargingFacility]
-    let chargingStationId: String
     
     init(apiStation: APIStation) {
         
@@ -22,22 +21,19 @@ struct Station: Codable {
                   latitude: apiStation.latitude,
                   longitude: apiStation.longitude,
                   availability: Availability(rawValue: apiStation.evseStatus) ?? .unknown,
-                  chargingFacilities: chargingFacilities,
-                  chargingStationId: apiStation.chargingStationId)
+                  chargingFacilities: chargingFacilities)
     }
     
     init(id: String,
          latitude: Double,
          longitude: Double,
          availability: Availability,
-         chargingFacilities: [ChargingFacility],
-         chargingStationId: String) {
+         chargingFacilities: [ChargingFacility]) {
         self.id = id
         self.latitude = latitude
         self.longitude = longitude
         self.availability = availability
         self.chargingFacilities = chargingFacilities
-        self.chargingStationId = chargingStationId
     }
     
     var maxPower: UInt16? {
