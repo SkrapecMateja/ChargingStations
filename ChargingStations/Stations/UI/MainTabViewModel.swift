@@ -11,13 +11,15 @@ import SwiftUICore
 class MainTabViewModel: ObservableObject {
     
     let stationsViewModel: StationsViewModel
+    let mapViewModel: MapViewModel
     
     private(set) var tabItems: [TabType] = [.map, .list]
     
     @Published var selectedTab: TabType = .map
     
-    init(stationsViewModel: StationsViewModel) {
+    init(stationsViewModel: StationsViewModel, mapViewModel: MapViewModel) {
         self.stationsViewModel = stationsViewModel
+        self.mapViewModel = mapViewModel
     }
     
     func viewAppeared() {

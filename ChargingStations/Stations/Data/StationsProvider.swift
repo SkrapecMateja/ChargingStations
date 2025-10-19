@@ -7,18 +7,24 @@
 
 import Foundation
 import Combine
+import CoreLocation
 
 protocol StationsProviderType {
-    func startUpdates(for boundingBox: BoundingBox)
+    func startUpdates()
     func cancelUpdates()
-    var lastUpdate: Date? { get }
+    var lastUpdatePublisher: AnyPublisher<Date?, Never> { get }
     var publishedStations: AnyPublisher<[Station], StationError> { get }
 }
 
 class StationsProvider: StationsProviderType {
     private let updateInterval: TimeInterval = 10
+    
     private let respository: StationsRepositoryType
+    private let locationManager: LocationManagerType
     private let client: StationFetching
+    
+    private let boundingBoxCalculator: BoundingBoxCalculator
+    private var radiusInKm: Double = 1
     
     private var timer: Timer?
     
@@ -26,18 +32,50 @@ class StationsProvider: StationsProviderType {
     var publishedStations: AnyPublisher<[Station], StationError> {
         stationsSubject.eraseToAnyPublisher()
     }
+    
+    private let lastUpdateSubject: CurrentValueSubject<Date?, Never> = .init(nil)
+    var lastUpdatePublisher: AnyPublisher<Date?, Never> {
+        lastUpdateSubject.eraseToAnyPublisher()
+    }
+    
     private var cancellables: Set<AnyCancellable> = []
     
     private var sortOption: StationSortOption?
     
-    init(repository: StationsRepositoryType, client: StationFetching, sortOption: StationSortOption? = nil) {
+    init(repository: StationsRepositoryType,
+         locationManager: LocationManagerType,
+         client: StationFetching,
+         boundingBoxCalculator: BoundingBoxCalculator,
+         radiusInKm: Double = 1,
+         sortOption: StationSortOption? = nil) {
         self.respository = repository
+        self.locationManager = locationManager
         self.client = client
+        self.boundingBoxCalculator = boundingBoxCalculator
+        self.radiusInKm = radiusInKm
         self.sortOption = sortOption
+        
+        startObservingLocation()
     }
     
-    func startUpdates(for boundingBox: BoundingBox) {
+    private func startObservingLocation() {
+        self.locationManager.locationPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] location in
+                self?.startUpdates(location: location)
+        }.store(in: &cancellables)
+    }
+    
+    func startUpdates() {
+        startUpdates(location: locationManager.currentLocation)
+    }
+    
+    private func startUpdates(location: CLLocation?) {
         cancelUpdates()
+        
+        let coordinates = location?.coordinate ?? locationManager.defaultCoordinate
+        let boundingBox = boundingBoxCalculator.boundingBox(center: coordinates, radiusKm: radiusInKm)
+        
         timer = Timer.scheduledTimer(withTimeInterval: updateInterval, repeats: true, block: { [weak self] _ in
             self?.fetchStations(boundingBox: boundingBox, sortOption: self?.sortOption)
         })
@@ -47,12 +85,9 @@ class StationsProvider: StationsProviderType {
     func cancelUpdates() {
         timer?.invalidate()
         timer = nil
+        cancellables.removeAll()
     }
-    
-    var lastUpdate: Date? {
-        respository.lastUpdated
-    }
-    
+
     private func fetchStations(boundingBox: BoundingBox, sortOption: StationSortOption?) {
         client.fetchStations(boundingBox: boundingBox).sink { [weak self] result in
             switch result {
@@ -77,7 +112,9 @@ class StationsProvider: StationsProviderType {
         respository.saveStations(stations, completion: {[weak self] result in
             switch result {
             case .success:
-                self?.respository.saveLastUpdated(date: Date())
+                let date = Date()
+                self?.respository.saveLastUpdated(date: date)
+                self?.lastUpdateSubject.send(date)
             case .failure(let error):
                 // Log error
                 break

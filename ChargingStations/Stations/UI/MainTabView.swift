@@ -15,7 +15,7 @@ struct MainTabView: View {
             ForEach(viewModel.tabItems) { tabType in
                 switch tabType {
                 case .map:
-                    StationsMapView(viewModel: viewModel.stationsViewModel).tabItem {
+                    StationsMapView(viewModel: viewModel.mapViewModel).tabItem {
                         Label(tabType.title, systemImage: tabType.icon)
                     }.tag(tabType)
                 case .list:

@@ -23,7 +23,7 @@ struct LastUpdateView: View {
             .font(.footnote)
             .padding(4)
             .background(
-                Color(.systemGroupedBackground).opacity(0.4)
+                Color(.systemGroupedBackground).opacity(0.8)
             )
             .foregroundColor(.primary)
     }

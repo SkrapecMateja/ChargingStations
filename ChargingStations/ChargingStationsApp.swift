@@ -9,15 +9,15 @@ import SwiftUI
 
 @main
 struct ChargingStationsApp: App {
+    
+    let dependencies: AppDependencies = AppDependencies()
+    
     var body: some Scene {
         WindowGroup {
-            MainTabView(viewModel: MainTabViewModel(
-                stationsViewModel: StationsViewModel(
-                    stationsProvider: StationsProvider(
-                        repository: StationsRepository(),
-                        client: StationClient(),
-                        sortOption: .power), locationManager: LocationManager()
-                    )
+            MainTabView(
+                viewModel: MainTabViewModel(
+                    stationsViewModel: StationsViewModel(stationsProvider: dependencies.stationsProvider),
+                    mapViewModel: MapViewModel(stationsProvider: dependencies.stationsProvider, locationManager: dependencies.locationManager)
                 )
             )
         }

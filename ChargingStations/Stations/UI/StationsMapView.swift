@@ -9,33 +9,31 @@ import SwiftUI
 import MapKit
 
 struct StationsMapView: View {
-    @ObservedObject var stationsViewModel: StationsViewModel
-    @ObservedObject var mapViewModel: MapViewModel
+    @ObservedObject var viewModel: MapViewModel
     
-    init(viewModel: StationsViewModel) {
-        self.stationsViewModel = viewModel
-        self.mapViewModel = viewModel.mapViewModel
+    init(viewModel: MapViewModel) {
+        self.viewModel = viewModel
     }
     
     var body: some View {
         ZStack {
-            Map(bounds: mapViewModel.mapCameraBounds) {
-                ForEach(stationsViewModel.stations) { station in
+            Map(bounds: viewModel.mapCameraBounds) {
+                ForEach(viewModel.chargingPoints) { point in
                         Marker(
-                            station.id,
+                            "",
                             coordinate: CLLocationCoordinate2D(
-                                latitude: station.latitude,
-                                longitude: station.longitude
+                                latitude: point.latitude,
+                                longitude: point.longitude
                             )
-                        ).tint(station.availability.color)
+                        ).tint(point.bestAvailability.color)
                     }
                 Marker(
                     "You are here",
-                    coordinate: mapViewModel.currentLocation
+                    coordinate: viewModel.currentLocation
                 ).tint(.blue)
             }
             
-            if let lastUpdate = stationsViewModel.lastUpdate {
+            if let lastUpdate = viewModel.lastUpdate {
                 VStack {
                     Spacer()
                     HStack {
