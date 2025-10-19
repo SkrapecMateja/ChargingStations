@@ -21,6 +21,10 @@ struct LastUpdateView: View {
     var body: some View {
         Text("Last update: \(self.lastUpdateDateString)")
             .font(.footnote)
+            .padding(4)
+            .background(
+                Color(.systemGroupedBackground).opacity(0.4)
+            )
             .foregroundColor(.primary)
     }
 }

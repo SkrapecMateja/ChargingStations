@@ -32,8 +32,7 @@ struct StationsListView: View {
                             LastUpdateView(lastUpdateDate: lastUpdate)
                             Spacer()
                         }
-                        .padding(.top, 16)
-                        .padding(.bottom, 2)
+                        .padding(.top, 8)
                         .padding(.leading, 32)
                     }
  

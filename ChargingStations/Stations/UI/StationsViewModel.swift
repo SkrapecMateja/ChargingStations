@@ -11,8 +11,9 @@ import CoreLocation
 class StationsViewModel: ObservableObject {
     
     @Published var stations: [StationViewModel] = []
-    @Published var currentLocation: CLLocation?
     @Published var lastUpdate: Date?
+    
+    private(set) var mapViewModel: MapViewModel
     
     private let stationsProvider: StationsProviderType
     private let locationManager: LocationManagerType
@@ -22,9 +23,10 @@ class StationsViewModel: ObservableObject {
     
     private var cancellables: Set<AnyCancellable> = []
     
-    init(stationsProvider: StationsProviderType, locationManager: LocationManagerType) {
+    init(stationsProvider: StationsProviderType, locationManager: LocationManagerType, mapViewModel: MapViewModel = MapViewModel()) {
         self.stationsProvider = stationsProvider
         self.locationManager = locationManager
+        self.mapViewModel = MapViewModel()
     }
     
     func startFetchingStations() {
@@ -58,14 +60,12 @@ class StationsViewModel: ObservableObject {
     }
     
     private func updateLocation(location: CLLocation?) {
-        currentLocation = location
-        
-        stationsProvider.cancelUpdates()
-        
         guard let coordinates = location?.coordinate else { return }
-        
-        // Calculate new boundingBox
+        stationsProvider.cancelUpdates()
+
         let boundingBox = boundingBoxCalculator.boundingBox(center: coordinates, radiusKm: radiusInKm)
+        
+        mapViewModel.currentLocation = coordinates
         stationsProvider.startUpdates(for: boundingBox)
     }
 }
