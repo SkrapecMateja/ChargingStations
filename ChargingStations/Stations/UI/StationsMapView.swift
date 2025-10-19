@@ -18,8 +18,15 @@ struct StationsMapView: View {
     
     var body: some View {
         ZStack {
-            Map(bounds: viewModel.mapCameraBounds, selection: $selectedMarkerId) {
-                ForEach(viewModel.chargingPoints) { point in
+            if viewModel.mapCameraBounds == nil || viewModel.chargingPoints.isEmpty {
+                VStack {
+                    Spacer()
+                    ContentUnavailableView("Loading map...", systemImage: "map")
+                    Spacer()
+                }
+            } else {
+                Map(bounds: viewModel.mapCameraBounds, selection: $selectedMarkerId) {
+                    ForEach(viewModel.chargingPoints) { point in
                         Marker(
                             "",
                             coordinate: CLLocationCoordinate2D(
@@ -28,39 +35,41 @@ struct StationsMapView: View {
                             )
                         ).tint(point.bestAvailability.color)
                     }
-                Marker(
-                    "You are here",
-                    coordinate: viewModel.currentLocation
-                ).tint(.blue)
-            }.onChange(of: selectedMarkerId) {
-                if let selectedMarkerId = selectedMarkerId {
-                    viewModel.showStations(for: selectedMarkerId)
-                } else {
-                    viewModel.hideStations()
-                }
-            }
-            
-            if let selectedStations = viewModel.selectedStationsText {
-                VStack {
-                    Spacer()
-                    HStack {
-                        Text(selectedStations)
-                            .font(.caption)
-                            .padding([.leading, .trailing], 16)
-                            .background(.ultraThinMaterial)
-                            .cornerRadius(8)
-                        Spacer()
+                    Marker(
+                        "You are here",
+                        coordinate: viewModel.currentLocation
+                    ).tint(.blue)
+                }.onChange(of: selectedMarkerId) {
+                    if let selectedMarkerId = selectedMarkerId {
+                        viewModel.showStations(for: selectedMarkerId)
+                    } else {
+                        viewModel.hideStations()
                     }
                 }
-                .transition(.scale.combined(with: .opacity))
-            }
-            
-            if let lastUpdate = viewModel.lastUpdate {
-                VStack {
-                    Spacer()
-                    HStack {
+                
+                if let selectedStations = viewModel.selectedStationsText {
+                    VStack {
                         Spacer()
-                        LastUpdateView(lastUpdateDate: lastUpdate)
+                        HStack {
+                            Text(selectedStations)
+                                .font(.caption)
+                                .padding([.leading, .trailing], 16)
+                                .background(.ultraThinMaterial)
+                                .cornerRadius(8)
+                            Spacer()
+                        }
+                    }
+                    .transition(.scale.combined(with: .opacity))
+                }
+                
+                
+                if let lastUpdate = viewModel.lastUpdate {
+                    VStack {
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            LastUpdateView(lastUpdateDate: lastUpdate)
+                        }
                     }
                 }
             }
