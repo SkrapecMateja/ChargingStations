@@ -25,6 +25,7 @@ final class ReachabilityMonitor: ReachabilityMonitoring {
         monitor.pathUpdateHandler = { [weak self] path in
             let isConnected = path.status == .satisfied
             if isConnected {
+                DefaultLogger.shared.info("Sending network is available")
                 self?.networkAvailableSubject.send(())
             }
         }

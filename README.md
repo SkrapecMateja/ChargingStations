@@ -73,6 +73,20 @@ Key types include:
 
 ---
 
+🧪 Unit Testing
+The project includes a lightweight unit testing setup using XCTest and Combine test publishers.
+A few initial tests are implemented to verify the core logic and reactive data flow (e.g., location updates, station fetching, and network availability handling).
+
+✅ Current Tests
+Mock-driven architecture:
+Core services (StationClientMock, LocationManagerMock, NetworkAvailabilityMock) simulate real-world behaviors and responses using Combine publishers.
+StationsProvider tests:
+ - Validate automatic updates, offline fallback, and correct station publishing behavior.
+Mock-based isolation:
+- Each component is tested independently from networking, ensuring deterministic, fast tests.
+Future improvements: I would add more unit test in a similar way to cover StationsProvider further and view models
+
+
 ## 🌐 Data Source
 
 Open data provided by the **Swiss Confederation**:  

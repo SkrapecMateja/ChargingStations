@@ -75,6 +75,11 @@ final class StationsProvider: StationsProviderType {
         DefaultLogger.shared.info("Start observing location.")
         
         self.locationManager.locationPublisher
+            .removeDuplicates(by: { lhs, rhs in
+                    guard let lhs = lhs, let rhs = rhs else { return false }
+                    return lhs.distance(from: rhs) < 10 // let's not update if we moved less than 10 m
+            })
+            .throttle(for: .seconds(5), scheduler: DispatchQueue.main, latest: true)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] location in
                 if let location = location {
