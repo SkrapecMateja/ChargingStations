@@ -16,11 +16,12 @@ protocol StationsProviderType {
 }
 
 final class StationsProvider: StationsProviderType {
-    private let updateInterval: TimeInterval = 10
+    private let updateInterval: TimeInterval = 30
     
     private let respository: StationsRepositoryType
     private let locationManager: LocationManagerType
     private let client: StationFetching
+    private let networkAvailability: ReachabilityMonitoring
     
     private let boundingBoxCalculator: BoundingBoxCalculator
     
@@ -46,17 +47,20 @@ final class StationsProvider: StationsProviderType {
          locationManager: LocationManagerType,
          client: StationFetching,
          boundingBoxCalculator: BoundingBoxCalculator = BoundingBoxCalculator(),
+         networkAvailability: ReachabilityMonitoring,
          radiusInKm: Double = 1,
          sortOption: StationSortOption? = .power) {
         self.respository = repository
         self.locationManager = locationManager
         self.client = client
+        self.networkAvailability = networkAvailability
         self.radiusInKm = radiusInKm
         self.sortOption = sortOption
         self.boundingBoxCalculator = boundingBoxCalculator
         
         startUpdates()
         startObservingLocation()
+        startObservingNetworkAvailability()
     }
     
     private func startObservingLocation() {
@@ -74,14 +78,24 @@ final class StationsProvider: StationsProviderType {
         }.store(in: &cancellables)
     }
     
+    private func startObservingNetworkAvailability() {
+        DefaultLogger.shared.info("Start observing network.")
+        
+        networkAvailability.networkAvailablePublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] in
+                DefaultLogger.shared.info("Network is available.")
+                self?.startUpdates()
+            }.store(in: &cancellables)
+    }
+    
     private func startUpdates(location: CLLocationCoordinate2D? = nil) {
         DefaultLogger.shared.info("Started station updates.")
-        let currentLocation = location //?? locationManager.currentLocation?.coordinate
         
         cancelUpdates()
 
         timer = Timer.scheduledTimer(withTimeInterval: updateInterval, repeats: true, block: { [weak self] _ in
-            if let location = currentLocation {
+            if let location = location {
                 DefaultLogger.shared.info("Fetching stations.")
                 self?.fetchStations(location: location, sortOption: self?.sortOption)
             } else {

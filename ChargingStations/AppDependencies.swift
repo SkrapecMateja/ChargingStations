@@ -17,6 +17,7 @@ struct AppDependencies {
             repository: StationsRepository(),
             locationManager: locationManager,
             client: StationClient(),
+            networkAvailability: ReachabilityMonitor(),
             sortOption: .power
         )
     }
