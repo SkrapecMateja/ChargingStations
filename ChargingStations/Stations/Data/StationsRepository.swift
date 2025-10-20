@@ -21,6 +21,7 @@ struct StationsRepository: StationsRepositoryType {
     private let lastUpdatedKey: String
     private let lastLatitudeKey: String
     private let lastLongitudeKey: String
+    private var cacheDirectory: FileManager.SearchPathDirectory = .applicationSupportDirectory
 
     private let jsonEncoder: JSONEncoder = {
         let encoder = JSONEncoder()
@@ -35,16 +36,18 @@ struct StationsRepository: StationsRepositoryType {
     }()
     
     private var cacheURL: URL {
-        let dir = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+        let dir = FileManager.default.urls(for: cacheDirectory, in: .userDomainMask)[0]
         try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
         return dir.appendingPathComponent(cacheFileName)
     }
     
-    init(cacheFileName: String = "stationsCache.json",
+    init(cacheDirectory: FileManager.SearchPathDirectory = .applicationSupportDirectory,
+         cacheFileName: String = "stationsCache.json",
          lastUpdatedKey: String = "stations.lastUpdated",
          lastLatitudeKey: String = "stations.lastLatitude",
          lastLongitudeKey: String = "stations.lastLongitude"
     ) {
+        self.cacheDirectory = cacheDirectory
         self.cacheFileName = cacheFileName
         self.lastUpdatedKey = lastUpdatedKey
         self.lastLatitudeKey = lastLatitudeKey

@@ -21,26 +21,27 @@ class StationsRepositoryTests: XCTestCase {
         let saveExpectation = expectation(description: "Fetch stations completion called")
         let loadExpectation = expectation(description: "Load stations completion called")
 
-        let stationsRepository = StationsRepository(cacheFileName: "cache.stations.test", lastUpdatedKey: "stations.lastUpdated.test")
+        let stationsRepository = StationsRepository(cacheDirectory: .cachesDirectory, cacheFileName: "cache.stations.test", lastUpdatedKey: "stations.lastUpdated.test")
         
         stationsRepository.saveStations(stations, completion: { result in
             if case .failure(let error) = result {
                 XCTFail("Expected success, but got failure with error: \(error)")
             }
             saveExpectation.fulfill()
-        })
-        
-        stationsRepository.loadStations { result in
-            switch result {
-            case .success(let loadedStations):
-                for i in 0..<self.stations.count {
-                    StationTestHelpers().assertStationsEqual(self.stations[i], loadedStations[i])
+            
+            // Now load stations
+            stationsRepository.loadStations { result in
+                switch result {
+                case .success(let loadedStations):
+                    for i in 0..<self.stations.count {
+                        StationTestHelpers().assertStationsEqual(self.stations[i], loadedStations[i])
+                    }
+                case .failure(let error):
+                    XCTFail("Expected success, but got failure with error: \(error)")
                 }
-            case .failure(let error):
-                XCTFail("Expected success, but got failure with error: \(error)")
+                loadExpectation.fulfill()
             }
-            loadExpectation.fulfill()
-        }
+        })
         
         wait(for: [saveExpectation, loadExpectation], timeout: 2)
     }

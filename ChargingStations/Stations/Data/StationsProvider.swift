@@ -17,7 +17,7 @@ protocol StationsProviderType {
 }
 
 final class StationsProvider: StationsProviderType {
-    private let updateInterval: TimeInterval = 30
+    private var updateInterval: TimeInterval = 30
     
     private let respository: StationsRepositoryType
     private let locationManager: LocationManagerType
@@ -50,6 +50,7 @@ final class StationsProvider: StationsProviderType {
          boundingBoxCalculator: BoundingBoxCalculator = BoundingBoxCalculator(),
          networkAvailability: ReachabilityMonitoring,
          radiusInKm: Double = 1,
+         updateInterval: TimeInterval = 30,
          sortOption: StationSortOption? = .power) {
         self.respository = repository
         self.locationManager = locationManager
@@ -58,6 +59,7 @@ final class StationsProvider: StationsProviderType {
         self.radiusInKm = radiusInKm
         self.sortOption = sortOption
         self.boundingBoxCalculator = boundingBoxCalculator
+        self.updateInterval = updateInterval
         
         startUpdates()
         startObservingLocation()
@@ -140,24 +142,33 @@ final class StationsProvider: StationsProviderType {
         client.fetchStations(boundingBox: boundingBox).sink { [weak self] result in
             switch result {
             case .failure(let error):
-                if case StationError.networkUnavailable = error {
-                    DefaultLogger.shared.error("Network unavailable, fetching stations from cache.")
-                    self?.stationsSubject.send(.failure(.networkUnavailable))
-                } else {
-                    DefaultLogger.shared.error("Network error: \(error)")
-                    self?.stationsSubject.send(.failure(.serviceUnavailable))
-                }
+                self?.handleFaliureOnFetch(error: error)
             case .finished:
                 DefaultLogger.shared.info("Finished fetching stations from API.")
                 break
             }
         } receiveValue: { [weak self] apiStations in
             DefaultLogger.shared.info("Fetched stations from API: \(apiStations.count).")
-            let stations = apiStations.map { Station(apiStation: $0) }
-
-            self?.saveStationsToCache(stations, latitude: location.latitude, longitude: location.longitude)
-            self?.sendStations(stations: stations, sortOption: sortOption)
+            self?.handleFetchSuccess(apiStations: apiStations, location: location)
         }.store(in: &cancellables)
+    }
+    
+    private func handleFetchSuccess(apiStations: [APIStation], location: CLLocationCoordinate2D) {
+        DefaultLogger.shared.info("Fetched stations from API: \(apiStations.count).")
+        let stations = apiStations.map { Station(apiStation: $0) }
+
+        saveStationsToCache(stations, latitude: location.latitude, longitude: location.longitude)
+        sendStations(stations: stations, sortOption: sortOption)
+    }
+    
+    private func handleFaliureOnFetch(error: StationError) {
+        if case StationError.networkUnavailable = error {
+            DefaultLogger.shared.error("Network unavailable, fetching stations from cache.")
+            stationsSubject.send(.failure(.networkUnavailable))
+        } else {
+            DefaultLogger.shared.error("Network error: \(error)")
+            stationsSubject.send(.failure(.serviceUnavailable))
+        }
     }
     
     private func saveStationsToCache(_ stations: [Station], latitude: Double, longitude: Double) {

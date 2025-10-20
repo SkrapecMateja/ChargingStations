@@ -30,7 +30,7 @@ class DecodingTests: XCTestCase {
         XCTAssertEqual(stations[0].latitude, 47.37229222, accuracy: 0.0000001)
         XCTAssertEqual(stations[0].longitude, 8.53584745, accuracy: 0.0000001)
         
-        XCTAssertEqual(stations[0].id, "CHFASE4150401")
+        XCTAssertEqual(stations[0].id, "CH*SHE*E585*1")
         
         XCTAssertEqual(stations[0].chargingFacilities.count, 2)
         XCTAssertEqual(stations[0].chargingFacilities[0].power, 22)
