@@ -1,6 +1,5 @@
 # ⚡️ ChargingStations
 
-An iOS app built for the **Trifork Tech Interview** challenge.  
 The app helps electric vehicle (EV) drivers find **nearby charging stations** in Switzerland and displays their **real-time availability**.
 
 ---
@@ -100,13 +99,10 @@ For validation, use:
 
 ## 🧭 How to Run
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/<your-username>/ChargingStations.git
-   cd ChargingStations
-2. open ChargingStations.xcodeproj
+1. Clone the repository: https://github.com/SkrapecMateja/ChargingStations
+2. open ChargingStations.xcodeproj in Xcode (created in Xcode 16.4)
 3. Build on a simulator running iOS 18 or more:
-    - There is a gpx file that can mock Trifork's office location. Check if it's assigned in the target: 
+    - There is a gpx file that can mock of Oerlikon office location. Check if it's assigned in the target: 
         1. Open Chargins Stations -> Edit Scheme -> Run -> Options
         2. For defaultLocation choose 'gpxZurich'
 4. To run on a device running iOS 18 or more, you will have to 'Trust the developer':
