@@ -105,11 +105,11 @@ For validation, use:
    git clone https://github.com/<your-username>/ChargingStations.git
    cd ChargingStations
 2. open ChargingStations.xcodeproj
-3. Build on a simulator:
+3. Build on a simulator running iOS 18 or more:
     - There is a gpx file that can mock Trifork's office location. Check if it's assigned in the target: 
         1. Open Chargins Stations -> Edit Scheme -> Run -> Options
         2. For defaultLocation choose 'gpxZurich'
-4. To run on a device, you will have to 'Trust the developer':
+4. To run on a device running iOS 18 or more, you will have to 'Trust the developer':
     - Open Settings app after app instalation
     - General -> VPN & Device Managment -> Developer App: mateja.skrapec15@gmail.com
     - Allow install
