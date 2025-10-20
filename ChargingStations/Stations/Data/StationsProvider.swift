@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import CoreLocation
+import UIKit
 
 protocol StationsProviderType {
     func cancelUpdates()
@@ -61,6 +62,11 @@ final class StationsProvider: StationsProviderType {
         startUpdates()
         startObservingLocation()
         startObservingNetworkAvailability()
+        startObservingAppLifecycle()
+    }
+    
+    deinit {
+        cancellables.removeAll()
     }
     
     private func startObservingLocation() {
@@ -71,9 +77,7 @@ final class StationsProvider: StationsProviderType {
             .sink { [weak self] location in
                 if let location = location {
                     DefaultLogger.shared.info("Received location update.")
-                    DispatchQueue.main.async {
-                        self?.startUpdates(location: location.coordinate)
-                    }
+                    self?.startUpdates(location: location.coordinate)
                 }
         }.store(in: &cancellables)
     }
@@ -89,13 +93,30 @@ final class StationsProvider: StationsProviderType {
             }.store(in: &cancellables)
     }
     
+    private func startObservingAppLifecycle() {
+        NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)
+            .sink { [weak self] _ in
+                DefaultLogger.shared.info("App entered background")
+                self?.cancelUpdates()
+            }
+            .store(in: &cancellables)
+
+        NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)
+            .sink { [weak self] _ in
+                DefaultLogger.shared.info("App will enter foreground")
+                self?.startUpdates()
+            }
+            .store(in: &cancellables)
+    }
+    
     private func startUpdates(location: CLLocationCoordinate2D? = nil) {
         DefaultLogger.shared.info("Started station updates.")
+        let currentLocation = location ?? locationManager.currentLocation?.coordinate
         
         cancelUpdates()
 
         timer = Timer.scheduledTimer(withTimeInterval: updateInterval, repeats: true, block: { [weak self] _ in
-            if let location = location {
+            if let location = currentLocation {
                 DefaultLogger.shared.info("Fetching stations.")
                 self?.fetchStations(location: location, sortOption: self?.sortOption)
             } else {
@@ -109,7 +130,6 @@ final class StationsProvider: StationsProviderType {
     func cancelUpdates() {
         timer?.invalidate()
         timer = nil
-        cancellables.removeAll()
     }
 
     private func fetchStations(location: CLLocationCoordinate2D, sortOption: StationSortOption?) {
