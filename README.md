@@ -50,8 +50,8 @@ The project follows the **MVVM** architecture pattern with **Combine**-based rea
 |--------|----------------|
 | **View (SwiftUI)** | Displays map, station list, and status UI. |
 | **ViewModel** | Binds model data to views, handles sorting, filtering, and state management. |
-| **Model / Repository** | Defines domain entities and manages persistence and API data. |
-| **Networking** | Fetches charging station data and handles API errors gracefully. |
+| **Model / Repository** | Defines domain entities and manages persistence. |
+| **Networking** | Fetches charging station data and handles API errors. |
 | **Location & Reachability** | Observes the user’s location and network state. |
 
 Key types include:
@@ -103,7 +103,7 @@ For validation, use:
 1. Clone the repository: https://github.com/SkrapecMateja/ChargingStations
 2. open ChargingStations.xcodeproj in Xcode (created in Xcode 16.4)
 3. Build on a simulator running iOS 18 or more:
-    - There is a gpx file that can mock of Oerlikon office location. Check if it's assigned in the target: 
+    - There is a gpx file that can mock of Oerlikon office location. It can be assigned in the target: 
         1. Open Chargins Stations -> Edit Scheme -> Run -> Options
         2. For defaultLocation choose 'gpxZurich'
 4. To run on a device running iOS 18 or more, you will have to 'Trust the developer':
