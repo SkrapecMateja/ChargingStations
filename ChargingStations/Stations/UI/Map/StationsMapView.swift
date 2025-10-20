@@ -21,7 +21,7 @@ struct StationsMapView: View {
             if viewModel.mapCameraBounds == nil || viewModel.chargingPoints.isEmpty {
                 VStack {
                     Spacer()
-                    ContentUnavailableView("No locations found", systemImage: "map")
+                    ContentUnavailableView(viewModel.emptyViewText, systemImage: "map")
                     Spacer()
                 }
             } else {

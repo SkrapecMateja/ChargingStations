@@ -12,7 +12,7 @@ import CoreLocation
 protocol StationsProviderType {
     func cancelUpdates()
     var lastUpdatePublisher: AnyPublisher<Date?, Never> { get }
-    var publishedStations: AnyPublisher<[Station], Never> { get }
+    var publishedStations: AnyPublisher<Result<[Station], StationError>, Never> { get }
 }
 
 final class StationsProvider: StationsProviderType {
@@ -28,8 +28,8 @@ final class StationsProvider: StationsProviderType {
     
     private var timer: Timer?
     
-    private let stationsSubject: CurrentValueSubject<[Station], Never> = .init([])
-    var publishedStations: AnyPublisher<[Station], Never> {
+    private let stationsSubject: CurrentValueSubject<Result<[Station], StationError>, Never> = .init(Result<[Station], StationError>.success([]))
+    var publishedStations: AnyPublisher<Result<[Station], StationError>, Never> {
         stationsSubject.eraseToAnyPublisher()
     }
     
@@ -47,7 +47,7 @@ final class StationsProvider: StationsProviderType {
          client: StationFetching,
          boundingBoxCalculator: BoundingBoxCalculator = BoundingBoxCalculator(),
          radiusInKm: Double = 1,
-         sortOption: StationSortOption? = nil) {
+         sortOption: StationSortOption? = .power) {
         self.respository = repository
         self.locationManager = locationManager
         self.client = client
@@ -67,21 +67,26 @@ final class StationsProvider: StationsProviderType {
             .sink { [weak self] location in
                 if let location = location {
                     DefaultLogger.shared.info("Received location update.")
-                    self?.startUpdates(location: location.coordinate)
+                    DispatchQueue.main.async {
+                        self?.startUpdates(location: location.coordinate)
+                    }
                 }
         }.store(in: &cancellables)
     }
     
     private func startUpdates(location: CLLocationCoordinate2D? = nil) {
         DefaultLogger.shared.info("Started station updates.")
+        let currentLocation = location //?? locationManager.currentLocation?.coordinate
         
         cancelUpdates()
 
         timer = Timer.scheduledTimer(withTimeInterval: updateInterval, repeats: true, block: { [weak self] _ in
-            if let location = location {
+            if let location = currentLocation {
+                DefaultLogger.shared.info("Fetching stations.")
                 self?.fetchStations(location: location, sortOption: self?.sortOption)
             } else {
-                self?.sendStationsFromCache(sortOption: self?.sortOption)
+                DefaultLogger.shared.info("No location on fetching stations.")
+                self?.stationsSubject.send(.failure(.locationUnavailable))
             }
         })
         timer?.fire()
@@ -103,9 +108,10 @@ final class StationsProvider: StationsProviderType {
             case .failure(let error):
                 if case StationError.networkUnavailable = error {
                     DefaultLogger.shared.error("Network unavailable, fetching stations from cache.")
-                    self?.sendStationsFromCache(sortOption: sortOption)
+                    self?.stationsSubject.send(.failure(.networkUnavailable))
                 } else {
                     DefaultLogger.shared.error("Network error: \(error)")
+                    self?.stationsSubject.send(.failure(.serviceUnavailable))
                 }
             case .finished:
                 DefaultLogger.shared.info("Finished fetching stations from API.")
@@ -135,30 +141,13 @@ final class StationsProvider: StationsProviderType {
             }
         })
     }
-    
-    private func sendStationsFromCache(sortOption: StationSortOption?) {
-        let lastUpdated = respository.lastUpdated
-        
-        DefaultLogger.shared.info("Loading stations from cache.")
-        
-        respository.loadStations { [weak self] result in
-            switch result {
-                case .success(let stations):
-                self?.sendStations(stations: stations, sortOption: sortOption)
-                self?.sendLastUpdate(date: lastUpdated)
-            case .failure(let error):
-                DefaultLogger.shared.error("Failed to load stations from cache \(error).")
-                break
-            }
-        }
-    }
-    
+
     private func sendStations(stations: [Station], sortOption: StationSortOption?) {
         DefaultLogger.shared.info("Publishing stations.")
         if let sortedStations = sortOption?.apply(to: stations) {
-            self.stationsSubject.send(sortedStations)
+            self.stationsSubject.send(.success(sortedStations))
         } else {
-            self.stationsSubject.send(stations)
+            self.stationsSubject.send(.success(stations))
         }
     }
     

@@ -12,18 +12,17 @@ final class StationsViewModel: ObservableObject {
     @Published var stations: [StationViewModel] = []
     @Published var lastUpdate: Date?
     
-    @Published var isLoading: Bool = false
-    
     private let stationsProvider: StationsProviderType
+    private let respository: StationsRepositoryType
     
     private var cancellables: Set<AnyCancellable> = []
     
-    init(stationsProvider: StationsProviderType) {
+    init(stationsProvider: StationsProviderType, respository: StationsRepositoryType) {
         self.stationsProvider = stationsProvider
+        self.respository = respository
     }
     
     func startFetchingStations() {
-        isLoading = true
         subscribeToUpdates()
     }
     
@@ -31,11 +30,23 @@ final class StationsViewModel: ObservableObject {
         
         DefaultLogger.shared.info("Subscribe to station updates.")
         
+        // Station updates
+        DefaultLogger.shared.info("Subscribing to station updates.")
         self.stationsProvider.publishedStations
         .receive(on: DispatchQueue.main)
-        .sink { [weak self] stations in
-            self?.stations = stations.map { StationViewModel(station: $0) }
-            self?.isLoading = false
+        .sink { [weak self] result in
+            DefaultLogger.shared.info("Received stations fetch response.")
+            
+            switch result {
+            case let .success(stations):
+                DefaultLogger.shared.info("Received stations \(stations.count).")
+                self?.stations = stations.map(StationViewModel.init)
+            case let .failure(error):
+                DefaultLogger.shared.info("Received stations fetch error: \(error).")
+                // We could handle no network separately but in all cases it
+                // would be good to show stations from cache
+                self?.loadStationsFromCache(sortOption: .power)
+            }
         }
         .store(in: &cancellables)
         
@@ -50,6 +61,29 @@ final class StationsViewModel: ObservableObject {
         DefaultLogger.shared.info("End fetching stations.")
         stationsProvider.cancelUpdates()
         cancellables.removeAll()
-        isLoading = false
+    }
+    
+    private func loadStationsFromCache(sortOption: StationSortOption?) {
+        DefaultLogger.shared.info("Loading stations from cache.")
+        let lastUpdated = respository.lastUpdated
+       
+       respository.loadStations { [weak self] result in
+           switch result {
+               case .success(let stations):
+               DispatchQueue.main.async {
+                   DefaultLogger.shared.info("Loaded stations from cache.")
+                   let sortedStations = sortOption?.apply(to: stations) ?? stations
+                   self?.stations = sortedStations.map(StationViewModel.init)
+                   self?.lastUpdate = lastUpdated
+               }
+               
+           case .failure(let error):
+               DefaultLogger.shared.error("Failed to load stations from cache \(error).")
+               DispatchQueue.main.async {
+                   self?.stations = []
+                   self?.lastUpdate = nil
+               }
+           }
+       }
     }
 }

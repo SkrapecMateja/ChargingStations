@@ -19,6 +19,7 @@ final class MapViewModel: ObservableObject {
     @Published var lastUpdate: Date?
     
     @Published var selectedStationsText: String?
+    @Published var emptyViewText: String = "No locations found."
     
     private let stationsProvider: StationsProviderType
     private static let radiusMeters: CLLocationDistance = 1000 // 1 km
@@ -39,19 +40,18 @@ final class MapViewModel: ObservableObject {
         DefaultLogger.shared.info("Subscribing to station updates.")
         self.stationsProvider.publishedStations
         .receive(on: DispatchQueue.main)
-        .sink { [weak self] stations in
-            DefaultLogger.shared.info("Received stations \(stations.count).")
-            // Do not show charging stations on the map when no location
-            guard let location = self?.locationManager.currentLocation else {
+        .sink { [weak self] result in
+            DefaultLogger.shared.info("Received fetch response.")
+            
+            switch result {
+            case let .success(stations):
+                self?.updateStationsOnMap(stations: stations)
+            case let .failure(error):
+                DefaultLogger.shared.info("Received stations fetch error: \(error).")
+                self?.emptyViewText = error.localized
+                // We could handle each error separately but for now just clearing the map
                 self?.clearMap()
-                return
             }
-            
-            self?.currentLocation = location.coordinate
-            let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: Self.radiusMeters, longitudinalMeters: Self.radiusMeters)
-            self?.mapCameraBounds = MapCameraBounds(centerCoordinateBounds: region)
-            
-            self?.chargingPoints = self?.clusterStationsIntoChargingPointsByLocation(stations: stations) ?? []
         }
         .store(in: &cancellables)
         
@@ -61,23 +61,19 @@ final class MapViewModel: ObservableObject {
             .receive(on: DispatchQueue.main)
             .assign(to: \.lastUpdate, on: self)
             .store(in: &cancellables)
+    }
+    
+    private func updateStationsOnMap(stations: [Station]) {
+        guard let location = locationManager.currentLocation else {
+            clearMap()
+            return
+        }
         
-        // Location updates
-//        DefaultLogger.shared.info("Subscribing to location updates.")
-//        locationManager.locationPublisher
-//            .receive(on: DispatchQueue.main)
-//            .sink { [weak self] location in
-//                DefaultLogger.shared.info("Received location updates.")
-//                guard let coordinate = location?.coordinate else {
-//                    self?.clearMap()
-//                    return
-//                }
-//                
-//                self?.currentLocation = coordinate
-//                let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: Self.radiusMeters, longitudinalMeters: Self.radiusMeters)
-//                self?.mapCameraBounds = MapCameraBounds(centerCoordinateBounds: region)
-//                
-//            }.store(in: &cancellables)
+        self.currentLocation = location.coordinate
+        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: Self.radiusMeters, longitudinalMeters: Self.radiusMeters)
+        self.mapCameraBounds = MapCameraBounds(centerCoordinateBounds: region)
+        
+        self.chargingPoints = clusterStationsIntoChargingPointsByLocation(stations: stations)
     }
     
     private func clearMap() {
