@@ -37,7 +37,8 @@ It retrieves charging station data from the **Swiss Confederation open data port
   Charging stations have distinct colors/icons depending on their availability.
 
 - **Automatic refresh & location updates**  
-  The app listens for network changes, location updates, and app foreground/background transitions.
+  Stations refresh automatically every 30 seconds.
+  The app also listens for network availablity, location updates, and app foreground/background transitions.
 
 ---
 
