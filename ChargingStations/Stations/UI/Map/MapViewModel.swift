@@ -10,21 +10,7 @@ import Combine
 import MapKit
 import _MapKit_SwiftUI
 
-struct StationCluster: Identifiable {
-    let clusterId: String
-    let latitude: Double
-    let longitude: Double
-    
-    var bestAvailability: Availability {
-        stations.map(\.availability).max() ?? .unknown
-    }
-    
-    var id: String { clusterId }
-    
-    let stations: [StationViewModel]
-}
-
-class MapViewModel: ObservableObject {
+final class MapViewModel: ObservableObject {
     @Published var currentLocation: CLLocationCoordinate2D?
 
     @Published var mapCameraBounds: MapCameraBounds?
@@ -55,6 +41,16 @@ class MapViewModel: ObservableObject {
         .receive(on: DispatchQueue.main)
         .sink { [weak self] stations in
             DefaultLogger.shared.info("Received stations \(stations.count).")
+            // Do not show charging stations on the map when no location
+            guard let location = self?.locationManager.currentLocation else {
+                self?.clearMap()
+                return
+            }
+            
+            self?.currentLocation = location.coordinate
+            let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: Self.radiusMeters, longitudinalMeters: Self.radiusMeters)
+            self?.mapCameraBounds = MapCameraBounds(centerCoordinateBounds: region)
+            
             self?.chargingPoints = self?.clusterStationsIntoChargingPointsByLocation(stations: stations) ?? []
         }
         .store(in: &cancellables)
@@ -67,21 +63,21 @@ class MapViewModel: ObservableObject {
             .store(in: &cancellables)
         
         // Location updates
-        DefaultLogger.shared.info("Subscribing to location updates.")
-        locationManager.locationPublisher
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] location in
-                DefaultLogger.shared.info("Received location updates.")
-                guard let coordinate = location?.coordinate else {
-                    self?.clearMap()
-                    return
-                }
-                
-                self?.currentLocation = coordinate
-                let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: Self.radiusMeters, longitudinalMeters: Self.radiusMeters)
-                self?.mapCameraBounds = MapCameraBounds(centerCoordinateBounds: region)
-                
-            }.store(in: &cancellables)
+//        DefaultLogger.shared.info("Subscribing to location updates.")
+//        locationManager.locationPublisher
+//            .receive(on: DispatchQueue.main)
+//            .sink { [weak self] location in
+//                DefaultLogger.shared.info("Received location updates.")
+//                guard let coordinate = location?.coordinate else {
+//                    self?.clearMap()
+//                    return
+//                }
+//                
+//                self?.currentLocation = coordinate
+//                let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: Self.radiusMeters, longitudinalMeters: Self.radiusMeters)
+//                self?.mapCameraBounds = MapCameraBounds(centerCoordinateBounds: region)
+//                
+//            }.store(in: &cancellables)
     }
     
     private func clearMap() {
@@ -91,7 +87,7 @@ class MapViewModel: ObservableObject {
         lastUpdate = nil
     }
     
-    func clusterStationsIntoChargingPointsByLocation(
+    private func clusterStationsIntoChargingPointsByLocation(
         stations: [Station],
         tolerance: Double = 0.0001
     ) -> [StationCluster] {
@@ -123,7 +119,7 @@ class MapViewModel: ObservableObject {
         return cluster
     }
 
-    // Short method to show available stations in one charging point / location
+    // Compose short text to show available stations in one charging point / location
     public func showStations(for chargingPointId: String) {
         if let chargingPoints = chargingPoints.first(where: { $0.clusterId == chargingPointId }) {
             let sortedStations = chargingPoints.stations.sorted(by: { $0.id > $1.id} )

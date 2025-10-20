@@ -7,10 +7,12 @@
 import Combine
 import Foundation
 
-class StationsViewModel: ObservableObject {
+final class StationsViewModel: ObservableObject {
     
     @Published var stations: [StationViewModel] = []
     @Published var lastUpdate: Date?
+    
+    @Published var isLoading: Bool = false
     
     private let stationsProvider: StationsProviderType
     
@@ -21,6 +23,7 @@ class StationsViewModel: ObservableObject {
     }
     
     func startFetchingStations() {
+        isLoading = true
         subscribeToUpdates()
     }
     
@@ -32,6 +35,7 @@ class StationsViewModel: ObservableObject {
         .receive(on: DispatchQueue.main)
         .sink { [weak self] stations in
             self?.stations = stations.map { StationViewModel(station: $0) }
+            self?.isLoading = false
         }
         .store(in: &cancellables)
         
@@ -46,5 +50,6 @@ class StationsViewModel: ObservableObject {
         DefaultLogger.shared.info("End fetching stations.")
         stationsProvider.cancelUpdates()
         cancellables.removeAll()
+        isLoading = false
     }
 }

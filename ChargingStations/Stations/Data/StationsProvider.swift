@@ -15,7 +15,7 @@ protocol StationsProviderType {
     var publishedStations: AnyPublisher<[Station], Never> { get }
 }
 
-class StationsProvider: StationsProviderType {
+final class StationsProvider: StationsProviderType {
     private let updateInterval: TimeInterval = 10
     
     private let respository: StationsRepositoryType

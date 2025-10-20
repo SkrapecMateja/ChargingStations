@@ -11,9 +11,10 @@ import CoreLocation
 protocol LocationManagerType {
     func stopUpdatingLocation()
     var locationPublisher: AnyPublisher<CLLocation?, Never> { get }
+    var currentLocation: CLLocation? { get }
 }
 
-class LocationManager: NSObject, LocationManagerType {
+final class LocationManager: NSObject, LocationManagerType {
     
     private var locationSubject = CurrentValueSubject<CLLocation?, Never>(nil)
     private let manager = CLLocationManager()
@@ -46,6 +47,10 @@ class LocationManager: NSObject, LocationManagerType {
     func stopUpdatingLocation() {
         DefaultLogger.shared.info("Ended updating location.")
         manager.stopUpdatingLocation()
+    }
+    
+    var currentLocation: CLLocation? {
+        manager.location
     }
 }
 

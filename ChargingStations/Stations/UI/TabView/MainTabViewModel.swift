@@ -8,7 +8,7 @@
 import Combine
 import SwiftUICore
 
-class MainTabViewModel: ObservableObject {
+final class MainTabViewModel: ObservableObject {
     
     let stationsViewModel: StationsViewModel
     let mapViewModel: MapViewModel

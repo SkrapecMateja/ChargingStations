@@ -21,7 +21,7 @@ struct StationsListView: View {
                 // Empty, loading view
                 VStack {
                     Spacer()
-                    ContentUnavailableView("No stations found", systemImage: "ev.charger")
+                    ContentUnavailableView(viewModel.isLoading ? "Loading stations..." : "No stations found", systemImage: "ev.charger")
                     Spacer()
                 }
             } else {
@@ -47,7 +47,3 @@ struct StationsListView: View {
         }.background(Color(.systemGroupedBackground))
     }
 }
-
-//#Preview {
-//    StationsListView(viewModel: StationsViewModel(stationsProvider: <#any StationsProviderType#>))
-//}
