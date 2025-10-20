@@ -17,7 +17,7 @@ struct ChargingStationsApp: App {
             MainTabView(
                 viewModel: MainTabViewModel(
                     stationsViewModel: StationsViewModel(stationsProvider: dependencies.stationsProvider, respository: StationsRepository()),
-                    mapViewModel: MapViewModel(stationsProvider: dependencies.stationsProvider, locationManager: dependencies.locationManager)
+                    mapViewModel: StationsMapViewModel(stationsProvider: dependencies.stationsProvider, locationManager: dependencies.locationManager)
                 )
             )
         }

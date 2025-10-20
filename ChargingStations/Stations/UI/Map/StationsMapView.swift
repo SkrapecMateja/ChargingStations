@@ -9,10 +9,10 @@ import SwiftUI
 import MapKit
 
 struct StationsMapView: View {
-    @ObservedObject var viewModel: MapViewModel
+    @ObservedObject var viewModel: StationsMapViewModel
     @State private var selectedMarkerId: String?
     
-    init(viewModel: MapViewModel) {
+    init(viewModel: StationsMapViewModel) {
         self.viewModel = viewModel
     }
     

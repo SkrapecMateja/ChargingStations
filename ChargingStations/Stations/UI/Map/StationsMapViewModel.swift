@@ -10,7 +10,7 @@ import Combine
 import MapKit
 import _MapKit_SwiftUI
 
-final class MapViewModel: ObservableObject {
+final class StationsMapViewModel: ObservableObject {
     @Published var currentLocation: CLLocationCoordinate2D?
 
     @Published var mapCameraBounds: MapCameraBounds?
@@ -19,7 +19,7 @@ final class MapViewModel: ObservableObject {
     @Published var lastUpdate: Date?
     
     @Published var selectedStationsText: String?
-    @Published var emptyViewText: String = "No locations found."
+    @Published var emptyViewText: String = "Loading locations..."
     
     private let stationsProvider: StationsProviderType
     private static let radiusMeters: CLLocationDistance = 1000 // 1 km

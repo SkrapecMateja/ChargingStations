@@ -19,8 +19,6 @@ struct StationsRepository: StationsRepositoryType {
     
     private let cacheFileName: String
     private let lastUpdatedKey: String
-    private let lastLatitudeKey: String
-    private let lastLongitudeKey: String
     private var cacheDirectory: FileManager.SearchPathDirectory = .applicationSupportDirectory
 
     private let jsonEncoder: JSONEncoder = {
@@ -43,15 +41,11 @@ struct StationsRepository: StationsRepositoryType {
     
     init(cacheDirectory: FileManager.SearchPathDirectory = .applicationSupportDirectory,
          cacheFileName: String = "stationsCache.json",
-         lastUpdatedKey: String = "stations.lastUpdated",
-         lastLatitudeKey: String = "stations.lastLatitude",
-         lastLongitudeKey: String = "stations.lastLongitude"
+         lastUpdatedKey: String = "stations.lastUpdated"
     ) {
         self.cacheDirectory = cacheDirectory
         self.cacheFileName = cacheFileName
         self.lastUpdatedKey = lastUpdatedKey
-        self.lastLatitudeKey = lastLatitudeKey
-        self.lastLongitudeKey = lastLongitudeKey
     }
     
     func saveStations(_ stations: [Station], completion: @escaping (Result<Void, StationError>) -> Void) {
